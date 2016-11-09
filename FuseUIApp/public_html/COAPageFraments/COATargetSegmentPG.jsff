@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/WEB-INF/_Templates/fuse-page-1-column.jspx"
+                   id="pt1">
+    <f:facet name="header-start">
+      <af:panelGroupLayout id="panelGroupLayout1">
+        <af:outputText value="Webservice: Target Segment" id="ot2" styleClass="page-title"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="header-end"/>
+    <f:facet name="body">
+      <af:panelGroupLayout id="pgl1" layout="vertical"
+                           styleClass="AFStrecthWidth">
+        <af:panelFormLayout id="pfl1">
+          <af:inputText value="#{bindings.sourceSystem.inputValue}"
+                        label="Source System"
+                        required="#{bindings.sourceSystem.hints.mandatory}"
+                        columns="#{bindings.sourceSystem.hints.displayWidth}"
+                        maximumLength="#{bindings.sourceSystem.hints.precision}"
+                        shortDesc="#{bindings.sourceSystem.hints.tooltip}"
+                        id="it1">
+            <f:validator binding="#{bindings.sourceSystem.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.targetSystem.inputValue}"
+                        label="Target System"
+                        required="#{bindings.targetSystem.hints.mandatory}"
+                        columns="#{bindings.targetSystem.hints.displayWidth}"
+                        maximumLength="#{bindings.targetSystem.hints.precision}"
+                        shortDesc="#{bindings.targetSystem.hints.tooltip}"
+                        id="it2">
+            <f:validator binding="#{bindings.targetSystem.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.sourceString.inputValue}"
+                        label="Source String"
+                        required="#{bindings.sourceString.hints.mandatory}"
+                        columns="#{bindings.sourceString.hints.displayWidth}"
+                        maximumLength="#{bindings.sourceString.hints.precision}"
+                        shortDesc="#{bindings.sourceString.hints.tooltip}"
+                        id="it3">
+            <f:validator binding="#{bindings.sourceString.validator}"/>
+          </af:inputText>
+          <af:commandButton actionListener="#{bindings.getCOASegments.execute}"
+                            text="Get Target Segment"
+                            disabled="#{!bindings.getCOASegments.enabled}"
+                            id="cb1" partialSubmit="true">
+            <af:showPopupBehavior popupId="p1" triggerType="click"/>
+          </af:commandButton>
+          <af:panelLabelAndMessage label="Target String"
+                                   id="plam1" partialTriggers="cb1">
+            <af:outputText value="#{bindings.return.inputValue}" id="ot1"/>
+          </af:panelLabelAndMessage>
+        </af:panelFormLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="footer-end"/>
+    <f:facet name="footer-start"/>
+    <f:facet name="hidden">
+      <af:popup id="p1">
+        <af:dialog id="d1" type="ok" title="Target Segment" modal="false"
+                   resize="on" styleClass="AFStrecthWidth"
+                   closeIconVisible="false" contentWidth="400">
+          <af:panelGroupLayout id="pgl2" layout="vertical"
+                               partialTriggers="cb1"
+                               styleClass="AFStrecthWidth">
+            <af:spacer width="10" height="5" id="s1"/>
+            <af:outputFormatted value="#{bindings.return.inputValue}" id="of1"/>
+          </af:panelGroupLayout>
+        </af:dialog>
+      </af:popup>
+    </f:facet>
+    <f:facet name="side-panel"/>
+  </af:pageTemplate>
+</jsp:root>

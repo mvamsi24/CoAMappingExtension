@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="COAMappingRulesVO"
+  Version="11.1.1.65.57"
+  InheritPersonalization="true"
+  SelectList="COAMappingRulesEO.RULE_ID, 
+       COAMappingRulesEO.RULE_NAME, 
+       COAMappingRulesEO.DESCRIPTION, 
+       COAMappingRulesEO.SOURCE_SYSTEM, 
+       COAMappingRulesEO.TARGET_SYSTEM, 
+       COAMappingRulesEO.START_DATE, 
+       COAMappingRulesEO.END_DATE, 
+       COAMappingRulesEO.ENABLED_FLAG, 
+       COAMappingRulesEO.ATTRIBUTE1, 
+       COAMappingRulesEO.ATTRIBUTE2, 
+       COAMappingRulesEO.ATTRIBUTE3, 
+       COAMappingRulesEO.ATTRIBUTE4, 
+       COAMappingRulesEO.ATTRIBUTE5, 
+       COAMappingRulesEO.ATTRIBUTE6, 
+       COAMappingRulesEO.ATTRIBUTE7, 
+       COAMappingRulesEO.ATTRIBUTE8, 
+       COAMappingRulesEO.ATTRIBUTE9, 
+       COAMappingRulesEO.ATTRIBUTE10, 
+       COAMappingRulesEO.CREATED_BY, 
+       COAMappingRulesEO.CREATION_DATE, 
+       COAMappingRulesEO.LAST_UPDATED_BY, 
+       COAMappingRulesEO.LAST_UPDATE_DATE, 
+       COAMappingRulesEO.LAST_UPDATED_LOGIN"
+  FromList="COA_MAPPING_RULES COAMappingRulesEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="COATargetSystemLOVVO1"
+    ViewObjectName="deloitte.fin.gl.coa.view.lov.COATargetSystemLOVVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="COAMappingRuleLOVVO1"
+    ViewObjectName="deloitte.fin.gl.coa.view.lov.COAMappingRuleLOVVO">
+    <ViewCriteriaUsage
+      Name="COAMappingRuleLOVVOCriteria"
+      FullName="deloitte.fin.gl.coa.view.lov.COAMappingRuleLOVVO.COAMappingRuleLOVVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="P_Ssystem">
+        <TransientExpression><![CDATA[SourceSystem]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="p_Tsystem">
+        <TransientExpression><![CDATA[TargetSystem]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="COASourceSystemLOVVO1"
+    ViewObjectName="deloitte.fin.gl.coa.view.lov.COASourceSystemLOVVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SourceSystem"
+    ListVOName="COASourceSystemLOVVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SourceSystem"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SourceSystem"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SourceSystem"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TargetSystem"
+    ListVOName="COATargetSystemLOVVO1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TargetSystem"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TargetSystem"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TargetSystem"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RuleName"
+    ListVOName="COAMappingRuleLOVVO1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_RuleName_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RuleName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RuleName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="RuleName"/>
+      <Item Value="SourceSystem"/>
+      <Item Value="TargetSystem"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="COAMappingRulesEO"
+    Entity="deloitte.fin.gl.coa.entity.COAMappingRulesEO"/>
+  <ViewAttribute
+    Name="RuleId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RuleId"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="RULE_ID"/>
+  <ViewAttribute
+    Name="RuleName"
+    PrecisionRule="true"
+    EntityAttrName="RuleName"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="RULE_NAME"
+    LOVName="LOV_RuleName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="SourceSystem"
+    PrecisionRule="true"
+    EntityAttrName="SourceSystem"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="SOURCE_SYSTEM"
+    LOVName="LOV_SourceSystem">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TargetSystem"
+    PrecisionRule="true"
+    EntityAttrName="TargetSystem"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="TARGET_SYSTEM"
+    LOVName="LOV_TargetSystem">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="EnabledFlag"
+    PrecisionRule="true"
+    EntityAttrName="EnabledFlag"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ENABLED_FLAG"/>
+  <ViewAttribute
+    Name="Attribute1"
+    PrecisionRule="true"
+    EntityAttrName="Attribute1"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ATTRIBUTE1"/>
+  <ViewAttribute
+    Name="Attribute2"
+    PrecisionRule="true"
+    EntityAttrName="Attribute2"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ATTRIBUTE2"/>
+  <ViewAttribute
+    Name="Attribute3"
+    PrecisionRule="true"
+    EntityAttrName="Attribute3"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ATTRIBUTE3"/>
+  <ViewAttribute
+    Name="Attribute4"
+    PrecisionRule="true"
+    EntityAttrName="Attribute4"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ATTRIBUTE4"/>
+  <ViewAttribute
+    Name="Attribute5"
+    PrecisionRule="true"
+    EntityAttrName="Attribute5"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ATTRIBUTE5"/>
+  <ViewAttribute
+    Name="Attribute6"
+    PrecisionRule="true"
+    EntityAttrName="Attribute6"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ATTRIBUTE6"/>
+  <ViewAttribute
+    Name="Attribute7"
+    PrecisionRule="true"
+    EntityAttrName="Attribute7"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ATTRIBUTE7"/>
+  <ViewAttribute
+    Name="Attribute8"
+    PrecisionRule="true"
+    EntityAttrName="Attribute8"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ATTRIBUTE8"/>
+  <ViewAttribute
+    Name="Attribute9"
+    PrecisionRule="true"
+    EntityAttrName="Attribute9"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ATTRIBUTE9"/>
+  <ViewAttribute
+    Name="Attribute10"
+    PrecisionRule="true"
+    EntityAttrName="Attribute10"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="ATTRIBUTE10"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreationDate"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="CREATION_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdateDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateDate"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="LAST_UPDATE_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedLogin"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedLogin"
+    EntityUsage="COAMappingRulesEO"
+    AliasName="LAST_UPDATED_LOGIN"/>
+  <ViewLinkAccessor
+    Name="COASegmentMappingsVO"
+    ViewLink="deloitte.fin.gl.coa.view.SysC007381Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="COASegmentValuesVO"
+    ViewLink="deloitte.fin.gl.coa.view.SysC007382Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

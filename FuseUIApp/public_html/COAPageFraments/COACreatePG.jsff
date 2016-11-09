@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/WEB-INF/_Templates/fuse-popup.jspx" id="pt1">
+    <f:facet name="header-start">
+      <af:panelGroupLayout id="pgl5">
+        <af:outputText value="Create Segment Values"
+                       id="ot1" styleClass="page-title"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="header-end">
+      <af:panelGroupLayout id="pgl1" layout="horizontal">
+        <af:commandButton text="Save" id="cb1"
+                          actionListener="#{backingBeanScope.UtilLibraryBean.saveAndClose}"/>
+        <af:commandButton text="Close" id="cb3" immediate="true"
+                          actionListener="#{backingBeanScope.UtilLibraryBean.cancelButton}"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="body">
+      <af:panelGroupLayout id="pgl2" layout="vertical"
+                           styleClass="AFStecthWidth">
+        <af:panelGroupLayout id="pgl3" layout="vertical" halign="center">
+          <af:messages id="m1" inline="true" styleClass="coa-saveandclose"/>
+        </af:panelGroupLayout>
+        <af:panelBox text="Rule" id="pb1" showDisclosure="false">
+          <f:facet name="toolbar"/>
+          <af:panelFormLayout id="pfl2" maxColumns="1" rows="2"
+                              labelWidth="200px">
+            <af:selectOneChoice value="#{bindings.RuleId.inputValue}"
+                                label="Rule Name"
+                                required="#{bindings.RuleId.hints.mandatory}"
+                                shortDesc="#{bindings.RuleId.hints.tooltip}"
+                                id="soc1" autoSubmit="true">
+              <f:selectItems value="#{bindings.RuleId.items}" id="si1"/>
+            </af:selectOneChoice>
+            <af:inputText value="#{bindings.RuleName.inputValue}"
+                          label="#{bindings.RuleName.hints.label}"
+                          required="#{bindings.RuleName.hints.mandatory}"
+                          maximumLength="#{bindings.RuleName.hints.precision}"
+                          shortDesc="#{bindings.RuleName.hints.tooltip}"
+                          id="it10" partialTriggers="soc1" rendered="false">
+              <f:validator binding="#{bindings.RuleName.validator}"/>
+            </af:inputText>
+          </af:panelFormLayout>
+        </af:panelBox>
+        <af:panelBox text="Systems and Segments" id="pb2">
+          <f:facet name="toolbar"/>
+          <af:panelFormLayout id="pfl3" rows="2" maxColumns="2"
+                              labelWidth="150px" partialTriggers="soc1"
+                              fieldWidth="300px">
+            <f:facet name="footer"/>
+            <af:inputText value="#{bindings.SourceSystem.inputValue}"
+                          label="Source System"
+                          required="#{bindings.SourceSystem.hints.mandatory}"
+                          maximumLength="#{bindings.SourceSystem.hints.precision}"
+                          shortDesc="#{bindings.SourceSystem.hints.tooltip}"
+                          id="it8">
+              <f:validator binding="#{bindings.SourceSystem.validator}"/>
+            </af:inputText>
+            <af:spacer width="10" height="2" id="s1"/>
+            <af:inputText value="#{bindings.SourceSegment.inputValue}"
+                          label="Source Segment"
+                          required="#{bindings.SourceSegment.hints.mandatory}"
+                          maximumLength="#{bindings.SourceSegment.hints.precision}"
+                          shortDesc="#{bindings.SourceSegment.hints.tooltip}"
+                          id="it2">
+              <f:validator binding="#{bindings.SourceSegment.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Description.inputValue}"
+                          label="Description"
+                          required="#{bindings.Description.hints.mandatory}"
+                          maximumLength="#{bindings.Description.hints.precision}"
+                          shortDesc="#{bindings.Description.hints.tooltip}"
+                          id="it12" rows="1" columns="40">
+              <f:validator binding="#{bindings.Description.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.TargetSystem.inputValue}"
+                          label="Target System"
+                          required="#{bindings.TargetSystem.hints.mandatory}"
+                          maximumLength="#{bindings.TargetSystem.hints.precision}"
+                          shortDesc="#{bindings.TargetSystem.hints.tooltip}"
+                          id="it13">
+              <f:validator binding="#{bindings.TargetSystem.validator}"/>
+            </af:inputText>
+            <af:spacer width="10" height="2" id="s2"/>
+            <af:inputText value="#{bindings.TargetSegment.inputValue}"
+                          label="Target Segment"
+                          required="#{bindings.TargetSegment.hints.mandatory}"
+                          maximumLength="#{bindings.TargetSegment.hints.precision}"
+                          shortDesc="#{bindings.TargetSegment.hints.tooltip}"
+                          id="it9">
+              <f:validator binding="#{bindings.TargetSegment.validator}"/>
+            </af:inputText>
+          </af:panelFormLayout>
+        </af:panelBox>
+        <af:panelBox text="Segment Values" id="pb3" showDisclosure="false">
+          <f:facet name="toolbar"/>
+          <af:panelFormLayout id="pfl1" maxColumns="2" rows="2"
+                              labelWidth="200px">
+            <af:inputText value="#{bindings.ValueId.inputValue}"
+                          label="Value Id"
+                          required="#{bindings.ValueId.hints.mandatory}"
+                          maximumLength="#{bindings.ValueId.hints.precision}"
+                          shortDesc="#{bindings.ValueId.hints.tooltip}" id="it3"
+                          rendered="false">
+              <f:validator binding="#{bindings.ValueId.validator}"/>
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.ValueId.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.SourceValue.inputValue}"
+                          label="Source Value"
+                          required="#{bindings.SourceValue.hints.mandatory}"
+                          maximumLength="#{bindings.SourceValue.hints.precision}"
+                          shortDesc="#{bindings.SourceValue.hints.tooltip}"
+                          id="it5">
+              <f:validator binding="#{bindings.SourceValue.validator}"/>
+            </af:inputText>
+            <af:inputDate value="#{bindings.StartDate.inputValue}"
+                          label="Start Date"
+                          required="#{bindings.StartDate.hints.mandatory}"
+                          shortDesc="#{bindings.StartDate.hints.tooltip}"
+                          id="id1">
+              <f:validator binding="#{bindings.StartDate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
+            </af:inputDate>
+            <af:selectBooleanCheckbox value="#{bindings.EnableFlagBoolean.inputValue}"
+                                      label="Enable"
+                                      shortDesc="#{bindings.EnableFlagBoolean.hints.tooltip}"
+                                      id="sbc1" selected="true"
+                                      autoSubmit="true"/>
+            <af:selectBooleanCheckbox
+                                      label="Enable"
+                                      required="#{bindings.EnabledFlag.hints.mandatory}"
+                                      shortDesc="#{bindings.EnabledFlag.hints.tooltip}"
+                                      id="it1"
+                                      value="#{bindings.EnabledFlag1.inputValue}"
+                                      rendered="false">
+              <f:validator binding="#{bindings.EnabledFlag.validator}"/>
+            </af:selectBooleanCheckbox>
+            <af:inputText value="#{bindings.TargetValue.inputValue}"
+                          label="Target Value"
+                          required="#{bindings.TargetValue.hints.mandatory}"
+                          maximumLength="#{bindings.TargetValue.hints.precision}"
+                          shortDesc="#{bindings.TargetValue.hints.tooltip}"
+                          id="it11">
+              <f:validator binding="#{bindings.TargetValue.validator}"/>
+            </af:inputText>
+            <af:inputDate value="#{bindings.EndDate.inputValue}"
+                          label="End Date"
+                          required="#{bindings.EndDate.hints.mandatory}"
+                          shortDesc="#{bindings.EndDate.hints.tooltip}"
+                          id="id2">
+              <f:validator binding="#{bindings.EndDate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
+            </af:inputDate>
+            <af:inputText value="#{bindings.RuleId1.inputValue}"
+                          label="#{bindings.RuleId1.hints.label}"
+                          required="#{bindings.RuleId1.hints.mandatory}"
+                          maximumLength="#{bindings.RuleId1.hints.precision}"
+                          shortDesc="#{bindings.RuleId1.hints.tooltip}" id="it6"
+                          rendered="false">
+              <f:validator binding="#{bindings.RuleId1.validator}"/>
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.RuleId1.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.RuleId2.inputValue}"
+                          label="#{bindings.RuleId2.hints.label}"
+                          required="#{bindings.RuleId2.hints.mandatory}"
+                          maximumLength="#{bindings.RuleId2.hints.precision}"
+                          shortDesc="#{bindings.RuleId2.hints.tooltip}" id="it7"
+                          rendered="false">
+              <f:validator binding="#{bindings.RuleId2.validator}"/>
+            </af:inputText>
+          </af:panelFormLayout>
+        </af:panelBox>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="hidden"/>
+  </af:pageTemplate>
+</jsp:root>

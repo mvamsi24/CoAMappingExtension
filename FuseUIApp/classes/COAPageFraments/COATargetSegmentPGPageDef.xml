@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.57" id="COATargetSegmentPGPageDef"
+                Package="COAPageFraments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="getCOASegments_return"
+                IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.getCOASegments.result}"/>
+      <variable Type="java.lang.String" Name="getCOASegments_sourceSystem"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="getCOASegments_targetSystem"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="getCOASegments_sourceString"
+                IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="findCOAValues" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="findCOAValues"
+                  IsViewObjectMethod="false" DataControl="COAAMDataControl"
+                  InstanceName="COAAMDataControl.dataProvider">
+      <NamedData NDName="sourceSystem" NDType="java.lang.String"
+                 NDValue="${bindings.findCOAValues_sourceSystem}"/>
+      <NamedData NDName="targetSystem" NDType="java.lang.String"
+                 NDValue="${bindings.findCOAValues_targetSystem}"/>
+      <NamedData NDName="mappingRule" NDType="java.lang.String"/>
+      <NamedData NDName="sourceSegment" NDType="java.lang.String"/>
+      <NamedData NDName="targetSegemnt" NDType="java.lang.String"/>
+      <NamedData NDName="sourceValue" NDType="java.lang.String"/>
+      <NamedData NDName="targetValue" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="getCOASegments" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getCOASegments"
+                  IsViewObjectMethod="false" DataControl="COAAMDataControl"
+                  InstanceName="COAAMDataControl.dataProvider"
+                  ReturnName="data.COAAMDataControl.methodResults.getCOASegments_COAAMDataControl_dataProvider_getCOASegments_result">
+      <NamedData NDName="sourceSystem" NDType="java.lang.String"
+                 NDValue="${bindings.getCOASegments_sourceSystem}"/>
+      <NamedData NDName="targetSystem" NDType="java.lang.String"
+                 NDValue="${bindings.getCOASegments_targetSystem}"/>
+      <NamedData NDName="sourceString" NDType="java.lang.String"
+                 NDValue="${bindings.getCOASegments_sourceString}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="sourceSystem">
+      <AttrNames>
+        <Item Value="getCOASegments_sourceSystem"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="targetSystem">
+      <AttrNames>
+        <Item Value="getCOASegments_targetSystem"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="sourceString">
+      <AttrNames>
+        <Item Value="getCOASegments_sourceString"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="return">
+      <AttrNames>
+        <Item Value="getCOASegments_return"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

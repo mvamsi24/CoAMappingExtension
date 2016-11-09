@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="COACreateTF">
+    <default-activity id="__1">COACreatePG</default-activity>
+    <data-control-scope id="__6"></data-control-scope>
+    <managed-bean id="__2">
+      <managed-bean-name id="__5">SaveandCloseBean</managed-bean-name>
+      <managed-bean-class id="__4">deloitte.fin.gl.coa.util.SaveandCloseBean</managed-bean-class>
+      <managed-bean-scope id="__3">backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="COACreatePG">
+      <page>/COAPageFraments/COACreatePG.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="COASearchTF">
+    <default-activity id="__1">COASearchPG</default-activity>
+    <managed-bean id="__3">
+      <managed-bean-name id="__4">PopBackingBean</managed-bean-name>
+      <managed-bean-class id="__2">deloitte.fin.gl.coa.bean.pop.PopBackingBean</managed-bean-class>
+      <managed-bean-scope id="__5">backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__8">
+      <managed-bean-name id="__6">COADeleteListnerBean</managed-bean-name>
+      <managed-bean-class id="__9">deloitte.fin.gl.coa.bean.COADeleteListnerBean</managed-bean-class>
+      <managed-bean-scope id="__7">backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="COASearchPG">
+      <page>/COAPageFraments/COASearchPG.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
