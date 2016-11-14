@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Fuse" styleClass="application-container round">
+      <f:facet name="metaContainer">
+        <af:resource type="javascript" source="/faces/skins/js/fuse-ui.js"/>
+        <af:resource type="javascript"
+                     source="/faces/skins/js/jquery-3.1.1.min.js"/>
+        <f:verbatim>
+          <meta name="apple-mobile-web-app-capable" content="yes"/>
+          <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+          <meta name="viewport" content="width=device-width,
+                               maximum-scale=1.0"/>
+        </f:verbatim>
+      </f:facet>
+      <af:clientListener type="load"
+                         method="objectNavigatorPropertyChangeListener_Helper"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/WEB-INF/_Templates/fuse-ui-shell.jspx"
+                         id="pt1">
+          <f:attribute name="application-logo"
+                       value="/images/fuse-brand-oracle-white.png"/>
+          <f:attribute name="card-1" value="Configurations"/>
+          <f:attribute name="icon-1"
+                       value="/images/coa/1_1.png"/>
+          <f:attribute name="card-2" value="Rules"/>
+          <f:attribute name="icon-2"
+                       value="/images/coa/2_2.png"/>
+          <f:attribute name="card-3" value="Values"/>
+          <f:attribute name="icon-3"
+                       value="/images/coa/3_3.png"/>
+          <f:attribute name="card-4" value="Mappings"/>
+          <f:attribute name="icon-4"
+                       value="/images/coa/4_4.png"/>
+          <f:attribute name="card-5" value="Spread Sheet Loader"/>
+          <f:attribute name="icon-5" value="/images/coa/5_5.png"/>
+          <f:attribute name="card-6" value="Web Service"/>
+          <f:facet name="global-header-end">
+            <af:menuBar id="login-menu" styleClass="global-menu-bar">
+              <af:menu text="CASEY.BROWN" id="m1" styleClass="global-menu">
+                <af:commandMenuItem text="Sign Out" id="cmi5"
+                                    action="performLogout"/>
+              </af:menu>
+            </af:menuBar>
+          </f:facet>
+          <f:facet name="card-1-content">
+            <af:region value="#{bindings.COASegmentDefinitionsTF1.regionModel}" id="r2"/>
+          </f:facet>
+          <f:facet name="card-2-content">
+            <af:region value="#{bindings.COAMappingRulesTF1.regionModel}"
+                       id="r1"/>
+          </f:facet>
+          <f:facet name="card-3-content">
+            <af:region value="#{bindings.COASearchTF1.regionModel}"
+                       id="region2"/>
+          </f:facet>
+          <f:facet name="card-4-content">
+            <af:region value="#{bindings.COAStringMappingsTF1.regionModel}"
+                       id="region3"/>
+          </f:facet>
+          <f:facet name="card-5-content">
+            <af:region value="#{bindings.COASpreedSheetLoaderTF1.regionModel}" id="r5"/>
+          </f:facet>
+          <f:facet name="announcement-content">
+            <af:panelGroupLayout id="pgl2" layout="vertical"
+                                 inlineStyle="padding: 10px;">
+              <af:panelGridLayout id="pgl3">
+                <af:gridRow marginTop="5px" marginBottom="10px" height="auto"
+                            id="gr2">
+                  <af:gridCell marginStart="1px" width="30px" id="gc5"
+                               marginEnd="1px">
+                    <af:image source="/images/coa/logo.png" id="i1"/>
+                  </af:gridCell>
+                </af:gridRow>
+              </af:panelGridLayout>
+              <af:outputText value="Welcome to the CoA Mapping Extension Tool " id="ot10" styleClass="large-text bold"/>
+              <af:spacer width="10" height="25" id="s1"/>
+              <af:outputText styleClass="medium-text"
+                             value="This tool will help users to map legacy chart of accounts either by single segment/combination of segments  and produce a mapping that will help interfaces/conversions to propagate Transactions from the legacy CoA to CoA in ERP Cloud" id="outputText1"
+                             inlineStyle="font-size:x-small; text-align:justify; font-weight:bold;"/>
+              <af:spacer width="10" height="20" id="spacer1"/>
+              <af:outputText styleClass="medium-text"
+                             value="This solution has below components:"
+                             id="outputText13"
+                             inlineStyle="font-size:x-small; text-align:justify; font-weight:bold;"/>
+              <af:panelList id="pl1" styleClass="medium-text">
+                <af:outputText value="System and Segment Definition"
+                               id="ot1"
+                               inlineStyle="font-size:x-small; font-weight:bold;"/>
+                <af:outputText value="Mapping Rules"
+                               id="outputText2"
+                               inlineStyle="font-size:x-small; font-weight:bold;"/>
+                <af:outputText value="Segment Values"
+                               id="outputText3"
+                               inlineStyle="font-size:x-small; font-weight:bold;"/>
+                <af:outputText value="CoA String Mappings" id="outputText4"
+                               inlineStyle="font-size:x-small; font-weight:bold;"/>
+                <af:outputText value="Webservice for Source to Target CoA Conversion"
+                               id="outputText5"
+                               inlineStyle="font-size:x-small; font-weight:bold;"/>
+              </af:panelList>
+              <af:spacer width="10" height="15" id="s2"/>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="card-6-content">
+            <af:region value="#{bindings.COATargetSegmentTF1.regionModel}"
+                       id="region1"/>
+          </f:facet>
+          <f:attribute name="icon-6" value="/images/coa/6_6.png"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

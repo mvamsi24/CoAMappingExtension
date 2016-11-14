@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/WEB-INF/_Templates/fuse-side-panel.jspx" id="pt1">
+    <f:facet name="body">
+      <af:panelGroupLayout id="pgl1" layout="vertical"
+                           styleClass="AFStrecthWidth">
+        <af:panelGroupLayout id="pgl3" styleClass="AFStrecthWidth">
+          <af:panelFormLayout id="pfl1" labelWidth="150px"
+                              partialTriggers="cb2">
+            <af:selectOneChoice
+                                label="Source System"
+                                required="#{bindings.SourceSystem.hints.mandatory}"
+                                shortDesc="#{bindings.SourceSystem.hints.tooltip}"
+                                id="soc1" autoSubmit="true"
+                                valueChangeListener="#{backingBeanScope.COAListnersBean.onChangeSystem}"
+                                value="#{bindings.SourceSystem.inputValue}"
+                                styleClass="search-field">
+              <f:selectItems value="#{bindings.SourceSystem.items}" id="si1"/>
+            </af:selectOneChoice>
+            <af:inputText label="Target System:" id="inputText1"
+                          showRequired="false" simple="false"
+                          styleClass="search-field"
+                          binding="#{pageFlowScope.COAFindBean.findTargetSystem}"
+                          value="#{pageFlowScope.COAFindBean.findTargetSystemString}"
+                          rendered="false"/>
+            <af:selectOneChoice value="#{bindings.TargetSystem.inputValue}"
+                                label="Target System"
+                                required="#{bindings.TargetSystem.hints.mandatory}"
+                                shortDesc="#{bindings.TargetSystem.hints.tooltip}"
+                                id="soc2" autoSubmit="true"
+                                styleClass="search-field">
+              <f:selectItems value="#{bindings.TargetSystem.items}" id="si2"/>
+            </af:selectOneChoice>
+            <af:inputText label="Mapping Rule:" id="inputText2"
+                          showRequired="false" simple="false"
+                          styleClass="search-field"
+                          binding="#{pageFlowScope.COAFindBean.findMappingRule}"
+                          value="#{pageFlowScope.COAFindBean.findMappingRuleString}"
+                          rendered="false"/>
+            <af:inputComboboxListOfValues id="ruleNameId"
+                                          popupTitle="Search and Select: #{bindings.RuleName.hints.label}"
+                                          value="#{bindings.RuleName.inputValue}"
+                                          label="Mapping Rule"
+                                          model="#{bindings.RuleName.listOfValuesModel}"
+                                          required="#{bindings.RuleName.hints.mandatory}"
+                                          shortDesc="#{bindings.RuleName.hints.tooltip}"
+                                          autoSubmit="true"
+                                          partialTriggers="soc1 soc2"
+                                          styleClass="search-field">
+              <f:validator binding="#{bindings.RuleName.validator}"/>
+            </af:inputComboboxListOfValues>
+            <af:inputText label="Source Segment:" id="inputText3"
+                          showRequired="false" simple="false"
+                          styleClass="search-field"
+                          binding="#{pageFlowScope.COAFindBean.findSourceSegment}"
+                          value="#{pageFlowScope.COAFindBean.findSourceSegmentString}"
+                          rendered="false"/>
+            <af:selectOneChoice value="#{bindings.SourceSegment.inputValue}"
+                                label="Source Segment"
+                                required="#{bindings.SourceSegment.hints.mandatory}"
+                                shortDesc="#{bindings.SourceSegment.hints.tooltip}"
+                                id="soc3"
+                                partialTriggers="ruleNameId soc1 soc2"
+                                styleClass="search-field">
+              <f:selectItems value="#{bindings.SourceSegment.items}" id="si3"/>
+            </af:selectOneChoice>
+            <af:inputText label="Target Segment:" id="inputText4"
+                          showRequired="false" simple="false"
+                          styleClass="search-field"
+                          binding="#{pageFlowScope.COAFindBean.findTargetSegment}"
+                          value="#{pageFlowScope.COAFindBean.findTargetSegmentString}"
+                          rendered="false"/>
+            <af:selectOneChoice value="#{bindings.TargetSegment.inputValue}"
+                                label="Target Segment"
+                                required="#{bindings.TargetSegment.hints.mandatory}"
+                                shortDesc="#{bindings.TargetSegment.hints.tooltip}"
+                                id="soc4"
+                                partialTriggers="ruleNameId soc1 soc2"
+                                styleClass="search-field">
+              <f:selectItems value="#{bindings.TargetSegment.items}" id="si4"/>
+            </af:selectOneChoice>
+            <af:inputText label="Source Segment Value" id="inputText5"
+                          showRequired="false" simple="false"
+                          styleClass="search-field"
+                          binding="#{pageFlowScope.COAFindBean.findSourceSegmentValue}"
+                          value="#{pageFlowScope.COAFindBean.findSourceSegmentValueString}"/>
+            <af:inputText label="Target Segment Value" id="inputText6"
+                          showRequired="false" simple="false"
+                          styleClass="search-field"
+                          binding="#{pageFlowScope.COAFindBean.findTargetSegmentValue}"
+                          value="#{pageFlowScope.COAFindBean.findTargetSegmentValueString}"/>
+          </af:panelFormLayout>
+        </af:panelGroupLayout>
+        <af:panelGroupLayout id="pgl2" layout="horizontal"
+                             styleClass="AFStrecthWidth">
+          <af:spacer width="171" height="10" id="s3"/>
+          <af:commandButton text="Search" id="cb1"
+                            actionListener="#{bindings.findCOAValues.execute}"/>
+          <af:spacer width="5" height="10" id="s4"/>
+          <af:commandButton text="Clear" id="cb2" partialSubmit="true"
+                            actionListener="#{backingBeanScope.COAListnersBean.clearForm}"/>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="hidden"/>
+  </af:pageTemplate>
+</jsp:root>
