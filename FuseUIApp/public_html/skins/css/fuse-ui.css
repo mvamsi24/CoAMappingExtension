@@ -1191,20 +1191,12 @@ af|commandToolbarButton.radio-group:selected::text {
     Panel Springboard
 ----------------------*/
 .springboard-grid-mode-size { 
-<<<<<<< HEAD
     width: 874px; 
-=======
-    width: 624px; 
->>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649
     height: 500px; 
 }
 
 .springboard-strip-mode-size { 
-<<<<<<< HEAD
     width: 1274px; 
-=======
-    width: 1024px; 
->>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649
     height: 738px; 
 }
 
@@ -1283,11 +1275,7 @@ af|panelSpringboard::body {
     background-color: transparent;
     box-shadow: none;
     height: 600px;
-<<<<<<< HEAD
     width: 1250px;
-=======
-    width: 1000px;
->>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649
     margin-left:4px;
     padding-top:5px
 }
@@ -5276,7 +5264,6 @@ af|inputComboboxListOfValues{
 
 .selectContact .af_query_criterion-content{
         padding-top: 8px;
-<<<<<<< HEAD
 }
 
 
@@ -5288,6 +5275,4 @@ af|inputComboboxListOfValues{
 .popupFadeAnimate {
   opacity: 0;
   -webkit-transition: opacity 2s ease-in-out;
-=======
->>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649
 }
