@@ -61,6 +61,7 @@
         
         }
         
+<<<<<<< HEAD
 //Custom Functions
 
 /**
@@ -154,3 +155,5 @@ function closeFadedPopup(popup, container, resetStyle) {
   container.setStyleClass(resetStyle);
   popup.cancel();
 } 
+=======
+>>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649

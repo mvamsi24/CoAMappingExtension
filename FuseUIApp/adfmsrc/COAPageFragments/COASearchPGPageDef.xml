@@ -33,7 +33,10 @@
           <Item Value="Description"/>
           <Item Value="SourceSegment"/>
           <Item Value="TargetSegment"/>
+<<<<<<< HEAD
           <Item Value="EnableFlagBoolean" Binds="EnableFlagBoolean"/>
+=======
+>>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -61,6 +64,7 @@
             InstanceName="COAAMDataControl.COASearchVO1"
             DataControl="COAAMDataControl" RequiresUpdateModel="true"
             Action="createInsertRow"/>
+<<<<<<< HEAD
     <button IterBinding="COASearchVO1Iterator" id="EnableFlagBoolean"
             DTSupportsMRU="false" StaticList="true">
       <AttrNames>
@@ -71,5 +75,7 @@
         <Item Value="false"/>
       </ValueList>
     </button>
+=======
+>>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649
   </bindings>
 </pageDefinition>

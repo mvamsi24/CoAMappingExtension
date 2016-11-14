@@ -4,7 +4,11 @@
       <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
       <RefAddresses>
          <StringRefAddr addrType="sid">
+<<<<<<< HEAD
             <Contents>XE</Contents>
+=======
+            <Contents>ORCL</Contents>
+>>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649
          </StringRefAddr>
          <StringRefAddr addrType="subtype">
             <Contents>oraJDBC</Contents>

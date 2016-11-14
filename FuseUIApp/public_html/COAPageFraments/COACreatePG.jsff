@@ -11,11 +11,16 @@
     </f:facet>
     <f:facet name="header-end">
       <af:panelGroupLayout id="pgl1" layout="horizontal">
+<<<<<<< HEAD
         <af:commandButton text="Save and Close" id="cb1"
                           actionListener="#{backingBeanScope.UtilLibraryBean.saveAndClose}"
                           partialSubmit="true">
           <af:showPopupBehavior popupId="p1" triggerType="click"/>
         </af:commandButton>
+=======
+        <af:commandButton text="Save" id="cb1"
+                          actionListener="#{backingBeanScope.UtilLibraryBean.saveAndClose}"/>
+>>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649
         <af:commandButton text="Close" id="cb3" immediate="true"
                           actionListener="#{backingBeanScope.UtilLibraryBean.cancelButton}"/>
       </af:panelGroupLayout>
@@ -100,7 +105,11 @@
         <af:panelBox text="Segment Values" id="pb3" showDisclosure="false">
           <f:facet name="toolbar"/>
           <af:panelFormLayout id="pfl1" maxColumns="2" rows="2"
+<<<<<<< HEAD
                               labelWidth="200px" partialTriggers="sbc1">
+=======
+                              labelWidth="200px">
+>>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649
             <af:inputText value="#{bindings.ValueId.inputValue}"
                           label="Value Id"
                           required="#{bindings.ValueId.hints.mandatory}"
@@ -179,6 +188,7 @@
         </af:panelBox>
       </af:panelGroupLayout>
     </f:facet>
+<<<<<<< HEAD
     <f:facet name="hidden">
       <af:popup id="p1" clientComponent="true">
         <af:dialog id="d1" type="none" title="Record Saved..!"
@@ -187,5 +197,8 @@
         <af:clientListener method="animateFadingPopup" type="popupOpened"/>
       </af:popup>
     </f:facet>
+=======
+    <f:facet name="hidden"/>
+>>>>>>> 06178e9f1a27d12969d3403ee2051f22b5de1649
   </af:pageTemplate>
 </jsp:root>
