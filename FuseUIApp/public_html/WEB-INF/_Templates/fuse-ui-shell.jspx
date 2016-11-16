@@ -106,7 +106,8 @@
                                          actionListener="#{sessionScope.SessionStateBean.objectNavigator_SetGridMode}">
                                     <af:clientListener type="action" method="setObjectNavigatorMode_Springboard"/>
                                 </af:commandImageLink>
-                                <af:panelGroupLayout halign="end" layout="horizontal">
+                                <af:panelGroupLayout layout="horizontal"
+                                                     halign="end">
                                     <af:facetRef facetName="global-header-end"/>
                                 </af:panelGroupLayout>
                             </af:panelGroupLayout>

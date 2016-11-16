@@ -11,8 +11,11 @@
     </f:facet>
     <f:facet name="header-end">
       <af:panelGroupLayout id="pgl1" layout="horizontal">
-        <af:commandButton text="Save" id="cb1"
-                          actionListener="#{backingBeanScope.UtilLibraryBean.saveAndClose}"/>
+        <af:commandButton text="Save and Close" id="cb1"
+                          actionListener="#{backingBeanScope.UtilLibraryBean.saveAndClose}"
+                          partialSubmit="true">
+          <af:showPopupBehavior popupId="p1" triggerType="click"/>
+        </af:commandButton>
         <af:commandButton text="Close" id="cb3" immediate="true"
                           actionListener="#{backingBeanScope.UtilLibraryBean.cancelButton}"/>
       </af:panelGroupLayout>
@@ -97,7 +100,7 @@
         <af:panelBox text="Segment Values" id="pb3" showDisclosure="false">
           <f:facet name="toolbar"/>
           <af:panelFormLayout id="pfl1" maxColumns="2" rows="2"
-                              labelWidth="200px">
+                              labelWidth="200px" partialTriggers="sbc1">
             <af:inputText value="#{bindings.ValueId.inputValue}"
                           label="Value Id"
                           required="#{bindings.ValueId.hints.mandatory}"
@@ -176,6 +179,13 @@
         </af:panelBox>
       </af:panelGroupLayout>
     </f:facet>
-    <f:facet name="hidden"/>
+    <f:facet name="hidden">
+      <af:popup id="p1" clientComponent="true">
+        <af:dialog id="d1" type="none" title="Record Saved..!"
+                   titleIconSource="/images/fuse-icon-checked.png"/>
+        <af:clientAttribute name="preFadeDelay" value="2"/>
+        <af:clientListener method="animateFadingPopup" type="popupOpened"/>
+      </af:popup>
+    </f:facet>
   </af:pageTemplate>
 </jsp:root>

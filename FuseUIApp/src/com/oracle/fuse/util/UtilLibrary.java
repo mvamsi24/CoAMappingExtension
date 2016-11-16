@@ -36,7 +36,7 @@ public class UtilLibrary {
     public void saveAndClose(ActionEvent actionEvent) {
 
 
-        //ADFPopupUtils.hideParentPopup(actionEvent.getComponent());
+        //
 
         BindingContainer bindings = getBindings();
         OperationBinding operationBinding =
@@ -61,7 +61,7 @@ public class UtilLibrary {
         //Select the message using .auto-hide selector, wait for 3 seconds and hide it fast
          builder.append("jQuery('.coa-saveandclose').delay(2000).hide('fast');");
          erks.addScript(ctx, builder.toString());
-         
+        ADFPopupUtils.hideParentPopup(actionEvent.getComponent());
         
     }
 
