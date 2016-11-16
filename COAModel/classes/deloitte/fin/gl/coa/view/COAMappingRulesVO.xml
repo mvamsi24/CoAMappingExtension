@@ -6,36 +6,16 @@
   Name="COAMappingRulesVO"
   Version="11.1.1.65.57"
   InheritPersonalization="true"
-  SelectList="COAMappingRulesEO.RULE_ID, 
-       COAMappingRulesEO.RULE_NAME, 
-       COAMappingRulesEO.DESCRIPTION, 
-       COAMappingRulesEO.SOURCE_SYSTEM, 
-       COAMappingRulesEO.TARGET_SYSTEM, 
-       COAMappingRulesEO.START_DATE, 
-       COAMappingRulesEO.END_DATE, 
-       COAMappingRulesEO.ENABLED_FLAG, 
-       COAMappingRulesEO.ATTRIBUTE1, 
-       COAMappingRulesEO.ATTRIBUTE2, 
-       COAMappingRulesEO.ATTRIBUTE3, 
-       COAMappingRulesEO.ATTRIBUTE4, 
-       COAMappingRulesEO.ATTRIBUTE5, 
-       COAMappingRulesEO.ATTRIBUTE6, 
-       COAMappingRulesEO.ATTRIBUTE7, 
-       COAMappingRulesEO.ATTRIBUTE8, 
-       COAMappingRulesEO.ATTRIBUTE9, 
-       COAMappingRulesEO.ATTRIBUTE10, 
-       COAMappingRulesEO.CREATED_BY, 
-       COAMappingRulesEO.CREATION_DATE, 
-       COAMappingRulesEO.LAST_UPDATED_BY, 
-       COAMappingRulesEO.LAST_UPDATE_DATE, 
-       COAMappingRulesEO.LAST_UPDATED_LOGIN"
-  FromList="COA_MAPPING_RULES COAMappingRulesEO"
   BindingStyle="OracleName"
-  CustomQuery="false"
+  CustomQuery="true"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  RowClass="deloitte.fin.gl.coa.view.COAMappingRulesVORowImpl"
+  ComponentClass="deloitte.fin.gl.coa.view.COAMappingRulesVOImpl">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
   <ViewAccessor
     Name="COATargetSystemLOVVO1"
@@ -116,6 +96,32 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT COAMappingRulesEO.RULE_ID, 
+       COAMappingRulesEO.RULE_NAME, 
+       COAMappingRulesEO.DESCRIPTION, 
+       COAMappingRulesEO.SOURCE_SYSTEM, 
+       COAMappingRulesEO.TARGET_SYSTEM, 
+       COAMappingRulesEO.START_DATE, 
+       COAMappingRulesEO.END_DATE, 
+       COAMappingRulesEO.ENABLED_FLAG, 
+       COAMappingRulesEO.ATTRIBUTE1, 
+       COAMappingRulesEO.ATTRIBUTE2, 
+       COAMappingRulesEO.ATTRIBUTE3, 
+       COAMappingRulesEO.ATTRIBUTE4, 
+       COAMappingRulesEO.ATTRIBUTE5, 
+       COAMappingRulesEO.ATTRIBUTE6, 
+       COAMappingRulesEO.ATTRIBUTE7, 
+       COAMappingRulesEO.ATTRIBUTE8, 
+       COAMappingRulesEO.ATTRIBUTE9, 
+       COAMappingRulesEO.ATTRIBUTE10, 
+       COAMappingRulesEO.CREATED_BY, 
+       COAMappingRulesEO.CREATION_DATE, 
+       COAMappingRulesEO.LAST_UPDATED_BY, 
+       COAMappingRulesEO.LAST_UPDATE_DATE, 
+       COAMappingRulesEO.LAST_UPDATED_LOGIN
+FROM COA_MAPPING_RULES COAMappingRulesEO]]>
+  </SQLQuery>
   <EntityUsage
     Name="COAMappingRulesEO"
     Entity="deloitte.fin.gl.coa.entity.COAMappingRulesEO"/>

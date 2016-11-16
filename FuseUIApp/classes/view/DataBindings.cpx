@@ -29,6 +29,10 @@
     <page path="/COAClient.jspx" usageId="view_COAClientPageDef"/>
     <page path="/COAPageFraments/COATargetSegmentPG.jsff"
           usageId="view_COATargetSegmentPGPageDef"/>
+    <page path="/COAPageFraments/COAMappingRulesPG.jsff"
+          usageId="view_COAMappingRulesPGPageDef"/>
+    <page path="/COAPageFraments/COACreateMappingRule.jsff"
+          usageId="view_COACreateMappingRulePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Fuse_UI_Shell_TestPageDef"
@@ -55,6 +59,10 @@
           path="fuseuiapp.pageDefs.COAClientPageDef"/>
     <page id="view_COATargetSegmentPGPageDef"
           path="COAPageFraments.COATargetSegmentPGPageDef"/>
+    <page id="view_COAMappingRulesPGPageDef"
+          path="COAPageFraments.COAMappingRulesPGPageDef"/>
+    <page id="view_COACreateMappingRulePageDef"
+          path="COAPageFraments.COACreateMappingRulePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="FusionOpportunityService"

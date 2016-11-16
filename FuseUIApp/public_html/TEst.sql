@@ -1,0 +1,1 @@
+select * from coa_mapping_rules 

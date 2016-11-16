@@ -6,10 +6,22 @@
   Name="FuseUIApp"
   Version="11.1.1.65.57"
   SeparateXMLFiles="true"
-  PackageName="fuseuiapp"
-  ExportIntfPackage="">
+  PackageName="fuseuiapp">
   <DesignTime>
     <Attr Name="_jprName" Value="../../FuseUIApp.jpr"/>
-    <Attr Name="_NamedConnection" Value="Connection1"/>
+    <Attr Name="_NamedConnection" Value="hrConn"/>
   </DesignTime>
+  <Containee
+    Name="lov"
+    PackageName="deloitte.fin.gl.coa.view.lov"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_LocationURL" Value="../../COAModel/src/"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="view"
+    PackageName="deloitte.fin.gl.coa.view"
+    ObjectType="JboPackage"/>
 </JboProject>

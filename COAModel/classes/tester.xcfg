@@ -1,11 +1,11 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
    <AppModuleConfigBag ApplicationName="deloitte.fin.gl.coa.module.COAAM">
-      <AppModuleConfig name="1583E7EDB58" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" DBconnection="java:comp/env/jdbc/Connection1DS" IsLazyLoadingTrue="true" JDBCName="Connection1" jbo.project="deloitte.fin.gl.coa.COAModel" BC4JConfigName="COAAMLocal" DeployPlatform="LOCAL" ApplicationName="deloitte.fin.gl.coa.module.COAAM">
-         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="Java"/>
+      <AppModuleConfig name="158492D0FE6" user="hr" JDBCName="hr" password="hr" DeployPlatform="LOCAL" jbo.project="deloitte.fin.gl.coa.COAModel" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="COAAM" ApplicationName="deloitte.fin.gl.coa.module.COAAM" DBconnection="jdbc:oracle:thin:@localhost:1521:XE">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="Java" jbo.SQLBuilder="Oracle"/>
          <Security AppModuleJndiName="deloitte.fin.gl.coa.module.COAAM"/>
          <Tester FullProxyInterfaceName="deloitte.fin.gl.coa.module.common.COAAM"/>
-         <Custom LastUsedConfiguration="COAAMLocal" JDBCDataSource="java:comp/env/jdbc/Connection1DS"/>
+         <Custom LastUsedConfiguration="COAAMLocal"/>
       </AppModuleConfig>
    </AppModuleConfigBag>
 </BC4JConfig>

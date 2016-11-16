@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.57" id="COACreateMappingRulePageDef"
+                Package="COAPageFraments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="COASourceSegmentLOVVO1" RangeSize="25"
+              DataControl="COAAMDataControl"
+              id="COASourceSegmentLOVVO1Iterator"/>
+    <iterator Binds="COATargetSegmentLOVVO1" RangeSize="25"
+              DataControl="COAAMDataControl"
+              id="COATargetSegmentLOVVO1Iterator"/>
+    <iterator Binds="COASourceSystemLOVVO1" RangeSize="25"
+              DataControl="COAAMDataControl"
+              id="COASourceSystemLOVVO1Iterator"/>
+    <iterator Binds="COATargetSystemLOVVO1" RangeSize="25"
+              DataControl="COAAMDataControl"
+              id="COATargetSystemLOVVO1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="COASourceSegmentLOVVO1Iterator"
+          ListOperMode="multiSelect"
+          ListIter="COASourceSegmentLOVVO1Iterator" id="COASourceSegmentLOVVO1"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="SegmentId"/>
+      </AttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="SegmentName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="COATargetSegmentLOVVO1Iterator"
+          ListOperMode="multiSelect"
+          ListIter="COATargetSegmentLOVVO1Iterator" id="COATargetSegmentLOVVO1"
+          SelectItemValueMode="ListObject" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="SegmentId"/>
+      </AttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="SegmentName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <methodAction id="callCOACreatingMappingRuleProc"
+                  InstanceName="COAAMDataControl.dataProvider"
+                  DataControl="COAAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="callCOACreatingMappingRuleProc"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="sourceSystemStr" NDType="java.lang.String"/>
+      <NamedData NDName="targetSystemStr" NDType="java.lang.String"/>
+      <NamedData NDName="ruleNameStr" NDType="java.lang.String"/>
+      <NamedData NDName="descStr" NDType="java.lang.String"/>
+      <NamedData NDName="seqStr" NDType="java.lang.String"/>
+      <NamedData NDName="sourceSegArray" NDType="oracle.jbo.domain.Number[]"/>
+      <NamedData NDName="targetSeqArray" NDType="oracle.jbo.domain.Number[]"/>
+    </methodAction>
+    <list IterBinding="COASourceSystemLOVVO1Iterator" ListOperMode="navigation"
+          ListIter="COASourceSystemLOVVO1Iterator" id="COASourceSystemLOVVO1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="SourceSystem"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="COATargetSystemLOVVO1Iterator" ListOperMode="navigation"
+          ListIter="COATargetSystemLOVVO1Iterator" id="COATargetSystemLOVVO1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="TargetSystem"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

@@ -2,6 +2,16 @@
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="COAMappingRulesTF">
     <default-activity id="__1">COAMappingRulesPG</default-activity>
+    <managed-bean id="__2">
+      <managed-bean-name id="__3">COACreateMappingRuleBean</managed-bean-name>
+      <managed-bean-class id="__4">deloitte.fin.gl.coa.bean.COACreateMappingRule</managed-bean-class>
+      <managed-bean-scope id="__5">backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__9">
+      <managed-bean-name id="__6">COAMappingRuleBean</managed-bean-name>
+      <managed-bean-class id="__8">deloitte.fin.gl.coa.bean.COAMappingRule</managed-bean-class>
+      <managed-bean-scope id="__7">backingBean</managed-bean-scope>
+    </managed-bean>
     <view id="COAMappingRulesPG">
       <page>/COAPageFraments/COAMappingRulesPG.jsff</page>
     </view>

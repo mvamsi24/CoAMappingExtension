@@ -44,6 +44,18 @@
   <ViewUsage
     Name="COAFindFieldLOVVO1"
     ViewObjectName="deloitte.fin.gl.coa.view.COAFindFieldLOVVO"/>
+  <ViewUsage
+    Name="COASourceSystemLOVVO1"
+    ViewObjectName="deloitte.fin.gl.coa.view.lov.COASourceSystemLOVVO"/>
+  <ViewUsage
+    Name="COATargetSystemLOVVO1"
+    ViewObjectName="deloitte.fin.gl.coa.view.lov.COATargetSystemLOVVO"/>
+  <ViewUsage
+    Name="COASourceSegmentLOVVO1"
+    ViewObjectName="deloitte.fin.gl.coa.view.lov.COASourceSegmentLOVVO"/>
+  <ViewUsage
+    Name="COATargetSegmentLOVVO1"
+    ViewObjectName="deloitte.fin.gl.coa.view.lov.COATargetSegmentLOVVO"/>
   <ViewLinkUsage
     Name="SysC007381Link1"
     ViewLinkObjectName="deloitte.fin.gl.coa.view.SysC007381Link"
@@ -107,6 +119,52 @@
         Type="java.lang.String"/>
       <Parameter
         Name="sourceString"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="callCOACreatingMappingRuleProc">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="sourceSystemStr"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="targetSystemStr"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="ruleNameStr"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="descStr"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="seqStr"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="sourceSegArray"
+        Type="oracle.jbo.domain.Number[]"/>
+      <Parameter
+        Name="targetSeqArray"
+        Type="oracle.jbo.domain.Number[]"/>
+    </Method>
+    <Method
+      Name="executeCOAMappingRuleVO">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="ruleStr"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="descStr"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="seqStr"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="sourceStr"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="destStr"
         Type="java.lang.String"/>
     </Method>
   </ClientInterface>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="COACreateMappingRuleTF">
+    <default-activity id="__1">COACreateMappingRule</default-activity>
+    <managed-bean id="__4">
+      <managed-bean-name id="__2">COACreateMappingRuleBean</managed-bean-name>
+      <managed-bean-class id="__5">deloitte.fin.gl.coa.bean.COACreateMappingRule</managed-bean-class>
+      <managed-bean-scope id="__3">request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__6">
+      <managed-bean-name id="__9">backing_COACreateMappingRule</managed-bean-name>
+      <managed-bean-class id="__7">deloitte.fin.gl.coa.bean.COACreateMappingRule</managed-bean-class>
+      <managed-bean-scope id="__8">backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__11">
+      <managed-bean-name id="__10">backing_COACreateMappingRuleBean</managed-bean-name>
+      <managed-bean-class id="__12">deloitte.fin.gl.coa.bean.COACreateMappingRuleBean</managed-bean-class>
+      <managed-bean-scope id="__13">backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="COACreateMappingRule">
+      <page>/COAPageFraments/COACreateMappingRule.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

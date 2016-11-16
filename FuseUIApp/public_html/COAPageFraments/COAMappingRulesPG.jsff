@@ -5,16 +5,161 @@
   <af:pageTemplate viewId="/WEB-INF/_Templates/fuse-page-1-column.jspx"
                    id="pt1">
     <f:facet name="header-start">
-      <af:panelGroupLayout id="panelGroupLayout1">
+      <af:panelGroupLayout id="panelGroupLayout1"
+                           binding="#{backingBeanScope.COAMappingRuleBean.panelGroupLayout1}">
         <af:outputText value="Mapping Rules" id="ot2"
-                       styleClass="page-title"/>
+                       styleClass="page-title"
+                       binding="#{backingBeanScope.COAMappingRuleBean.ot2}"/>
       </af:panelGroupLayout>
     </f:facet>
     <f:facet name="header-end"/>
-    <f:facet name="body"/>
+    <f:facet name="body">
+      <af:group id="g1" binding="#{backingBeanScope.COAMappingRuleBean.g1}">
+        <af:panelGroupLayout id="pgl1" inlineStyle="width:662px; height:207px;"
+                             binding="#{backingBeanScope.COAMappingRuleBean.pgl1}">
+          <af:panelFormLayout id="pfl1"
+                              binding="#{backingBeanScope.COAMappingRuleBean.pfl1}">
+            <f:facet name="footer">
+              <af:group id="g2"
+                        binding="#{backingBeanScope.COAMappingRuleBean.g2}"/>
+            </f:facet>
+            <af:inputText label="Rule Name" id="ruleInputID"
+                          binding="#{backingBeanScope.COAMappingRuleBean.ruleInputID}"/>
+            <af:inputText label="Description" id="descriptionITID"
+                          binding="#{backingBeanScope.COAMappingRuleBean.descriptionITID}"/>
+            <af:inputText label="Sequence" id="sequenceITID"
+                          binding="#{backingBeanScope.COAMappingRuleBean.sequenceITID}"/>
+            <af:selectOneChoice value="#{bindings.COASourceSystemLOVVO1.inputValue}"
+                                label="#{bindings.COASourceSystemLOVVO1.label}"
+                                required="#{bindings.COASourceSystemLOVVO1.hints.mandatory}"
+                                shortDesc="#{bindings.COASourceSystemLOVVO1.hints.tooltip}"
+                                id="soc1"
+                                binding="#{backingBeanScope.COAMappingRuleBean.soc1}">
+              <f:selectItems value="#{bindings.COASourceSystemLOVVO1.items}"
+                             id="si1"
+                             binding="#{backingBeanScope.COAMappingRuleBean.si1}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.COATargetSystemLOVVO1.inputValue}"
+                                label="#{bindings.COATargetSystemLOVVO1.label}"
+                                required="#{bindings.COATargetSystemLOVVO1.hints.mandatory}"
+                                shortDesc="#{bindings.COATargetSystemLOVVO1.hints.tooltip}"
+                                id="soc2"
+                                binding="#{backingBeanScope.COAMappingRuleBean.soc2}">
+              <f:selectItems value="#{bindings.COATargetSystemLOVVO1.items}"
+                             id="si2"
+                             binding="#{backingBeanScope.COAMappingRuleBean.si2}"/>
+            </af:selectOneChoice>
+            <af:panelGroupLayout id="pgl3"
+                                 binding="#{backingBeanScope.COAMappingRuleBean.pgl3}">
+              <af:commandButton text="Clear" id="cb1"
+                                binding="#{backingBeanScope.COAMappingRuleBean.cb1}"
+                                action="#{backingBeanScope.COAMappingRuleBean.cb1_action}"/>
+              <af:commandButton text="Search"
+                                binding="#{backingBeanScope.COAMappingRuleBean.cb2}"
+                                id="cb2"
+                                action="#{backingBeanScope.COAMappingRuleBean.cb2_action}"/>
+              <af:commandButton text="Add New" id="cb3"
+                                binding="#{backingBeanScope.COAMappingRuleBean.cb3}"
+                                action="#{backingBeanScope.COAMappingRuleBean.cb3_action}">
+                <af:showPopupBehavior popupId="p1" triggerType="click"/>
+              </af:commandButton>
+            </af:panelGroupLayout>
+          </af:panelFormLayout>
+          <af:popup id="p1" contentDelivery="lazyUncached"
+                    binding="#{backingBeanScope.COAMappingRuleBean.p1}">
+            <af:panelWindow id="pw1"
+                            binding="#{backingBeanScope.COAMappingRuleBean.pw1}">
+              <af:region value="#{bindings.COACreateMappingRuleTF1.regionModel}"
+                         id="r1"
+                         binding="#{backingBeanScope.COAMappingRuleBean.r1}"/>
+            </af:panelWindow>
+          </af:popup>
+        </af:panelGroupLayout>
+        <af:panelGroupLayout id="pgl2" inlineStyle="width:623px;"
+                             binding="#{backingBeanScope.COAMappingRuleBean.pgl2}">
+          <af:table value="#{bindings.COAMappingRulesVO1.collectionModel}"
+                    var="row" rows="#{bindings.COAMappingRulesVO1.rangeSize}"
+                    emptyText="#{bindings.COAMappingRulesVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.COAMappingRulesVO1.rangeSize}"
+                    rowBandingInterval="0" id="t1" inlineStyle="width:95%;"
+                    binding="#{backingBeanScope.COAMappingRuleBean.t1}">
+            <af:column sortProperty="#{bindings.COAMappingRulesVO1.hints.RuleId.name}"
+                       sortable="false"
+                       headerText="#{bindings.COAMappingRulesVO1.hints.RuleId.label}"
+                       id="c1">
+              <af:outputText value="#{row.RuleId}" id="ot7">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.COAMappingRulesVO1.hints.RuleId.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.COAMappingRulesVO1.hints.RuleName.name}"
+                       sortable="false"
+                       headerText="#{bindings.COAMappingRulesVO1.hints.RuleName.label}"
+                       id="c8">
+              <af:outputText value="#{row.RuleName}" id="ot8"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.COAMappingRulesVO1.hints.Description.name}"
+                       sortable="false"
+                       headerText="#{bindings.COAMappingRulesVO1.hints.Description.label}"
+                       id="c4">
+              <af:outputText value="#{row.Description}" id="ot11"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.COAMappingRulesVO1.hints.SourceSystem.name}"
+                       sortable="false"
+                       headerText="#{bindings.COAMappingRulesVO1.hints.SourceSystem.label}"
+                       id="c7">
+              <af:outputText value="#{row.SourceSystem}" id="ot9"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.COAMappingRulesVO1.hints.TargetSystem.name}"
+                       sortable="false"
+                       headerText="#{bindings.COAMappingRulesVO1.hints.TargetSystem.label}"
+                       id="c2">
+              <af:outputText value="#{row.TargetSystem}" id="ot3"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.COAMappingRulesVO1.hints.StartDate.name}"
+                       sortable="false"
+                       headerText="#{bindings.COAMappingRulesVO1.hints.StartDate.label}"
+                       id="c10">
+              <af:outputText value="#{row.StartDate}" id="ot4">
+                <af:convertDateTime pattern="#{bindings.COAMappingRulesVO1.hints.StartDate.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.COAMappingRulesVO1.hints.EndDate.name}"
+                       sortable="false"
+                       headerText="#{bindings.COAMappingRulesVO1.hints.EndDate.label}"
+                       id="c3">
+              <af:outputText value="#{row.EndDate}" id="ot6">
+                <af:convertDateTime pattern="#{bindings.COAMappingRulesVO1.hints.EndDate.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.COAMappingRulesVO1.hints.EnabledFlag.name}"
+                       sortable="false"
+                       headerText="#{bindings.COAMappingRulesVO1.hints.EnabledFlag.label}"
+                       id="c9">
+              <af:outputText value="#{row.EnabledFlag}" id="ot1"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.COAMappingRulesVO1.hints.CreatedBy.name}"
+                       sortable="false"
+                       headerText="#{bindings.COAMappingRulesVO1.hints.CreatedBy.label}"
+                       id="c5">
+              <af:outputText value="#{row.CreatedBy}" id="ot5"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.COAMappingRulesVO1.hints.CreationDate.name}"
+                       sortable="false"
+                       headerText="#{bindings.COAMappingRulesVO1.hints.CreationDate.label}"
+                       id="c6">
+              <af:outputText value="#{row.CreationDate}" id="ot10">
+                <af:convertDateTime pattern="#{bindings.COAMappingRulesVO1.hints.CreationDate.format}"/>
+              </af:outputText>
+            </af:column>
+          </af:table>
+        </af:panelGroupLayout>
+      </af:group>
+    </f:facet>
     <f:facet name="footer-end"/>
     <f:facet name="footer-start"/>
     <f:facet name="hidden"/>
     <f:facet name="side-panel"/>
   </af:pageTemplate>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:COAMappingRuleBean-->
 </jsp:root>
