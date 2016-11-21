@@ -1,13 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
    <AppModuleConfigBag ApplicationName="deloitte.fin.gl.coa.module.COAAM">
-      <AppModuleConfig DeployPlatform="LOCAL" JDBCName="hrConn1" jbo.project="deloitte.fin.gl.coa.COAModel" name="COAAM" ApplicationName="deloitte.fin.gl.coa.module.COAAM">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="deloitte.fin.gl.coa.COAModel" name="COAAM" ApplicationName="deloitte.fin.gl.coa.module.COAAM">
          <Database jbo.TypeMapEntries="Java" jbo.locking.mode="optimistic"/>
          <Security AppModuleJndiName="deloitte.fin.gl.coa.module.COAAM"/>
+         <Custom JDBCDataSource="apex2"/>
       </AppModuleConfig>
-      <AppModuleConfig name="COAAMLocal" jbo.project="deloitte.fin.gl.coa.COAModel" ApplicationName="deloitte.fin.gl.coa.module.COAAM" JDBCName="hrConn1" DeployPlatform="LOCAL">
-         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="Java"/>
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="deloitte.fin.gl.coa.COAModel" name="COAAMLocal" ApplicationName="deloitte.fin.gl.coa.module.COAAM">
+         <Database jbo.TypeMapEntries="Java" jbo.locking.mode="optimistic"/>
          <Security AppModuleJndiName="deloitte.fin.gl.coa.module.COAAM"/>
+         <Custom JDBCDataSource="apex2"/>
       </AppModuleConfig>
    </AppModuleConfigBag>
 </BC4JConfig>
