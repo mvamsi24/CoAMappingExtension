@@ -217,12 +217,6 @@ public class COAMappingRule {
         return panelGroupLayout1;
     }
 
-     
-
-    public String cb1_action() {
-        // Add event code here...
-        return null;
-    }
 
     public String cb3_action() {
         // Add event code here...
@@ -279,6 +273,15 @@ public class COAMappingRule {
         ob.getParamsMap().put("sourceStr", sourceSystemStr);
         ob.getParamsMap().put("targetSystemStr", targetSystemStr);
         ob.execute();
+        return null;
+    }
+
+    public String cb1_action() {
+        System.out.println("User Clicked on CLear Button");
+        sequenceITID.setValue(null); 
+        ruleInputID.setValue(null);
+        descriptionITID.setValue(null);
+        
         return null;
     }
 }
