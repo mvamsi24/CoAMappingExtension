@@ -18,6 +18,8 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
 import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
 
+import oracle.adf.view.rich.event.PopupCanceledEvent;
+
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
@@ -36,7 +38,6 @@ public class COACreateMappingRuleBean {
     private RichPanelFormLayout pfl1;
     private RichPanelFormLayout pfl2;
     private UIXGroup g1;
-    private RichCommandButton cb2;
     private RichCommandButton cb1;
     private UIXGroup g2;
     private RichOutputText ot1;
@@ -45,6 +46,7 @@ public class COACreateMappingRuleBean {
     private UISelectItems si4;
     private RichSelectOneChoice soc2;
     private UISelectItems si5;
+    private RichCommandButton cb2;
 
     public COACreateMappingRuleBean() {
     }
@@ -129,13 +131,6 @@ public class COACreateMappingRuleBean {
         return g1;
     }
 
-    public void setCb2(RichCommandButton cb2) {
-        this.cb2 = cb2;
-    }
-
-    public RichCommandButton getCb2() {
-        return cb2;
-    }
 
     public void setCb1(RichCommandButton cb1) {
         this.cb1 = cb1;
@@ -162,12 +157,12 @@ public class COACreateMappingRuleBean {
     }
 
     public String cb1_action() {
-        System.out.println("User clicked on button ");
+        System.out.println("User clicked on save button ");
         String sourceSystemStr = null;
         String targetSystemStr = null;
         
-        String ruleNameStr =it4.getValue().toString();
-        String descStr = it6.getValue().toString();
+        String ruleNameStr =it6.getValue().toString();
+        String descStr = it4.getValue().toString();
         String seqStr = it5.getValue().toString(); 
         
         //SourceSystemLovVO1
@@ -222,6 +217,7 @@ public class COACreateMappingRuleBean {
           BindingContext bCtx = BindingContext.getCurrent();
           DCBindingContainer DcCon = (DCBindingContainer)bCtx.getCurrentBindingsEntry();
           //Get OperationBinding of method
+          System.out.println("Invoking AM Method .....");
           OperationBinding ob= DcCon.getOperationBinding("callCOACreatingMappingRuleProc");
           
           ob.getParamsMap().put("sourceSystemStr", sourceSystemStr);
@@ -247,17 +243,7 @@ public class COACreateMappingRuleBean {
         return null;
     }
 
-
-    public void closeButton(ActionEvent actionEvent) {
-        ADFPopupUtils.hideParentPopup(actionEvent.getComponent());
-
-       BindingContainer bindings = getBindings();
-        OperationBinding operationBinding =
-            bindings.getOperationBinding("cb2");
-        operationBinding.execute();
-        System.out.println("Util Library: " + operationBinding + "\n");
-
-    }
+ 
 
     public BindingContainer getBindings() {
         return BindingContext.getCurrent().getCurrentBindingsEntry();
@@ -303,4 +289,14 @@ public class COACreateMappingRuleBean {
     public UISelectItems getSi5() {
         return si5;
     }
+
+
+    public void setCb2(RichCommandButton cb2) {
+        this.cb2 = cb2;
+    }
+
+    public RichCommandButton getCb2() {
+        return cb2;
+    }
+
 }
