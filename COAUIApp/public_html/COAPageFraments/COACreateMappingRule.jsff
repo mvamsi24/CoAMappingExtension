@@ -14,9 +14,9 @@
         <af:commandButton text="Save" id="cb1"
                           binding="#{backingBeanScope.backing_COACreateMappingRuleBean.cb1}"
                           action="#{backingBeanScope.backing_COACreateMappingRuleBean.cb1_action}"/>
-        <af:commandButton text="Close" id="cb2"
+        <af:commandButton text="Cancel"
                           binding="#{backingBeanScope.backing_COACreateMappingRuleBean.cb2}"
-                          actionListener="#{backingBeanScope.backing_COACreateMappingRuleBean.closeButton}"/>
+                          id="cb2"/>
       </af:group>
     </f:facet>
     <f:facet name="body">
@@ -28,7 +28,6 @@
         </af:panelFormLayout>
         <af:panelFormLayout id="pfl1"
                             binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pfl1}">
-          <f:facet name="footer"/>
           <af:inputText label="Rule" id="it6"
                         binding="#{backingBeanScope.backing_COACreateMappingRuleBean.it6}"/>
           <af:inputText label="Sequence" id="it5"
@@ -55,6 +54,10 @@
                            binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si5}"
                            id="si5"/>
           </af:selectOneChoice>
+        </af:panelFormLayout>
+        <af:panelFormLayout binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pfl3}"
+                            id="pfl3" inlineStyle="width:961px; height:49px;"
+                            rows="1" maxColumns="3">
           <af:selectManyChoice value="#{bindings.COASourceSegmentLOVVO1.inputValue}"
                                label="Source Segment" id="smc1"
                                binding="#{backingBeanScope.backing_COACreateMappingRuleBean.smc1}">
@@ -62,6 +65,9 @@
                            id="si1"
                            binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si1}"/>
           </af:selectManyChoice>
+          <af:spacer width="20" height="10"
+                     binding="#{backingBeanScope.backing_COACreateMappingRuleBean.s1}"
+                     id="s1"/>
           <af:selectManyChoice value="#{bindings.COATargetSegmentLOVVO1.inputValue}"
                                label="Target Segment" id="smc2"
                                binding="#{backingBeanScope.backing_COACreateMappingRuleBean.smc2}">
