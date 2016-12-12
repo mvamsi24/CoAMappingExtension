@@ -1,0 +1,50 @@
+<wsdl:definitions
+     name="COAAMService"
+     targetNamespace="/deloitte/fin/gl/coa/module/common/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="/deloitte/fin/gl/coa/module/common/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="/deloitte/fin/gl/coa/module/common/types/"
+    >
+    <wsdl:import namespace="http://xmlns.oracle.com/adf/svc/errors/" location="classpath:/META-INF/wsdl/ServiceException.wsdl"/>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="/deloitte/fin/gl/coa/module/common/types/" schemaLocation="COAAMService.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="COAAMService_getTargetString">
+        <wsdl:part name="parameters" element="types:getTargetString"/>
+    </wsdl:message>
+    <wsdl:message name="COAAMService_getTargetStringResponse">
+        <wsdl:part name="parameters" element="types:getTargetStringResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="COAAMService">
+        <wsdl:documentation/>
+        <wsdl:operation name="getTargetString">
+            <wsdl:input message="tns:COAAMService_getTargetString"/>
+            <wsdl:output message="tns:COAAMService_getTargetStringResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="COAAMServiceSoapHttp" type="tns:COAAMService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getTargetString">
+            <soap:operation soapAction="/deloitte/fin/gl/coa/module/common/getTargetString"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="COAAMService">
+        <wsdl:port name="COAAMServiceSoapHttpPort" binding="tns:COAAMServiceSoapHttp">
+            <soap:address location="http://localhost:7101/CoAMappingExtension/COAAMService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

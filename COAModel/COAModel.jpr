@@ -55,12 +55,19 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="deloitte.fin.gl.coa"/>
+   <hash n="ejbModuleContainer">
+      <url n="ejbJarNodeURL" path="src/META-INF/ejb-jar.xml"/>
+      <value n="ejbVersion" v="3.0"/>
+      <url n="weblogicEjbJarNodeURL" path="src/META-INF/weblogic-ejb-jar.xml"/>
+   </hash>
    <value n="jbo.JpxName" v="deloitte.fin.gl.coa.COAModel"/>
    <value n="JboProject" v="true"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="Java"/>
          <string v="ADFbc"/>
+         <string v="EJB"/>
+         <string v="WebServices"/>
       </list>
    </hash>
    <value n="oracle.jbo.SavedPreferences" v="true"/>
@@ -102,6 +109,370 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
+         <hash n="CoAMappingExtension">
+            <url n="bcApplication" path="src/deloitte/fin/gl/coa/COAModel.jpx"/>
+            <hash n="commonProfile">
+               <hash n="archiveOptions">
+                  <value n="hasManifest" v="true"/>
+               </hash>
+               <value n="containedProfile" v="true"/>
+               <hash n="fileGroups">
+                  <list n="groups">
+                     <hash>
+                        <list n="contributors">
+                           <hash>
+                              <value n="type" v="2"/>
+                           </hash>
+                           <hash>
+                              <value n="type" v="7"/>
+                           </hash>
+                        </list>
+                        <value n="displayName" v="Project Output"/>
+                        <hash n="filters">
+                           <list n="rules">
+                              <hash>
+                                 <value n="pattern" v="**.xcfg"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/entity/common/serviceinterface/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/entity/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/module/common/serviceinterface/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/module/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/lov/common/serviceinterface/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/lov/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/common/serviceinterface/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="WEB-INF/temp/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="WEB-INF/classes/jsp_servlet/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v=".wlsjsps/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v=".wlLibs/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/.svn/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/CVS/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/.ade_path"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/.data/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**.cdi"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**.contrib"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**.keep"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**.rvi"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v=".jsps/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v=".tags/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v=".dtags/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/*.jht"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/*.jjt"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/*.jxt"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**"/>
+                              </hash>
+                           </list>
+                        </hash>
+                        <value n="internalName" v="project-output"/>
+                        <value n="type" v="1"/>
+                     </hash>
+                     <hash>
+                        <list n="contributors">
+                           <hash>
+                              <url n="location" path="../.adf/"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                        </list>
+                        <value n="displayName" v="META-INF"/>
+                        <hash n="filters">
+                           <list n="rules">
+                              <hash>
+                                 <value n="pattern" v="META-INF/connections.xml"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                           </list>
+                        </hash>
+                        <value n="internalName" v="META-INF"/>
+                        <value n="type" v="1"/>
+                     </hash>
+                  </list>
+               </hash>
+               <url n="jarURL" path="deploy/CoAMappingExtension_Common.jar"/>
+               <hash n="libraryDependencies">
+                  <value n="IncludeLibrariesFromOtherContainers" v="true"/>
+               </hash>
+               <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
+               <value n="profileName" v="CoAMappingExtension_Common"/>
+            </hash>
+            <url n="commonProfileURL" path="COAModel.jpr" ref="CoAMappingExtension_Common"/>
+            <hash n="libraryDependencies">
+               <value n="IncludeLibrariesFromOtherContainers" v="true"/>
+            </hash>
+            <hash n="mtProfile">
+               <hash n="archiveOptions">
+                  <value n="hasManifest" v="true"/>
+               </hash>
+               <value n="containedProfile" v="true"/>
+               <hash n="dependencies">
+                  <list n="dependencyList">
+                     <hash>
+                        <value n="adapterClass" v="oracle.jdevimpl.deploy.common.DefaultProfileDependable"/>
+                        <url n="ownerURL" path="COAModel.jpr"/>
+                        <value n="profileName" v="CoAMappingExtension_Common"/>
+                     </hash>
+                  </list>
+               </hash>
+               <url n="earURL" path="deploy/CoAMappingExtension_MiddleTier.ear"/>
+               <value n="enterpriseAppName" v="CoAMappingExtension_MiddleTier"/>
+               <hash n="fileGroups">
+                  <list n="groups">
+                     <hash>
+                        <list n="contributors">
+                           <hash>
+                              <value n="type" v="2"/>
+                           </hash>
+                           <hash>
+                              <value n="type" v="7"/>
+                           </hash>
+                        </list>
+                        <value n="displayName" v="Project Output"/>
+                        <hash n="filters">
+                           <list n="rules">
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/client/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/common/serviceinterface/*.class"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/common/serviceinterface/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/common/*.class"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/**"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/lov/client/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/lov/common/serviceinterface/*.class"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/lov/common/serviceinterface/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/lov/common/*.class"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/lov/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/view/lov/**"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/module/client/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/module/common/serviceinterface/*.class"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/module/common/serviceinterface/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/module/common/*.class"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/module/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/module/**"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/entity/client/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="deloitte/fin/gl/coa/entity/**"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="WEB-INF/temp/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="WEB-INF/classes/jsp_servlet/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v=".wlsjsps/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v=".wlLibs/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/.svn/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/CVS/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/.ade_path"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/.data/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**.cdi"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**.contrib"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**.keep"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**.rvi"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v=".jsps/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v=".tags/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v=".dtags/"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/*.jht"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/*.jjt"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/*.jxt"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**"/>
+                              </hash>
+                           </list>
+                        </hash>
+                        <value n="internalName" v="project-output"/>
+                        <value n="type" v="1"/>
+                     </hash>
+                  </list>
+               </hash>
+               <url n="jarURL" path="deploy/CoAMappingExtension_MiddleTier.jar"/>
+               <hash n="libraryDependencies">
+                  <value n="IncludeLibrariesFromOtherContainers" v="true"/>
+               </hash>
+               <value n="profileClass" v="oracle.jdeveloper.deploy.ejb.EjbProfile"/>
+               <value n="profileName" v="CoAMappingExtension_MiddleTier"/>
+               <hash n="properties">
+                  <value n="JboService" v="true"/>
+               </hash>
+            </hash>
+            <url n="mtProfileURL" path="COAModel.jpr" ref="CoAMappingExtension_MiddleTier"/>
+            <value n="profileClass" v="oracle.jbo.dt.jdevx.deployment.JbdSDOProfile"/>
+            <value n="profileName" v="CoAMappingExtension"/>
+         </hash>
          <hash n="COAModelCOAModel">
             <value n="adflib-connectionDetails" v="true"/>
             <value n="adflib-nonReusablesError" v="false"/>
@@ -172,13 +543,24 @@
          </hash>
       </hash>
       <list n="profileList">
-         <string v="UIAcceleratorNEW_COAModel_adflibFuseUIApp1"/>
          <string v="COAModelCOAModel"/>
+         <string v="CoAMappingExtension"/>
+         <string v="UIAcceleratorNEW_COAModel_adflibFuseUIApp1"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
       <value n="j2eeWebAppName" v="UIAcceleratorNEW-COAModel-webapp"/>
-      <value n="j2eeWebContextRoot" v="UIAcceleratorNEW-COAModel-context-root"/>
+      <value n="j2eeWebContextRoot" v="CoAMappingExtension"/>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="javaContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
+      </hash>
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
       <hash n="runConfigurationDefinitions">
@@ -237,12 +619,24 @@
             <value n="id" v="Ojdbc6.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="BC4J Service Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JAX-WS Web Services"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="EJB 3.0"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
-                  <url path="../../../../../../../Mustafa/Software/ojdbc6.jar" jar-entry=""/>
+                  <url protocol="jar" path="file:/Mustafa/Software/ojdbc6.jar!/"/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Ojdbc6.jar"/>
@@ -294,6 +688,18 @@
          </hash>
          <hash>
             <value n="id" v="Ojdbc6.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Service Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JAX-WS Web Services"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="EJB 3.0"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

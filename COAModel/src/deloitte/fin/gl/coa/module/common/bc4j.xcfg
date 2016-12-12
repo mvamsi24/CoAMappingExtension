@@ -1,12 +1,18 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
-   <AppModuleConfigBag ApplicationName="deloitte.fin.gl.coa.module.COAAM">
+   <AppModuleConfigBag ApplicationName="deloitte.fin.gl.coa.module.COAAM" default="COAAM">
       <AppModuleConfig DeployPlatform="LOCAL" jbo.project="deloitte.fin.gl.coa.COAModel" name="COAAM" ApplicationName="deloitte.fin.gl.coa.module.COAAM">
          <Database jbo.TypeMapEntries="Java" jbo.locking.mode="optimistic"/>
          <Security AppModuleJndiName="deloitte.fin.gl.coa.module.COAAM"/>
          <Custom JDBCDataSource="apex2"/>
       </AppModuleConfig>
       <AppModuleConfig DeployPlatform="LOCAL" jbo.project="deloitte.fin.gl.coa.COAModel" name="COAAMLocal" ApplicationName="deloitte.fin.gl.coa.module.COAAM">
+         <Database jbo.TypeMapEntries="Java" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="deloitte.fin.gl.coa.module.COAAM"/>
+         <Custom JDBCDataSource="apex2"/>
+      </AppModuleConfig>
+      <AppModuleConfig DeployPlatform="SI" jbo.project="deloitte.fin.gl.coa.COAModel" name="COAAMService" ApplicationName="deloitte.fin.gl.coa.module.COAAM" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
+         <AM-Pooling jbo.ampool.resetnontransactionalstate="true"/>
          <Database jbo.TypeMapEntries="Java" jbo.locking.mode="optimistic"/>
          <Security AppModuleJndiName="deloitte.fin.gl.coa.module.COAAM"/>
          <Custom JDBCDataSource="apex2"/>

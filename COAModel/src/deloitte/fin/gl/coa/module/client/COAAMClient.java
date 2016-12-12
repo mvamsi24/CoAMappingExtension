@@ -47,9 +47,16 @@ public class COAAMClient extends ApplicationModuleImpl implements COAAM {
 
     public void executeCOAMappingRuleVO(String ruleStr, String descStr,
                                         String seqStr, String sourceStr,
-                                        String destStr) {
+                                        String targetSystemStr) {
         Object _ret =
-            this.riInvokeExportedMethod(this,"executeCOAMappingRuleVO",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {ruleStr, descStr, seqStr, sourceStr, destStr});
+            this.riInvokeExportedMethod(this,"executeCOAMappingRuleVO",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {ruleStr, descStr, seqStr, sourceStr, targetSystemStr});
         return;
+    }
+
+    public String getTargetString(String pSourceSystem, String pTargetSystem,
+                                  String pSourceString) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"getTargetString",new String [] {"java.lang.String","java.lang.String","java.lang.String"},new Object[] {pSourceSystem, pTargetSystem, pSourceString});
+        return (String)_ret;
     }
 }

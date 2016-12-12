@@ -6,6 +6,8 @@ import deloitte.fin.gl.coa.view.COAMappingRulesVOImpl;
 import deloitte.fin.gl.coa.view.COASearchVOImpl;
 
 import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import java.sql.Types;
@@ -352,4 +354,45 @@ public class COAAMImpl extends ApplicationModuleImpl implements COAAM {
     public ViewObjectImpl getCOATargetSegmentLOVVO1() {
         return (ViewObjectImpl)findViewObject("COATargetSegmentLOVVO1");
     }
+    
+    public String getTargetString(String pSourceSystem, String pTargetSystem, String pSourceString)
+    {
+        String pTargetString = "";    
+        Connection conn = null;
+        System.out.println("In getMappings Method");
+        try{
+            
+            PreparedStatement st =  getDBTransaction().createPreparedStatement("commit", 1);
+             conn = st.getConnection();
+            System.out.println("Getting Target Mapping for : Source - "+ pSourceSystem + " Target - "+ pTargetSystem + " Source String: "+ pSourceString);                                                              
+            CallableStatement cstmt = conn.prepareCall("begin :1 := COA_UTIL_PKG.GET_TARGET_COA_STRING(:2,:3,:4); end;");
+            
+            cstmt.registerOutParameter(1, Types.VARCHAR);
+            cstmt.setString(2,pSourceSystem);
+            cstmt.setString(3,pTargetSystem);
+            cstmt.setString(4,pSourceString);
+            cstmt.execute();
+            pTargetString = cstmt.getString(1);
+            System.out.println("Target String: "+ pTargetString);
+        } //try
+        catch(Exception e)
+        {
+            System.out.println("Exception: " + e.getMessage());    
+            pTargetString = e.getMessage();
+            e.printStackTrace();            
+        }
+        finally{
+                if(conn!=null)
+                    try {
+                        conn.close(); }
+                catch(Exception e)
+                    {
+                        e.printStackTrace();
+                        }
+            } //finally
+        
+        return pTargetString;
+    } //getMapping String
+    
+    
 }

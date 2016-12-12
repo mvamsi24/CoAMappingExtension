@@ -11,7 +11,7 @@
   ComponentInterface="deloitte.fin.gl.coa.module.common.COAAM"
   ClientProxyName="deloitte.fin.gl.coa.module.client.COAAMClient">
   <DesignTime>
-    <Attr Name="_deployType" Value="0"/>
+    <Attr Name="_deployType" Value="4096"/>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewUsage
@@ -80,6 +80,16 @@
     SrcViewUsageName="deloitte.fin.gl.coa.module.COAAM.COASegmentDefinitionsVO1"
     DstViewUsageName="deloitte.fin.gl.coa.module.COAAM.COASegmentMappingsVO4"
     Reversed="false"/>
+  <Remote
+    Name="ServiceInterface"
+    ServerClassName="deloitte.fin.gl.coa.module.server.serviceinterface.COAAMServiceImpl"
+    ServerInterfaceName="deloitte.fin.gl.coa.module.common.serviceinterface.COAAMService">
+    <DesignTime>
+      <Attr Name="_webServiceName" Value="COAAMService"/>
+      <Attr Name="_targetNameSpace"
+        Value="/deloitte/fin/gl/coa/module/common/"/>
+    </DesignTime>
+  </Remote>
   <ClientInterface>
     <Method
       Name="findCOAValues">
@@ -164,8 +174,38 @@
         Name="sourceStr"
         Type="java.lang.String"/>
       <Parameter
-        Name="destStr"
+        Name="targetSystemStr"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="getTargetString">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="pSourceSystem"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="pTargetSystem"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="pSourceString"
         Type="java.lang.String"/>
     </Method>
   </ClientInterface>
+  <ServiceInterface>
+    <Method
+      Name="getTargetString">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="pSourceSystem"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="pTargetSystem"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="pSourceString"
+        Type="java.lang.String"/>
+    </Method>
+  </ServiceInterface>
 </AppModule>

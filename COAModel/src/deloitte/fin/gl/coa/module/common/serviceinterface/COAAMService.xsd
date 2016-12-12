@@ -1,0 +1,20 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="/deloitte/fin/gl/coa/module/common/types/"
+     xmlns:tns="/deloitte/fin/gl/coa/module/common/types/" xmlns:ns0="http://xmlns.oracle.com/adf/svc/errors/">
+    <import namespace="http://xmlns.oracle.com/adf/svc/errors/" schemaLocation="classpath:/META-INF/wsdl/ServiceException.xsd"/>
+    <element name="getTargetString">
+        <complexType>
+            <sequence>
+                <element name="pSourceSystem" type="string"/>
+                <element name="pTargetSystem" type="string"/>
+                <element name="pSourceString" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getTargetStringResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
