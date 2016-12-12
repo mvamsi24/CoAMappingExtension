@@ -47,9 +47,21 @@ public class COAAMClient extends ApplicationModuleImpl implements COAAM {
 
     public void executeCOAMappingRuleVO(String ruleStr, String descStr,
                                         String seqStr, String sourceStr,
-                                        String destStr) {
+                                        String targetSystemStr) {
         Object _ret =
-            this.riInvokeExportedMethod(this,"executeCOAMappingRuleVO",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {ruleStr, descStr, seqStr, sourceStr, destStr});
+            this.riInvokeExportedMethod(this,"executeCOAMappingRuleVO",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {ruleStr, descStr, seqStr, sourceStr, targetSystemStr});
+        return;
+    }
+
+    public void findSystemValues(String systemName) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"findSystemValues",new String [] {"java.lang.String"},new Object[] {systemName});
+        return;
+    }
+
+    public void selectSystemValues(String systemName) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"selectSystemValues",new String [] {"java.lang.String"},new Object[] {systemName});
         return;
     }
 }

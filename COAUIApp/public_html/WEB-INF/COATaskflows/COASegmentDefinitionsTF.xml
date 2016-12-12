@@ -2,8 +2,18 @@
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="COASegmentDefinitionsTF">
     <default-activity id="__1">COASegmentDefinitionsPG</default-activity>
+    <managed-bean id="__5">
+      <managed-bean-name id="__2">COASystemsFindBean</managed-bean-name>
+      <managed-bean-class id="__4">deloitte.fin.gl.coa.bean.COASystemsFindBean</managed-bean-class>
+      <managed-bean-scope id="__3">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__7">
+      <managed-bean-name id="__6">COASelectSystemBean</managed-bean-name>
+      <managed-bean-class id="__8">deloitte.fin.gl.coa.bean.COASelectSystemBean</managed-bean-class>
+      <managed-bean-scope id="__9">backingBean</managed-bean-scope>
+    </managed-bean>
     <view id="COASegmentDefinitionsPG">
-      <page>/COAPageFraments/COASegmentDefinitionsPG.jsff</page>
+      <page>/COAPageFraments/COASystemDefinitionsPG.jsff</page>
     </view>
     <use-page-fragments/>
   </task-flow-definition>

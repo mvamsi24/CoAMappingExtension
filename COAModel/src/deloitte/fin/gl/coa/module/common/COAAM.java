@@ -23,4 +23,8 @@ public interface COAAM extends ApplicationModule {
 
     void executeCOAMappingRuleVO(String ruleStr, String descStr, String seqStr,
                                  String sourceStr, String destStr);
+
+    void findSystemValues(String systemName);
+
+    void selectSystemValues(String systemName);
 }

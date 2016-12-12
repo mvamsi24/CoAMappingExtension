@@ -37,6 +37,7 @@ public class COACreateMappingRuleBean {
     private RichInputText it6;
     private RichPanelFormLayout pfl1;
     private RichPanelFormLayout pfl2;
+    private RichPanelFormLayout pfl3;
     private UIXGroup g1;
     private RichCommandButton cb1;
     private UIXGroup g2;
@@ -299,4 +300,11 @@ public class COACreateMappingRuleBean {
         return cb2;
     }
 
+    public void setPfl3(RichPanelFormLayout pfl3) {
+        this.pfl3 = pfl3;
+    }
+
+    public RichPanelFormLayout getPfl3() {
+        return pfl3;
+    }
 }

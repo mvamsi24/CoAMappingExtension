@@ -25,6 +25,7 @@ public class COACreateMappingRule {
     private RichInputText it6;
     private RichPanelFormLayout pfl1;
     private RichPanelFormLayout pfl2;
+    
     private UIXGroup g1;
     private RichCommandButton cb2;
     private RichCommandButton cb1;

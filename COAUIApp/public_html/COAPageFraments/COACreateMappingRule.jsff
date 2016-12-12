@@ -66,7 +66,7 @@
                            binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si1}"/>
           </af:selectManyChoice>
           <af:spacer width="20" height="10"
-                     binding="#{backingBeanScope.backing_COACreateMappingRuleBean.s1}"
+                     
                      id="s1"/>
           <af:selectManyChoice value="#{bindings.COATargetSegmentLOVVO1.inputValue}"
                                label="Target Segment" id="smc2"

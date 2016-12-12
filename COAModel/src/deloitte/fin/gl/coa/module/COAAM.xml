@@ -56,6 +56,16 @@
   <ViewUsage
     Name="COATargetSegmentLOVVO1"
     ViewObjectName="deloitte.fin.gl.coa.view.lov.COATargetSegmentLOVVO"/>
+  <ViewUsage
+    Name="COASystemDefinitonsVO1"
+    ViewObjectName="deloitte.fin.gl.coa.view.COASystemDefinitonsVO">
+    <ViewCriteriaUsage
+      Name="COASystemDefinitonsVOCriteria"
+      FullName="deloitte.fin.gl.coa.view.COASystemDefinitonsVO.COASystemDefinitonsVOCriteria"/>
+    <ViewCriteriaUsage
+      Name="COASystemDefinitonsVOSourceCriteria"
+      FullName="deloitte.fin.gl.coa.view.COASystemDefinitonsVO.COASystemDefinitonsVOSourceCriteria"/>
+  </ViewUsage>
   <ViewLinkUsage
     Name="SysC007381Link1"
     ViewLinkObjectName="deloitte.fin.gl.coa.view.SysC007381Link"
@@ -164,7 +174,23 @@
         Name="sourceStr"
         Type="java.lang.String"/>
       <Parameter
-        Name="destStr"
+        Name="targetSystemStr"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="findSystemValues">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="systemName"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="selectSystemValues">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="systemName"
         Type="java.lang.String"/>
     </Method>
   </ClientInterface>
