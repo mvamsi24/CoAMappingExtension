@@ -31,5 +31,17 @@
         <consumer region="COASearchTF1" handler="COASearchPGPageDef.Execute"/>
       </producer>
     </event>
+    <event name="findSystemEvent">
+      <producer region="COASegmentDefinitionsTF1.COASystemDefinitionsPGPageDef.findSystemValues">
+        <consumer region="COASegmentDefinitionsTF1"
+                  handler="COASystemDefinitionsPGPageDef.Execute"/>
+      </producer>
+    </event>
+    <event name="selectSystemName">
+      <producer region="COASegmentDefinitionsTF1.COASystemDefinitionsPGPageDef.selectSystemValues">
+        <consumer region="COASegmentDefinitionsTF1"
+                  handler="COASystemDefinitionsPGPageDef.Execute"/>
+      </producer>
+    </event>
   </eventMap>
 </pageDefinition>

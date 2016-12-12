@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="COASystemCreateTF">
+    <default-activity id="__1">COASystemCreatePG</default-activity>
+    <transaction id="__2">
+      <new-transaction/>
+    </transaction>
+    <data-control-scope id="__3">
+      <isolated/>
+    </data-control-scope>
+    <view id="COASystemCreatePG">
+      <page>/COAPageFraments/COASystemCreatePG.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1990,9 +1990,12 @@ af|selectOneRadio::item-text {
 /*--------------------
     Search Side Panel
 ----------------------*/
-.search-field af|inputText::label, 
+.search-field af|inputText::label,
+af|selectOneChoice::label, 
 af|selectOneChoice.filter::label {
-    padding: 0px;
+    padding: 3px;
+    
+    
 }
 
 af|quickQuery::search-icon-style {

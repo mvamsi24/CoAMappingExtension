@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/WEB-INF/_Templates/fuse-page-1-column.jspx"
+                   id="pt1">
+    <f:facet name="header-start">
+      <af:panelGroupLayout id="panelGroupLayout1">
+        <af:outputText value="System Definitions" id="ot2" styleClass="page-title"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="header-end"/>
+    <f:facet name="body">
+      <af:panelGroupLayout id="pgl1" layout="vertical"
+                           styleClass="AFStrecthWidth">
+        <af:panelStretchLayout id="psl1" startWidth="auto" endWidth="auto"
+                               topHeight="0px" bottomHeight="0px"
+                               dimensionsFrom="auto">
+          <f:facet name="bottom"/>
+          <f:facet name="center">
+            <af:panelGroupLayout layout="horizontal"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pgl2">
+              <af:inputText label="Find" id="it1" styleClass="search-field"
+                            inlineStyle="padding:1.0px;"
+                            binding="#{pageFlowScope.COASystemsFindBean.findSystem}"
+                            value="#{pageFlowScope.COASystemsFindBean.findSystemString}"/>
+              <af:commandImageLink id="cil1"
+                                   icon="/images/fuse-side-panel-search-field-icon.png"
+                                   actionListener="#{bindings.findSystemValues.execute}"
+                                   partialSubmit="true"/>
+              <af:spacer width="20" height="1" id="s1"/>
+              <af:selectOneChoice label="Show" id="soc1"
+                                  styleClass="search-field"
+                                  unselectedLabel="--Select Value--"
+                                  valueChangeListener="#{backingBeanScope.COASelectSystemBean.filterSystem}"
+                                  autoSubmit="true"
+                                  binding="#{backingBeanScope.COASelectSystemBean.selectChoiceSystem}"
+                                  value="#{backingBeanScope.COASelectSystemBean.selectChoiceSystemString}">
+                <af:selectItem label="All Systems" id="si1" value="ALL"/>
+                <af:selectItem label="Source Systems" value="SOURCE" id="si3"/>
+                <af:selectItem label="Target Systems" value="TARGET" id="si2"/>
+              </af:selectOneChoice>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="start"/>
+          <f:facet name="end">
+            <af:commandButton text="Create System" id="cb1">
+              <af:showPopupBehavior popupId="p1" triggerType="click"/>
+            </af:commandButton>
+          </f:facet>
+          <f:facet name="top"/>
+        </af:panelStretchLayout>
+        <af:table value="#{bindings.COASystemDefinitonsVO1.collectionModel}"
+                  var="row" rows="#{bindings.COASystemDefinitonsVO1.rangeSize}"
+                  emptyText="#{bindings.COASystemDefinitonsVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.COASystemDefinitonsVO1.rangeSize}"
+                  rowBandingInterval="0"
+                  selectedRowKeys="#{bindings.COASystemDefinitonsVO1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.COASystemDefinitonsVO1.collectionModel.makeCurrent}"
+                  rowSelection="single" id="t1" columnStretching="multiple"
+                  styleClass="AFStrecthWidth" contentDelivery="immediate"
+                  autoHeightRows="10" first="0" partialTriggers="::cil1 ::soc1">
+          <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.SystemId.name}"
+                     sortable="true"
+                     headerText="#{bindings.COASystemDefinitonsVO1.hints.SystemId.label}"
+                     id="c4" rendered="false">
+            <af:outputText value="#{row.SystemId}" id="ot7"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.SystemName.name}"
+                     sortable="true"
+                     headerText="System Name"
+                     id="c3" width="20%">
+            <af:commandImageLink id="ot9" text="#{row.SystemName}"
+                                 styleClass="minor-link">
+              <af:showPopupBehavior popupId="::p1" triggerType="click"/>
+            </af:commandImageLink>
+          </af:column>
+          <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.Description.name}"
+                     sortable="true"
+                     headerText="Description"
+                     id="c1" width="30%">
+            <af:outputText value="#{row.Description}" id="ot4"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.StartDate.name}"
+                     sortable="true"
+                     headerText="Start Date"
+                     id="c6" width="10%">
+            <af:outputText value="#{row.StartDate}" id="ot1">
+              <af:convertDateTime pattern="#{bindings.COASystemDefinitonsVO1.hints.StartDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.EndDate.name}"
+                     sortable="true"
+                     headerText="End Date"
+                     id="c2" width="10%">
+            <af:outputText value="#{row.EndDate}" id="ot5">
+              <af:convertDateTime pattern="#{bindings.COASystemDefinitonsVO1.hints.EndDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.SourceFlag.name}"
+                     sortable="true"
+                     headerText="Source System"
+                     id="c5" width="10%" align="center">
+            
+            <af:image source="#{row.SourceFlag eq 'Y' ? '/images/fuse-icon-checked.png' : ''}"
+                      id="image1"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.TargetFlag.name}"
+                     sortable="true"
+                     headerText="Target System"
+                     id="c7" width="10%" align="center">
+            <af:image source="#{row.TargetFlag eq 'Y' ? '/images/fuse-icon-checked.png' : ''}"
+                      id="image2"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.EnabledFlag.name}"
+                     sortable="true"
+                     headerText="Status"
+                     id="c8" width="10%" align="center">
+        <af:image source="#{row.EnabledFlag eq 'Y' ? '/images/fuse-icon-checked.png' : ''}"
+                      id="image3"/>
+          </af:column>
+
+        </af:table>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="footer-end"/>
+    <f:facet name="footer-start"/>
+    <f:facet name="hidden">
+      <af:popup id="p1" contentDelivery="lazyUncached" childCreation="deferred">
+        <af:panelWindow id="pw1" closeIconVisible="false" modal="true"
+                        styleClass="fuse-popup" inlineStyle="height:500.0px;">
+          <af:region value="#{bindings.COASystemCreateTF1.regionModel}" id="r2"/>
+        </af:panelWindow>
+      </af:popup>
+    </f:facet>
+    <f:facet name="side-panel"/>
+  </af:pageTemplate>
+</jsp:root>

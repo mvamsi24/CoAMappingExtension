@@ -59,4 +59,16 @@ public class COAAMClient extends ApplicationModuleImpl implements COAAM {
             this.riInvokeExportedMethod(this,"getTargetString",new String [] {"java.lang.String","java.lang.String","java.lang.String"},new Object[] {pSourceSystem, pTargetSystem, pSourceString});
         return (String)_ret;
     }
+
+    public void findSystemValues(String systemName) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"findSystemValues",new String [] {"java.lang.String"},new Object[] {systemName});
+        return;
+    }
+
+    public void selectSystemValues(String systemName) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"selectSystemValues",new String [] {"java.lang.String"},new Object[] {systemName});
+        return;
+    }
 }

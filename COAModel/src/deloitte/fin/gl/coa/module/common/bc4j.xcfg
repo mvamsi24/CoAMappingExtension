@@ -4,12 +4,12 @@
       <AppModuleConfig DeployPlatform="LOCAL" jbo.project="deloitte.fin.gl.coa.COAModel" name="COAAM" ApplicationName="deloitte.fin.gl.coa.module.COAAM">
          <Database jbo.TypeMapEntries="Java" jbo.locking.mode="optimistic"/>
          <Security AppModuleJndiName="deloitte.fin.gl.coa.module.COAAM"/>
-         <Custom JDBCDataSource="apex2"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/hrConn1DS"/>
       </AppModuleConfig>
       <AppModuleConfig DeployPlatform="LOCAL" jbo.project="deloitte.fin.gl.coa.COAModel" name="COAAMLocal" ApplicationName="deloitte.fin.gl.coa.module.COAAM">
          <Database jbo.TypeMapEntries="Java" jbo.locking.mode="optimistic"/>
          <Security AppModuleJndiName="deloitte.fin.gl.coa.module.COAAM"/>
-         <Custom JDBCDataSource="apex2"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/hrConn1DS"/>
       </AppModuleConfig>
       <AppModuleConfig DeployPlatform="SI" jbo.project="deloitte.fin.gl.coa.COAModel" name="COAAMService" ApplicationName="deloitte.fin.gl.coa.module.COAAM" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
          <AM-Pooling jbo.ampool.resetnontransactionalstate="true"/>

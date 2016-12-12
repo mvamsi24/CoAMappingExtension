@@ -26,4 +26,8 @@ public interface COAAM extends ApplicationModule {
 
     String getTargetString(String pSourceSystem, String pTargetSystem,
                            String pSourceString);
+
+    void findSystemValues(String systemName);
+
+    void selectSystemValues(String systemName);
 }

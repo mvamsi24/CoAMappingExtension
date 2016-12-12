@@ -36,103 +36,108 @@ public class COAAMImpl extends ApplicationModuleImpl implements COAAM {
     public COAAMImpl() {
     }
 
- public void executeCOAMappingRuleVO(String ruleStr, String descStr, String seqStr, String sourceStr, String targetSystemStr)
- {
-     String whereClauseStr= " 1=1 " ;
-     
-    System.out.println("Inside the method executeCOAMappingRuleVO");
-      COAMappingRulesVOImpl vo = (COAMappingRulesVOImpl)getCOAMappingRulesVO1(); 
-      
-      vo.clearCache();
-      vo.setWhereClause(null);
-     // vo.setWhereClauseParams(null);      
-     
-       if(ruleStr!=null  && !"".equals(ruleStr))
-           whereClauseStr += "AND RULE_NAME = '"+ruleStr +"'" ;
-         
-         if(descStr!=null&& !"".equals(descStr))
-             whereClauseStr += "AND DESCRIPTION = '"+descStr +"'";
-         
-         if(seqStr!=null&& !"".equals(seqStr))
-              whereClauseStr +=  "AND ATTRIBUTE1 = '"+seqStr +"'";
-         
-         if(sourceStr!=null&& !"".equals(sourceStr))
-              whereClauseStr +=  "AND SOURCE_SYSTEM = '"+sourceStr +"'";
-    
-         if(targetSystemStr!=null&& !"".equals(targetSystemStr))
-               whereClauseStr += "AND TARGET_SYSTEM = '"+targetSystemStr +"'";
-         
-         vo.setWhereClause(whereClauseStr);
-        System.out.println("Total QUery --"+ vo.getQuery()); 
-      vo.executeQuery();
-     
-     }
- 
+    public void executeCOAMappingRuleVO(String ruleStr, String descStr,
+                                        String seqStr, String sourceStr,
+                                        String targetSystemStr) {
+        String whereClauseStr = " 1=1 ";
+
+        System.out.println("Inside the method executeCOAMappingRuleVO");
+        COAMappingRulesVOImpl vo =
+            (COAMappingRulesVOImpl)getCOAMappingRulesVO1();
+
+        vo.clearCache();
+        vo.setWhereClause(null);
+        // vo.setWhereClauseParams(null);
+
+        if (ruleStr != null && !"".equals(ruleStr))
+            whereClauseStr += "AND RULE_NAME = '" + ruleStr + "'";
+
+        if (descStr != null && !"".equals(descStr))
+            whereClauseStr += "AND DESCRIPTION = '" + descStr + "'";
+
+        if (seqStr != null && !"".equals(seqStr))
+            whereClauseStr += "AND ATTRIBUTE1 = '" + seqStr + "'";
+
+        if (sourceStr != null && !"".equals(sourceStr))
+            whereClauseStr += "AND SOURCE_SYSTEM = '" + sourceStr + "'";
+
+        if (targetSystemStr != null && !"".equals(targetSystemStr))
+            whereClauseStr += "AND TARGET_SYSTEM = '" + targetSystemStr + "'";
+
+        vo.setWhereClause(whereClauseStr);
+        System.out.println("Total QUery --" + vo.getQuery());
+        vo.executeQuery();
+
+    }
+
     /**
      * /method to call PLSQL Stored Procedure to save the  COA GL Config Data
-     */     
-       public void callCOACreatingMappingRuleProc(String sourceSystemStr,String targetSystemStr, String ruleNameStr,String descStr, String seqStr
-                                             ,  oracle.jbo.domain.Number sourceSegArray [], oracle.jbo.domain.Number targetSeqArray[]
-                                             )
-       {
-           
-           //procedure insert_rule_config(p_source_sys varchar2, p_target_sys varchar2, p_rule_name varchar2, p_desc varchar2 ,
-           //  p_seq number,p_source_seg_array COA_SEGMENT_NUM_T, p_target_seg_array COA_SEGMENT_NUM_T) 
-              String returnStatus = null, message  = null; 
-               DBTransactionImpl dbti = (DBTransactionImpl)getDBTransaction();         
-               String sql = "BEGIN  XXCOA_PLSQL_UTILS.insert_rule_config("
+     */
+    public void callCOACreatingMappingRuleProc(String sourceSystemStr,
+                                               String targetSystemStr,
+                                               String ruleNameStr,
+                                               String descStr, String seqStr,
+                                               oracle.jbo.domain.Number[] sourceSegArray,
+                                               oracle.jbo.domain.Number[] targetSeqArray) {
 
-                        +"p_source_sys       =>:1,"
-                        +"p_target_sys        =>:2,"
-                        +"p_rule_name        => :3 , "
-                        +"p_desc          =>:4 ,"
-                        +"p_seq              =>:5 ," 
-                        +"p_source_seg_array      =>:6,"
-                        +"p_target_seg_array    => :7,"
-                       +"x_return_status    => :8,"                         
-                       +"x_message => :9); END;";
-               
-               
-                  CallableStatement statement =
-                    dbti.createCallableStatement(sql, 0);
-                  try {
-                      statement.setString(1, sourceSystemStr);
-                      statement.setString(2, targetSystemStr);
-                      statement.setString(3, ruleNameStr);
-                      statement.setString(4, descStr);                   
-                      statement.setString(5, seqStr);                    
-                      
-                      ArrayDescriptor desc = ArrayDescriptor.createDescriptor("COA_SEGMENT_NUM_T", statement.getConnection());
-                      ARRAY sourceSeqArrayValue = new ARRAY (desc, statement.getConnection(), sourceSegArray); 
-                      ((OracleCallableStatement)statement).setArray(6, sourceSeqArrayValue);
-        
-                       ARRAY targetSeqArrayValue = new ARRAY (desc, statement.getConnection(), targetSeqArray); 
-                      ((OracleCallableStatement)statement).setArray(7, targetSeqArrayValue);
-                      
-                      
-                      statement.registerOutParameter(8, Types.VARCHAR);
-                      statement.registerOutParameter(9, Types.VARCHAR);                   
-                      statement.execute();
-                      dbti.commit();
-                      
-                      returnStatus = statement.getString(8);  
-                      message = statement.getString(9);
-                      
-                  } catch (SQLException sqlerr) {
-                      throw new JboException(sqlerr);
-                  } finally {
-                      try {
-                          if (statement != null) {
-                              statement.close();
-                          }
-                      } catch (SQLException closeerr) {
-                          throw new JboException(closeerr);
-                      }
-                  }
-           
-             
-           }
-       
+        //procedure insert_rule_config(p_source_sys varchar2, p_target_sys varchar2, p_rule_name varchar2, p_desc varchar2 ,
+        //  p_seq number,p_source_seg_array COA_SEGMENT_NUM_T, p_target_seg_array COA_SEGMENT_NUM_T)
+        String returnStatus = null, message = null;
+        DBTransactionImpl dbti = (DBTransactionImpl)getDBTransaction();
+        String sql =
+            "BEGIN  XXCOA_PLSQL_UTILS.insert_rule_config(" + "p_source_sys       =>:1," +
+
+            "p_target_sys        =>:2," + "p_rule_name        => :3 , " +
+            "p_desc          =>:4 ," + "p_seq              =>:5 ," +
+            "p_source_seg_array      =>:6," + "p_target_seg_array    => :7," +
+            "x_return_status    => :8," + "x_message => :9); END;";
+
+
+        CallableStatement statement = dbti.createCallableStatement(sql, 0);
+        try {
+            statement.setString(1, sourceSystemStr);
+            statement.setString(2, targetSystemStr);
+            statement.setString(3, ruleNameStr);
+            statement.setString(4, descStr);
+            statement.setString(5, seqStr);
+
+            ArrayDescriptor desc =
+                ArrayDescriptor.createDescriptor("COA_SEGMENT_NUM_T",
+                                                 statement.getConnection());
+            ARRAY sourceSeqArrayValue =
+                new ARRAY(desc, statement.getConnection(), sourceSegArray);
+            ((OracleCallableStatement)statement).setArray(6,
+                                                          sourceSeqArrayValue);
+
+            ARRAY targetSeqArrayValue =
+                new ARRAY(desc, statement.getConnection(), targetSeqArray);
+            ((OracleCallableStatement)statement).setArray(7,
+                                                          targetSeqArrayValue);
+
+
+            statement.registerOutParameter(8, Types.VARCHAR);
+            statement.registerOutParameter(9, Types.VARCHAR);
+            statement.execute();
+            dbti.commit();
+
+            returnStatus = statement.getString(8);
+            message = statement.getString(9);
+
+        } catch (SQLException sqlerr) {
+            throw new JboException(sqlerr);
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException closeerr) {
+                throw new JboException(closeerr);
+            }
+        }
+
+
+    }
+
     /**
      * Container's getter for COAMappingRulesVO1.
      * @return COAMappingRulesVO1
@@ -198,44 +203,132 @@ public class COAAMImpl extends ApplicationModuleImpl implements COAAM {
     }
 
 
-    public void findCOAValues(String sourceSystem,String targetSystem,String mappingRule,String sourceSegment,String targetSegemnt,String sourceValue,String targetValue){
-            System.out.println("Source System:"+sourceSystem+
-                               "Tatget: "+targetSystem+
-                               "Mapping: "+mappingRule+
-                               "SourceSegment: "+sourceSegment+
-                               "TargetSegemnt: "+targetSegemnt+
-                               "SourceValue: "+sourceValue+
-                               "TargetValue "+targetValue+"\n");
-            
-            ViewObjectImpl COAValuesVO = getCOASearchVO1();
+    public void findCOAValues(String sourceSystem, String targetSystem,
+                              String mappingRule, String sourceSegment,
+                              String targetSegemnt, String sourceValue,
+                              String targetValue) {
+        System.out.println("Source System:" + sourceSystem + "Tatget: " +
+                           targetSystem + "Mapping: " + mappingRule +
+                           "SourceSegment: " + sourceSegment +
+                           "TargetSegemnt: " + targetSegemnt +
+                           "SourceValue: " + sourceValue + "TargetValue " +
+                           targetValue + "\n");
+
+        ViewObjectImpl COAValuesVO = getCOASearchVO1();
         //        tableName = "TableA";
-            if (sourceSystem != null||targetSystem !=null||mappingRule !=null||sourceSegment != null||targetSegemnt!=null||sourceValue!=null||targetValue!=null){
+        if (sourceSystem != null || targetSystem != null ||
+            mappingRule != null || sourceSegment != null ||
+            targetSegemnt != null || sourceValue != null ||
+            targetValue != null) {
             System.out.println("Inside IF Start");
-                ViewCriteria vc =
-                    COAValuesVO.getViewCriteria("COASearchVOCriteria");
-                COAValuesVO.applyViewCriteria(vc);
-                COAValuesVO.setNamedWhereClauseParam("p_SourceSystem", sourceSystem);
-                COAValuesVO.setNamedWhereClauseParam("p_TargetSystem", targetSystem);
-                COAValuesVO.setNamedWhereClauseParam("p_MappingRule", mappingRule);
-                COAValuesVO.setNamedWhereClauseParam("p_SourceSegment", sourceSegment);
-                COAValuesVO.setNamedWhereClauseParam("p_TargetSegment", targetSegemnt);
-                COAValuesVO.setNamedWhereClauseParam("p_SourceSegmentValue", sourceValue);
-                COAValuesVO.setNamedWhereClauseParam("p_TargetSegmentValue", targetValue);
-        //            ciaVO.executeQuery();
-        System.out.println("Inside IF END");
-            }
-            else{
-                System.out.println("Inside Else Start");
-                ViewCriteria vc = COAValuesVO.getViewCriteria("COASearchVOCriteria");
-                COAValuesVO.removeViewCriteria("COASearchVOCriteria");
-                vc.resetCriteria();
-                COAValuesVO.applyViewCriteria(vc);
-        //            ciaVO.executeQuery();
-        System.out.println("Inside Else Start");
-            }
-            
+            ViewCriteria vc =
+                COAValuesVO.getViewCriteria("COASearchVOCriteria");
+            COAValuesVO.applyViewCriteria(vc);
+            COAValuesVO.setNamedWhereClauseParam("p_SourceSystem",
+                                                 sourceSystem);
+            COAValuesVO.setNamedWhereClauseParam("p_TargetSystem",
+                                                 targetSystem);
+            COAValuesVO.setNamedWhereClauseParam("p_MappingRule", mappingRule);
+            COAValuesVO.setNamedWhereClauseParam("p_SourceSegment",
+                                                 sourceSegment);
+            COAValuesVO.setNamedWhereClauseParam("p_TargetSegment",
+                                                 targetSegemnt);
+            COAValuesVO.setNamedWhereClauseParam("p_SourceSegmentValue",
+                                                 sourceValue);
+            COAValuesVO.setNamedWhereClauseParam("p_TargetSegmentValue",
+                                                 targetValue);
+            //            ciaVO.executeQuery();
+            System.out.println("Inside IF END");
+        } else {
+            System.out.println("Inside Else Start");
+            ViewCriteria vc =
+                COAValuesVO.getViewCriteria("COASearchVOCriteria");
+            COAValuesVO.removeViewCriteria("COASearchVOCriteria");
+            vc.resetCriteria();
+            COAValuesVO.applyViewCriteria(vc);
+            //            ciaVO.executeQuery();
+            System.out.println("Inside Else Start");
         }
 
+    }
+
+    public void findSystemValues(String systemName) {
+        System.out.println("System Name:" + systemName + "\n");
+
+        ViewObjectImpl COASystemVO = getCOASystemDefinitonsVO1();
+        //        tableName = "TableA";
+        if (systemName != null && !systemName.isEmpty()) {
+            System.out.println("Inside IF Start");
+            ViewCriteria vc =
+                COASystemVO.getViewCriteria("COASystemDefinitonsVOCriteria");
+            COASystemVO.applyViewCriteria(vc);
+            COASystemVO.setNamedWhereClauseParam("p_System", systemName);
+
+
+            System.out.println("Inside IF END");
+        } else {
+            System.out.println("Inside Else Start");
+            ViewCriteria vc =
+                COASystemVO.getViewCriteria("COASystemDefinitonsVOCriteria");
+            //COASystemVO.applyViewCriteria(vc);
+            // COASystemVO.setNamedWhereClauseParam("p_System", systemName);
+            COASystemVO.removeViewCriteria("COASystemDefinitonsVOCriteria");
+            vc.resetCriteria();
+            //COASystemVO.executeEmptyRowSet();
+            COASystemVO.applyViewCriteria(vc);
+            COASystemVO.setNamedWhereClauseParam("p_System", "");
+
+            System.out.println("Inside Else END");
+        }
+
+    }
+
+
+    public void selectSystemValues(String systemName) {
+        System.out.println("System Name:" + systemName + "\n");
+
+        ViewObjectImpl COASystemVO = getCOASystemDefinitonsVO1();
+        //        tableName = "TableA";
+        if (systemName != null && !systemName.isEmpty()) {
+            if (systemName.trim().equals("SOURCE")) {
+                System.out.println("Inside Source IF Start");
+                ViewCriteria vc =
+                    COASystemVO.getViewCriteria("COASystemDefinitonsVOSourceCriteria");
+                COASystemVO.applyViewCriteria(vc);
+                COASystemVO.setNamedWhereClauseParam("p_SourceSystem", "Y");
+                COASystemVO.setNamedWhereClauseParam("p_TargetSystem", "");
+
+
+                System.out.println("Inside Source IF END");
+            } else if (systemName.trim().equals("TARGET")) {
+                System.out.println("Inside Target IF Start");
+                ViewCriteria vc =
+                    COASystemVO.getViewCriteria("COASystemDefinitonsVOSourceCriteria");
+                COASystemVO.applyViewCriteria(vc);
+                COASystemVO.setNamedWhereClauseParam("p_SourceSystem", "");
+                COASystemVO.setNamedWhereClauseParam("p_TargetSystem", "Y");
+
+
+                System.out.println("Inside Target IF END");
+            } else {
+                System.out.println("Inside ALL Else Start");
+                ViewCriteria vc =
+                    COASystemVO.getViewCriteria("COASystemDefinitonsVOSourceCriteria");
+                //COASystemVO.applyViewCriteria(vc);
+                // COASystemVO.setNamedWhereClauseParam("p_System", systemName);
+                COASystemVO.removeViewCriteria("COASystemDefinitonsVOSourceCriteria");
+                vc.resetCriteria();
+                //COASystemVO.executeEmptyRowSet();
+                COASystemVO.applyViewCriteria(vc);
+                COASystemVO.setNamedWhereClauseParam("p_SourceSystem", "");
+                COASystemVO.setNamedWhereClauseParam("p_TargetSystem", "");
+
+                System.out.println("Inside ALL Else END");
+            }
+        } else {
+            System.out.println("System Name is passed NULL");
+            }
+    }
 
     /**
      * Container's getter for SysC007381Link1.
@@ -284,43 +377,51 @@ public class COAAMImpl extends ApplicationModuleImpl implements COAAM {
     public ViewObjectImpl getCOAFindFieldLOVVO1() {
         return (ViewObjectImpl)findViewObject("COAFindFieldLOVVO1");
     }
-    protected Object invokeStoredFunction(int sqlReturnType, String stmt, Object[] bindVars) {
-            CallableStatement cst = null;
-            try {
-                //Creating sql statement
-                cst = this.getDBTransaction().createCallableStatement("begin ? := " + stmt + ";end;", 0);
-                //Register dataType for return value
-                cst.registerOutParameter(1, sqlReturnType);
-                //Pass input parameters value
-                if (bindVars != null) {
-                    for (int z = 0; z < bindVars.length; z++) {
-                        cst.setObject(z + 2, bindVars[z]);
-                    }
+
+    protected Object invokeStoredFunction(int sqlReturnType, String stmt,
+                                          Object[] bindVars) {
+        CallableStatement cst = null;
+        try {
+            //Creating sql statement
+            cst =
+this.getDBTransaction().createCallableStatement("begin ? := " + stmt + ";end;",
+                                                0);
+            //Register dataType for return value
+            cst.registerOutParameter(1, sqlReturnType);
+            //Pass input parameters value
+            if (bindVars != null) {
+                for (int z = 0; z < bindVars.length; z++) {
+                    cst.setObject(z + 2, bindVars[z]);
                 }
-                cst.executeUpdate();
-                //Finally get returned value
-                return cst.getObject(1);
-            } catch (SQLException e) {
-                throw new JboException(e.getMessage());
-            } finally {
-                if (cst != null) {
-                    try {
-                        cst.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
+            }
+            cst.executeUpdate();
+            //Finally get returned value
+            return cst.getObject(1);
+        } catch (SQLException e) {
+            throw new JboException(e.getMessage());
+        } finally {
+            if (cst != null) {
+                try {
+                    cst.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
         }
-    
-    public String getCOASegments(String sourceSystem, String targetSystem, String sourceString){
+    }
+
+    public String getCOASegments(String sourceSystem, String targetSystem,
+                                 String sourceString) {
         String returnValue = "Return Value is null";
-        Object outString = invokeStoredFunction(Types.VARCHAR, "GET_TARGET_COA_STRING(?,?,?)", new Object[]{sourceSystem,targetSystem,sourceString});
-        if (outString!= null){
-                returnValue=outString.toString();
-            }
-        return returnValue;
+        Object outString =
+            invokeStoredFunction(Types.VARCHAR, "GET_TARGET_COA_STRING(?,?,?)",
+                                 new Object[] { sourceSystem, targetSystem,
+                                                sourceString });
+        if (outString != null) {
+            returnValue = outString.toString();
         }
+        return returnValue;
+    }
     /*END*/
 
     /**
@@ -395,4 +496,12 @@ public class COAAMImpl extends ApplicationModuleImpl implements COAAM {
     } //getMapping String
     
     
+
+    /**
+     * Container's getter for COASystemDefinitonsVO1.
+     * @return COASystemDefinitonsVO1
+     */
+    public ViewObjectImpl getCOASystemDefinitonsVO1() {
+        return (ViewObjectImpl)findViewObject("COASystemDefinitonsVO1");
+    }
 }

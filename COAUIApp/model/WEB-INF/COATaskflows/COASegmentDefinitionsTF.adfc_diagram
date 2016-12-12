@@ -7,7 +7,7 @@
       <property
          name="activityId">COASegmentDefinitionsPG</property>
       <property
-         name="page">/COAPageFraments/COASegmentDefinitionsPG.jsff</property>
+         name="page">/COAPageFraments/COASystemDefinitionsPG.jsff</property>
       <property
          name="start">true</property>
       <property
@@ -17,8 +17,8 @@
       <property
          name="y">99.59766</property>
       <property
-         name="x">309.0</property>
-      <property
          name="pageFragment">true</property>
+      <property
+         name="x">309.0</property>
    </View>
 </SDM>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.57" id="COASystemDefinitionsPGPageDef"
+                Package="COAPageFraments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="COASystemDefinitonsVO1" RangeSize="25"
+              DataControl="COAAMDataControl"
+              id="COASystemDefinitonsVO1Iterator"/>
+    <taskFlow taskFlowId="/WEB-INF/COATaskflows/COASystemCreateTF.xml#COASystemCreateTF"
+              id="COASystemCreateTF1"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="COASystemDefinitonsVO1Iterator"
+          id="COASystemDefinitonsVO1">
+      <nodeDefinition DefName="deloitte.fin.gl.coa.view.COASystemDefinitonsVO"
+                      Name="COASystemDefinitonsVO10">
+        <AttrNames>
+          <Item Value="SystemId"/>
+          <Item Value="SystemName"/>
+          <Item Value="Description"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="SourceFlag"/>
+          <Item Value="TargetFlag"/>
+          <Item Value="EnabledFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="findSystemValues" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="findSystemValues"
+                  IsViewObjectMethod="false" DataControl="COAAMDataControl"
+                  InstanceName="COAAMDataControl.dataProvider">
+      <NamedData NDName="systemName"
+                 NDValue="#{pageFlowScope.COASystemsFindBean.findSystemString}"
+                 NDType="java.lang.String"/>
+      <events xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+        <event name="findSystemEvent"/>
+      </events>
+    </methodAction>
+    <action IterBinding="COASystemDefinitonsVO1Iterator" id="Execute"
+            InstanceName="COAAMDataControl.COASystemDefinitonsVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <methodAction id="selectSystemValues"
+                  InstanceName="COAAMDataControl.dataProvider"
+                  DataControl="COAAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="selectSystemValues"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="systemName"
+                 NDValue="#{backingBeanScope.COASelectSystemBean.selectChoiceSystemString}"
+                 NDType="java.lang.String"/>
+      <events xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+        <event name="selectSystemName"/>
+      </events>
+    </methodAction>
+    <action IterBinding="COASystemDefinitonsVO1Iterator" id="CreateInsert"
+            InstanceName="COAAMDataControl.COASystemDefinitonsVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="COASystemDefinitonsVO1Iterator" id="Delete"
+            InstanceName="COAAMDataControl.COASystemDefinitonsVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
