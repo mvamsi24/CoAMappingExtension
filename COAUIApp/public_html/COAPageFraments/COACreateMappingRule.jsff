@@ -22,60 +22,66 @@
     <f:facet name="body">
       <af:group id="g1"
                 binding="#{backingBeanScope.backing_COACreateMappingRuleBean.g1}">
-        <af:panelFormLayout id="pfl2" inlineStyle="height:52px;"
-                            binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pfl2}">
-          <f:facet name="footer"/>
-        </af:panelFormLayout>
-        <af:panelFormLayout id="pfl1"
-                            binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pfl1}">
-          <af:inputText label="Rule" id="it6"
-                        binding="#{backingBeanScope.backing_COACreateMappingRuleBean.it6}"/>
-          <af:inputText label="Sequence" id="it5"
-                        binding="#{backingBeanScope.backing_COACreateMappingRuleBean.it5}"/>
-          <af:inputText label="Description" id="it4"
-                        binding="#{backingBeanScope.backing_COACreateMappingRuleBean.it4}"/>
-          <af:selectOneChoice value="#{bindings.COASourceSystemLOVVO1.inputValue}"
-                              label="#{bindings.COASourceSystemLOVVO1.label}"
-                              required="#{bindings.COASourceSystemLOVVO1.hints.mandatory}"
-                              shortDesc="#{bindings.COASourceSystemLOVVO1.hints.tooltip}"
-                              binding="#{backingBeanScope.backing_COACreateMappingRuleBean.soc1}"
-                              id="soc1">
-            <f:selectItems value="#{bindings.COASourceSystemLOVVO1.items}"
-                           binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si4}"
-                           id="si4"/>
-          </af:selectOneChoice>
-          <af:selectOneChoice value="#{bindings.COATargetSystemLOVVO1.inputValue}"
-                              label="#{bindings.COATargetSystemLOVVO1.label}"
-                              required="#{bindings.COATargetSystemLOVVO1.hints.mandatory}"
-                              shortDesc="#{bindings.COATargetSystemLOVVO1.hints.tooltip}"
-                              binding="#{backingBeanScope.backing_COACreateMappingRuleBean.soc2}"
-                              id="soc2">
-            <f:selectItems value="#{bindings.COATargetSystemLOVVO1.items}"
-                           binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si5}"
-                           id="si5"/>
-          </af:selectOneChoice>
-        </af:panelFormLayout>
-        <af:panelFormLayout binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pfl3}"
-                            id="pfl3" inlineStyle="width:961px; height:49px;"
-                            rows="1" maxColumns="3">
-          <af:selectManyChoice value="#{bindings.COASourceSegmentLOVVO1.inputValue}"
-                               label="Source Segment" id="smc1"
-                               binding="#{backingBeanScope.backing_COACreateMappingRuleBean.smc1}">
-            <f:selectItems value="#{bindings.COASourceSegmentLOVVO1.items}"
-                           id="si1"
-                           binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si1}"/>
-          </af:selectManyChoice>
-          <af:spacer width="20" height="10"
-                     
-                     id="s1"/>
-          <af:selectManyChoice value="#{bindings.COATargetSegmentLOVVO1.inputValue}"
-                               label="Target Segment" id="smc2"
-                               binding="#{backingBeanScope.backing_COACreateMappingRuleBean.smc2}">
-            <f:selectItems value="#{bindings.COATargetSegmentLOVVO1.items}"
-                           id="si2"
-                           binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si2}"/>
-          </af:selectManyChoice>
-        </af:panelFormLayout>
+        <af:panelBox text="Enter Rule Info"
+                     binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pb2}"
+                     id="pb2">
+          <f:facet name="toolbar"/>
+          <af:panelFormLayout id="pfl1"
+                              binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pfl1}">
+            <af:inputText label="Rule" id="it6"
+                          binding="#{backingBeanScope.backing_COACreateMappingRuleBean.it6}"/>
+            <af:inputText label="Sequence" id="it5"
+                          binding="#{backingBeanScope.backing_COACreateMappingRuleBean.it5}"/>
+            <af:inputText label="Description" id="it4"
+                          binding="#{backingBeanScope.backing_COACreateMappingRuleBean.it4}"/>
+            <af:selectOneChoice value="#{bindings.COASourceSystemLOVVO1.inputValue}"
+                                label="#{bindings.COASourceSystemLOVVO1.label}"
+                                required="#{bindings.COASourceSystemLOVVO1.hints.mandatory}"
+                                shortDesc="#{bindings.COASourceSystemLOVVO1.hints.tooltip}"
+                                binding="#{backingBeanScope.backing_COACreateMappingRuleBean.soc1}"
+                                id="soc1">
+              <f:selectItems value="#{bindings.COASourceSystemLOVVO1.items}"
+                             binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si4}"
+                             id="si4"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.COATargetSystemLOVVO1.inputValue}"
+                                label="#{bindings.COATargetSystemLOVVO1.label}"
+                                required="#{bindings.COATargetSystemLOVVO1.hints.mandatory}"
+                                shortDesc="#{bindings.COATargetSystemLOVVO1.hints.tooltip}"
+                                binding="#{backingBeanScope.backing_COACreateMappingRuleBean.soc2}"
+                                id="soc2">
+              <f:selectItems value="#{bindings.COATargetSystemLOVVO1.items}"
+                             binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si5}"
+                             id="si5"/>
+            </af:selectOneChoice>
+          </af:panelFormLayout>
+        </af:panelBox>
+        <af:panelBox text="Select Source/Segment Details"
+                     binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pb1}"
+                     id="pb1">
+          <f:facet name="toolbar"/>
+          <af:panelFormLayout binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pfl3}"
+                              id="pfl3" inlineStyle="width:961px; height:49px;"
+                              rows="1" maxColumns="3">
+            <af:selectManyChoice value="#{bindings.COASourceSegmentLOVVO1.inputValue}"
+                                 label="Source Segment" id="smc1"
+                                 binding="#{backingBeanScope.backing_COACreateMappingRuleBean.smc1}">
+              <f:selectItems value="#{bindings.COASourceSegmentLOVVO1.items}"
+                             id="si1"
+                             binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si1}"/>
+            </af:selectManyChoice>
+            <af:spacer width="20" height="10"
+                       binding="#{backingBeanScope.backing_COACreateMappingRuleBean.s1}"
+                       id="s1"/>
+            <af:selectManyChoice value="#{bindings.COATargetSegmentLOVVO1.inputValue}"
+                                 label="Target Segment" id="smc2"
+                                 binding="#{backingBeanScope.backing_COACreateMappingRuleBean.smc2}">
+              <f:selectItems value="#{bindings.COATargetSegmentLOVVO1.items}"
+                             id="si2"
+                             binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si2}"/>
+            </af:selectManyChoice>
+          </af:panelFormLayout>
+        </af:panelBox>
       </af:group>
     </f:facet>
     <f:facet name="hidden"/>
