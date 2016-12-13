@@ -16,7 +16,8 @@
                           action="#{backingBeanScope.backing_COACreateMappingRuleBean.cb1_action}"/>
         <af:commandButton text="Cancel"
                           binding="#{backingBeanScope.backing_COACreateMappingRuleBean.cb2}"
-                          id="cb2"/>
+                          id="cb2"
+                          action="#{backingBeanScope.backing_COACreateMappingRuleBean.cb2_action}"/>
       </af:group>
     </f:facet>
     <f:facet name="body">
