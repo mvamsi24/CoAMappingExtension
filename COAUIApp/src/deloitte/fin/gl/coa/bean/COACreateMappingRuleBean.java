@@ -14,10 +14,12 @@ import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.input.RichSelectManyChoice;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
+import oracle.adf.view.rich.component.rich.layout.RichPanelBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
 import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
 
+import oracle.adf.view.rich.component.rich.output.RichSpacer;
 import oracle.adf.view.rich.event.PopupCanceledEvent;
 
 import oracle.binding.BindingContainer;
@@ -26,6 +28,10 @@ import oracle.binding.OperationBinding;
 import oracle.jbo.uicli.binding.JUCtrlListBinding;
 
 import org.apache.myfaces.trinidad.component.UIXGroup;
+import org.apache.myfaces.trinidad.event.AttributeChangeEvent;
+import org.apache.myfaces.trinidad.render.ExtendedRenderKitService;
+ 
+import org.apache.myfaces.trinidad.util.Service;
 
 public class COACreateMappingRuleBean {
     private UISelectItems si2;
@@ -48,6 +54,9 @@ public class COACreateMappingRuleBean {
     private RichSelectOneChoice soc2;
     private UISelectItems si5;
     private RichCommandButton cb2;
+    private RichPanelBox pb3;
+    private RichPanelBox pb1;
+    private RichSpacer s2;
 
     public COACreateMappingRuleBean() {
     }
@@ -234,17 +243,26 @@ public class COACreateMappingRuleBean {
         ob.execute();
         
         
-        String messageText= "Data Saved Successfully"; ;
+      /*  String messageText= "Data Saved Successfully"; ;
                FacesMessage fm = new FacesMessage(messageText);
 
                fm.setSeverity(FacesMessage.SEVERITY_INFO);
                FacesContext context = FacesContext.getCurrentInstance();
                context.addMessage(null, fm);
-             
+          */   
+      
+        calljqHelper("$.growl.notice({ message: \"Record Saved\" });");
+        
+        ADFPopupUtils.hideParentPopup(cb1);      
+      
         return null;
     }
 
- 
+    public void calljqHelper(String script) {
+        FacesContext context = FacesContext.getCurrentInstance();
+        ExtendedRenderKitService erks = Service.getService(context.getRenderKit(), ExtendedRenderKitService.class);
+        erks.addScript(context, script);
+    }
 
     public BindingContainer getBindings() {
         return BindingContext.getCurrent().getCurrentBindingsEntry();
@@ -306,5 +324,35 @@ public class COACreateMappingRuleBean {
 
     public RichPanelFormLayout getPfl3() {
         return pfl3;
+    }
+
+
+    public void setPb3(RichPanelBox pb3) {
+        this.pb3 = pb3;
+    }
+
+    public RichPanelBox getPb3() {
+        return pb3;
+    }
+
+    public void setPb1(RichPanelBox pb1) {
+        this.pb1 = pb1;
+    }
+
+    public RichPanelBox getPb1() {
+        return pb1;
+    }
+
+    public void setS2(RichSpacer s2) {
+        this.s2 = s2;
+    }
+
+    public RichSpacer getS2() {
+        return s2;
+    }
+
+    public String cb2_action() {
+        ADFPopupUtils.hideParentPopup(cb2);
+        return null;
     }
 }
