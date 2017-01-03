@@ -8,9 +8,29 @@
   SeparateXMLFiles="true"
   PackageName="fuseuiapp">
   <DesignTime>
-    <Attr Name="_jprName" Value="../../FuseUIApp.jpr"/>
+    <Attr Name="_jprName" Value="../../COAUIApp.jpr"/>
     <Attr Name="_NamedConnection" Value="hrConn"/>
+    <Attr Name="_appModuleNames0" Value="deloitte.fin.gl.coa.module.COAAM"/>
   </DesignTime>
+  <Containee
+    Name="entity"
+    PackageName="deloitte.fin.gl.coa.entity"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+      <Attr Name="_AS" Value="true"/>
+      <Attr Name="_LocationURL" Value="../../COAModel/src/"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="module"
+    PackageName="deloitte.fin.gl.coa.module"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+      <Attr Name="_LocationURL" Value="../../COAModel/src/"/>
+    </DesignTime>
+  </Containee>
   <Containee
     Name="lov"
     PackageName="deloitte.fin.gl.coa.view.lov"
@@ -23,5 +43,11 @@
   <Containee
     Name="view"
     PackageName="deloitte.fin.gl.coa.view"
-    ObjectType="JboPackage"/>
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_VL" Value="true"/>
+      <Attr Name="_LocationURL" Value="../../COAModel/src/"/>
+    </DesignTime>
+  </Containee>
 </JboProject>

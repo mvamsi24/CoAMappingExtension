@@ -37,6 +37,10 @@
           usageId="view_COASystemDefinitionsPGPageDef"/>
     <page path="/COAPageFraments/COASystemCreatePG.jsff"
           usageId="view_COASystemCreatePGPageDef"/>
+    <page path="/COAPageFraments/COAStringMappingsPG.jsff"
+          usageId="view_COAStringMappingsPGPageDef"/>
+    <page path="/COAPageFraments/COAStringSearchPG.jsff"
+          usageId="view_COAStringSearchPGPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Fuse_UI_Shell_TestPageDef"
@@ -71,6 +75,10 @@
           path="COAPageFraments.COASystemDefinitionsPGPageDef"/>
     <page id="view_COASystemCreatePGPageDef"
           path="COAPageFraments.COASystemCreatePGPageDef"/>
+    <page id="view_COAStringMappingsPGPageDef"
+          path="COAPageFraments.COAStringMappingsPGPageDef"/>
+    <page id="view_COAStringSearchPGPageDef"
+          path="COAPageFraments.COAStringSearchPGPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="FusionOpportunityService"

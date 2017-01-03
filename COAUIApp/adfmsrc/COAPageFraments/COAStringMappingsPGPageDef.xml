@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.57" id="COAStringMappingsPGPageDef"
+                Package="COAPageFraments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CoaStringValuesVO1" RangeSize="25"
+              DataControl="COAAMDataControl" id="CoaStringValuesVO1Iterator"/>
+    <taskFlow taskFlowId="/WEB-INF/COATaskflows/COAStringSearchTF.xml#COAStringSearchTF"
+              id="COAStringSearchTF1"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CoaStringValuesVO1Iterator" id="CoaStringValuesVO1">
+      <nodeDefinition DefName="deloitte.fin.gl.coa.view.CoaStringValuesVO"
+                      Name="CoaStringValuesVO10">
+        <AttrNames>
+          <Item Value="SourceSystem"/>
+          <Item Value="SourceValue"/>
+          <Item Value="TargetSystem"/>
+          <Item Value="TargetValue"/>
+          <Item Value="EnabledFlag"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="EnabledFlagBoolean" Binds="EnabledFlagBoolean"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" DataControl="COAAMDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action IterBinding="CoaStringValuesVO1Iterator" id="CreateInsert"
+            InstanceName="COAAMDataControl.CoaStringValuesVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="CoaStringValuesVO1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CoaStringValuesVO1Iterator" id="Delete"
+            InstanceName="COAAMDataControl.CoaStringValuesVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <button IterBinding="CoaStringValuesVO1Iterator" id="EnabledFlagBoolean"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="EnabledFlagBoolean"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+  </bindings>
+</pageDefinition>

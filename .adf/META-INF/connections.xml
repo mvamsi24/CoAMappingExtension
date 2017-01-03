@@ -1,60 +1,26 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="{/deloitte/fin/gl/coa/module/common/}COAAMService" className="oracle.jbo.client.svc.Service" xmlns="">
+      <Factory className="oracle.jbo.client.svc.ServiceFactory"/>
+      <RefAddresses>
+         <StringRefAddr addrType="serviceInterfaceName">
+            <Contents>deloitte.fin.gl.coa.module.common.serviceinterface.COAAMService</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceEndpointProvider">
+            <Contents>ADFBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="jndiName">
+            <Contents>COAAMServiceBean#deloitte.fin.gl.coa.module.common.serviceinterface.COAAMService</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceSchemaName">
+            <Contents>COAAMService.xsd</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceSchemaLocation">
+            <Contents>deloitte/fin/gl/coa/module/common/serviceinterface/</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
    <Reference name="Connection1" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="Connection1" xmlns="">
-      <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
-      <RefAddresses>
-         <StringRefAddr addrType="sid">
-            <Contents>orcl</Contents>
-         </StringRefAddr>
-         <StringRefAddr addrType="subtype">
-            <Contents>oraJDBC</Contents>
-         </StringRefAddr>
-         <StringRefAddr addrType="port">
-            <Contents>1521</Contents>
-         </StringRefAddr>
-         <StringRefAddr addrType="hostname">
-            <Contents>localhost</Contents>
-         </StringRefAddr>
-         <StringRefAddr addrType="user">
-            <Contents>hr</Contents>
-         </StringRefAddr>
-         <SecureRefAddr addrType="password"/>
-         <StringRefAddr addrType="DeployPassword">
-            <Contents>true</Contents>
-         </StringRefAddr>
-         <StringRefAddr addrType="oraDriverType">
-            <Contents>thin</Contents>
-         </StringRefAddr>
-      </RefAddresses>
-   </Reference>
-   <Reference name="hr" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="hr" xmlns="">
-      <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
-      <RefAddresses>
-         <StringRefAddr addrType="sid">
-            <Contents>orcl</Contents>
-         </StringRefAddr>
-         <StringRefAddr addrType="subtype">
-            <Contents>oraJDBC</Contents>
-         </StringRefAddr>
-         <StringRefAddr addrType="port">
-            <Contents>1521</Contents>
-         </StringRefAddr>
-         <StringRefAddr addrType="hostname">
-            <Contents>localhost</Contents>
-         </StringRefAddr>
-         <StringRefAddr addrType="user">
-            <Contents>hr</Contents>
-         </StringRefAddr>
-         <SecureRefAddr addrType="password"/>
-         <StringRefAddr addrType="DeployPassword">
-            <Contents>true</Contents>
-         </StringRefAddr>
-         <StringRefAddr addrType="oraDriverType">
-            <Contents>thin</Contents>
-         </StringRefAddr>
-      </RefAddresses>
-   </Reference>
-   <Reference name="hrConn" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="hrConn" xmlns="">
       <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
       <RefAddresses>
          <StringRefAddr addrType="sid">
@@ -108,23 +74,57 @@
          </StringRefAddr>
       </RefAddresses>
    </Reference>
-   <Reference name="{/deloitte/fin/gl/coa/module/common/}COAAMService" className="oracle.jbo.client.svc.Service" xmlns="">
-      <Factory className="oracle.jbo.client.svc.ServiceFactory"/>
+   <Reference name="hrConn" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="hrConn" xmlns="">
+      <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
       <RefAddresses>
-         <StringRefAddr addrType="serviceInterfaceName">
-            <Contents>deloitte.fin.gl.coa.module.common.serviceinterface.COAAMService</Contents>
+         <StringRefAddr addrType="sid">
+            <Contents>orcl</Contents>
          </StringRefAddr>
-         <StringRefAddr addrType="serviceEndpointProvider">
-            <Contents>ADFBC</Contents>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
          </StringRefAddr>
-         <StringRefAddr addrType="jndiName">
-            <Contents>COAAMServiceBean#deloitte.fin.gl.coa.module.common.serviceinterface.COAAMService</Contents>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
          </StringRefAddr>
-         <StringRefAddr addrType="serviceSchemaName">
-            <Contents>COAAMService.xsd</Contents>
+         <StringRefAddr addrType="hostname">
+            <Contents>localhost</Contents>
          </StringRefAddr>
-         <StringRefAddr addrType="serviceSchemaLocation">
-            <Contents>deloitte/fin/gl/coa/module/common/serviceinterface/</Contents>
+         <StringRefAddr addrType="user">
+            <Contents>hr</Contents>
+         </StringRefAddr>
+         <SecureRefAddr addrType="password"/>
+         <StringRefAddr addrType="DeployPassword">
+            <Contents>true</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="hr" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="hr" xmlns="">
+      <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
+      <RefAddresses>
+         <StringRefAddr addrType="sid">
+            <Contents>orcl</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>localhost</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>hr</Contents>
+         </StringRefAddr>
+         <SecureRefAddr addrType="password"/>
+         <StringRefAddr addrType="DeployPassword">
+            <Contents>true</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
          </StringRefAddr>
       </RefAddresses>
    </Reference>

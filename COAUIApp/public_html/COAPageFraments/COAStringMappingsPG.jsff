@@ -10,10 +10,176 @@
       </af:panelGroupLayout>
     </f:facet>
     <f:facet name="header-end"/>
-    <f:facet name="body"/>
+    <f:facet name="body">
+      <af:panelGroupLayout id="pgl1" layout="vertical"
+                           styleClass="AFStrecthWidth">
+        <af:panelGroupLayout id="pgl3" layout="vertical" halign="center">
+          <af:messages id="m1" inline="true" styleClass="coa-saveandclose"/>
+        </af:panelGroupLayout>
+        <af:panelStretchLayout id="psl1" startWidth="auto" endWidth="auto"
+                               topHeight="0px" bottomHeight="0px"
+                               dimensionsFrom="auto">
+          <f:facet name="bottom"/>
+          <f:facet name="center"/>
+          <f:facet name="start">
+            <af:panelGroupLayout layout="horizontal"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pgl2">
+              <af:commandButton text="Save" id="cb1"
+                                action="#{backingBeanScope.COASaveListnerBean.cb1_action}"/>
+              <af:commandButton text="Add" id="cb3"
+                                actionListener="#{bindings.CreateInsert1.execute}">
+                <af:showPopupBehavior triggerType="click" popupId="p1"/>
+              </af:commandButton>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="end"/>
+          <f:facet name="top"/>
+        </af:panelStretchLayout>
+        <af:table value="#{bindings.CoaStringValuesVO1.collectionModel}"
+                  var="row" rows="#{bindings.CoaStringValuesVO1.rangeSize}"
+                  emptyText="#{bindings.CoaStringValuesVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.CoaStringValuesVO1.rangeSize}"
+                  rowBandingInterval="0" id="t1" styleClass="AFStrecthWidth"
+                  columnStretching="multiple"
+                  editingMode="clickToEdit" autoHeightRows="10"
+                  partialTriggers="::cb3">
+          <af:column sortProperty="#{bindings.CoaStringValuesVO1.hints.SourceSystem.name}"
+                     sortable="false"
+                     headerText="Source System"
+                     id="c5" width="10%">
+            <af:inputText value="#{row.bindings.SourceSystem.inputValue}"
+                          label="#{bindings.CoaStringValuesVO1.hints.SourceSystem.label}"
+                          required="#{bindings.CoaStringValuesVO1.hints.SourceSystem.mandatory}"
+                          columns="#{bindings.CoaStringValuesVO1.hints.SourceSystem.displayWidth}"
+                          maximumLength="#{bindings.CoaStringValuesVO1.hints.SourceSystem.precision}"
+                          shortDesc="#{bindings.CoaStringValuesVO1.hints.SourceSystem.tooltip}"
+                          id="it3">
+              <f:validator binding="#{row.bindings.SourceSystem.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.CoaStringValuesVO1.hints.SourceValue.name}"
+                     sortable="false"
+                     headerText="Source Value"
+                     id="c2" width="20%">
+            <af:inputText value="#{row.bindings.SourceValue.inputValue}"
+                          label="#{bindings.CoaStringValuesVO1.hints.SourceValue.label}"
+                          required="#{bindings.CoaStringValuesVO1.hints.SourceValue.mandatory}"
+                          columns="#{bindings.CoaStringValuesVO1.hints.SourceValue.displayWidth}"
+                          maximumLength="#{bindings.CoaStringValuesVO1.hints.SourceValue.precision}"
+                          shortDesc="#{bindings.CoaStringValuesVO1.hints.SourceValue.tooltip}"
+                          id="it4">
+              <f:validator binding="#{row.bindings.SourceValue.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.CoaStringValuesVO1.hints.TargetSystem.name}"
+                     sortable="false"
+                     headerText="Target System"
+                     id="c6" width="10%">
+            <af:inputText value="#{row.bindings.TargetSystem.inputValue}"
+                          label="#{bindings.CoaStringValuesVO1.hints.TargetSystem.label}"
+                          required="#{bindings.CoaStringValuesVO1.hints.TargetSystem.mandatory}"
+                          columns="#{bindings.CoaStringValuesVO1.hints.TargetSystem.displayWidth}"
+                          maximumLength="#{bindings.CoaStringValuesVO1.hints.TargetSystem.precision}"
+                          shortDesc="#{bindings.CoaStringValuesVO1.hints.TargetSystem.tooltip}"
+                          id="it1">
+              <f:validator binding="#{row.bindings.TargetSystem.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.CoaStringValuesVO1.hints.TargetValue.name}"
+                     sortable="false"
+                     headerText="Target Value"
+                     id="c4" width="25%">
+            <af:inputText value="#{row.bindings.TargetValue.inputValue}"
+                          label="#{bindings.CoaStringValuesVO1.hints.TargetValue.label}"
+                          required="#{bindings.CoaStringValuesVO1.hints.TargetValue.mandatory}"
+                          columns="#{bindings.CoaStringValuesVO1.hints.TargetValue.displayWidth}"
+                          maximumLength="#{bindings.CoaStringValuesVO1.hints.TargetValue.precision}"
+                          shortDesc="#{bindings.CoaStringValuesVO1.hints.TargetValue.tooltip}"
+                          id="it2">
+              <f:validator binding="#{row.bindings.TargetValue.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.CoaStringValuesVO1.hints.EnabledFlag.name}"
+                     sortable="false"
+                     headerText="Enabled"
+                     id="c7" width="10%">
+            <af:selectBooleanCheckbox value="#{bindings.EnabledFlagBoolean.inputValue}"
+                                      label="#{row.bindings.EnabledFlag.label}"
+                                      shortDesc="#{bindings.CoaStringValuesVO1.hints.EnabledFlag.tooltip}"
+                                      id="sbc1" autoSubmit="true"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.CoaStringValuesVO1.hints.StartDate.name}"
+                     sortable="false"
+                     headerText="Start Date"
+                     id="c3" width="10%">
+            <af:inputDate value="#{row.bindings.StartDate.inputValue}"
+                          label="#{bindings.CoaStringValuesVO1.hints.StartDate.label}"
+                          required="#{bindings.CoaStringValuesVO1.hints.StartDate.mandatory}"
+                          shortDesc="#{bindings.CoaStringValuesVO1.hints.StartDate.tooltip}"
+                          id="id2">
+              <f:validator binding="#{row.bindings.StartDate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.CoaStringValuesVO1.hints.StartDate.format}"/>
+            </af:inputDate>
+          </af:column>
+          <af:column sortProperty="#{bindings.CoaStringValuesVO1.hints.EndDate.name}"
+                     sortable="false"
+                     headerText="End Date"
+                     id="c1" width="10%">
+            <af:inputDate value="#{row.bindings.EndDate.inputValue}"
+                          label="#{bindings.CoaStringValuesVO1.hints.EndDate.label}"
+                          required="#{bindings.CoaStringValuesVO1.hints.EndDate.mandatory}"
+                          shortDesc="#{bindings.CoaStringValuesVO1.hints.EndDate.tooltip}"
+                          id="id1">
+              <f:validator binding="#{row.bindings.EndDate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.CoaStringValuesVO1.hints.EndDate.format}"/>
+            </af:inputDate>
+          </af:column>
+          <af:column id="c11" width="10%" headerText="Delete">
+            <af:commandImageLink id="cil1" icon="/images/fuse-icon-delete.png"
+                                 action="#{backingBeanScope.COADeleteListnerBean.cb2_action}">
+              <af:showPopupBehavior popupId="::p2" triggerType="click"/>
+            </af:commandImageLink>
+          </af:column>
+        </af:table>
+      </af:panelGroupLayout>
+    </f:facet>
     <f:facet name="footer-end"/>
     <f:facet name="footer-start"/>
-    <f:facet name="hidden"/>
-    <f:facet name="side-panel"/>
+    <f:facet name="hidden">
+      <af:group id="g2">
+        <af:popup id="p2">
+          <af:panelWindow id="pw2" closeIconVisible="false" resize="on"
+                          title="Are you sure want to delete?"
+                          titleIconSource="/images/warning.png">
+            <af:panelGroupLayout id="pgl4" layout="vertical" halign="center">
+              <af:spacer width="10" height="10" id="s2"/>
+              <af:panelGroupLayout id="pgl5" layout="horizontal">
+                <af:commandButton text="Yes" id="cb4"
+                                  actionListener="#{backingBeanScope.COADeleteListnerBean.commitData}"/>
+                <af:spacer width="10" height="10" id="s1"/>
+                <af:commandButton text="No" id="cb5"
+                                  actionListener="#{backingBeanScope.COADeleteListnerBean.rollbackData}"/>
+              </af:panelGroupLayout>
+              <af:spacer width="10" height="10" id="spacer1"/>
+            </af:panelGroupLayout>
+          </af:panelWindow>
+        </af:popup>
+      </af:group>
+    </f:facet>
+    <f:facet name="side-panel">
+      <af:panelDrawer id="pd1" height="100%">
+        <af:showDetailItem text="Search" id="sdi1"
+                           icon="/images/fuse-side-panel-search.png">
+          <af:region value="#{bindings.COAStringSearchTF1.regionModel}" id="r1"/>
+          <af:panelSplitter id="ps1">
+            <f:facet name="first"/>
+            <f:facet name="second"/>
+          </af:panelSplitter>
+        </af:showDetailItem>
+        <af:showDetailItem text="Actions" id="sdi2"
+                           icon="/images/fuse-side-panel-actions.png"/>
+      </af:panelDrawer>
+    </f:facet>
   </af:pageTemplate>
 </jsp:root>

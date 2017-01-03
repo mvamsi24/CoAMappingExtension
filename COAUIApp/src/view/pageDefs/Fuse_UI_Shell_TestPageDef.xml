@@ -43,5 +43,11 @@
                   handler="COASystemDefinitionsPGPageDef.Execute"/>
       </producer>
     </event>
+    <event name="findStringValues">
+      <producer region="COAStringMappingsTF1.COAStringMappingsPGPageDef.COAStringSearchTF1.COAStringSearchPGPageDef.findStringValues">
+        <consumer region="COAStringMappingsTF1"
+                  handler="COAStringMappingsPGPageDef.COAStringSearchTF1.COAStringSearchPGPageDef.Execute"/>
+      </producer>
+    </event>
   </eventMap>
 </pageDefinition>

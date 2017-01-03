@@ -34,4 +34,9 @@
     <managed-bean-class id="__26">com.oracle.fuse.model.LOVDataBean</managed-bean-class>
     <managed-bean-scope id="__25">session</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__19">
+    <managed-bean-name id="__28">COAStringUtilityBean</managed-bean-name>
+    <managed-bean-class id="__27">deloitte.fin.gl.coa.bean.COAStringUtilityBean</managed-bean-class>
+    <managed-bean-scope id="__20">request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

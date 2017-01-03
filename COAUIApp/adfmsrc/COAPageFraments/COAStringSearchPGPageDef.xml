@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.57" id="COAStringSearchPGPageDef"
+                Package="COAPageFraments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CoaStringValuesVO1" RangeSize="25"
+              DataControl="COAAMDataControl" id="CoaStringValuesVO1Iterator"/>
+    <iterator Binds="COAFindFieldLOVVO1" RangeSize="25"
+              DataControl="COAAMDataControl" id="COAFindFieldLOVVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CoaStringValuesVO1Iterator" id="SourceValue">
+      <AttrNames>
+        <Item Value="SourceValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CoaStringValuesVO1Iterator" id="TargetValue">
+      <AttrNames>
+        <Item Value="TargetValue"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="findStringValues" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="findStringValues"
+                  IsViewObjectMethod="false" DataControl="COAAMDataControl"
+                  InstanceName="COAAMDataControl.dataProvider">
+      <NamedData NDName="sourceSystem"
+                 NDValue="#{pageFlowScope.COAStringValuesBean.sourceSystem}"
+                 NDType="java.lang.String" NDOption="2"/>
+      <NamedData NDName="targetSystem"
+                 NDValue="#{pageFlowScope.COAStringValuesBean.targetSystem}"
+                 NDType="java.lang.String" NDOption="2"/>
+      <NamedData NDName="sourceValue"
+                 NDValue="#{pageFlowScope.COAStringValuesBean.sourceValue}"
+                 NDType="java.lang.String" NDOption="2"/>
+      <NamedData NDName="targetValue"
+                 NDValue="#{pageFlowScope.COAStringValuesBean.targetValueItm}#{pageFlowScope.COAStringValuesBean.targetValue}"
+                 NDType="java.lang.String" NDOption="2"/>
+      <events xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+        <event name="findStringValues"/>
+      </events>
+    </methodAction>
+    <action IterBinding="CoaStringValuesVO1Iterator" id="Execute"
+            InstanceName="COAAMDataControl.CoaStringValuesVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <list IterBinding="COAFindFieldLOVVO1Iterator" StaticList="false"
+          Uses="LOV_SourceSystem" id="SourceSystem1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="COAFindFieldLOVVO1Iterator" StaticList="false"
+          Uses="LOV_TargetSystem" id="TargetSystem" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+  </bindings>
+  <eventMap xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+    <event name="findStringValues">
+      <producer region="findStringValues">
+        <consumer region="" handler="Execute"/>
+      </producer>
+    </event>
+  </eventMap>
+  <events xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+    <event name="findStringValues" eventType="Action Event"/>
+  </events>
+</pageDefinition>

@@ -66,6 +66,9 @@
       Name="COASystemDefinitonsVOSourceCriteria"
       FullName="deloitte.fin.gl.coa.view.COASystemDefinitonsVO.COASystemDefinitonsVOSourceCriteria"/>
   </ViewUsage>
+  <ViewUsage
+    Name="CoaStringValuesVO1"
+    ViewObjectName="deloitte.fin.gl.coa.view.CoaStringValuesVO"/>
   <ViewLinkUsage
     Name="SysC007381Link1"
     ViewLinkObjectName="deloitte.fin.gl.coa.view.SysC007381Link"
@@ -215,6 +218,23 @@
         Type="void"/>
       <Parameter
         Name="systemName"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="findStringValues">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="sourceSystem"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="targetSystem"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="sourceValue"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="targetValue"
         Type="java.lang.String"/>
     </Method>
   </ClientInterface>
