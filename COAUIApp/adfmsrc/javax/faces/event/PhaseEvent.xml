@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="PhaseEvent" Package="javax.faces.event"
+          BeanClass="javax.faces.event.PhaseEvent" isJavaBased="true">
+  <AccessorAttribute id="facesContext" IsCollection="false"
+                     BeanClass="javax.faces.context.FacesContext"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="phaseId" IsCollection="false"
+                     BeanClass="javax.faces.event.PhaseId"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <ConstructorMethod IsCollection="true" Type="javax.faces.event.PhaseEvent"
+                     BeanClass="javax.faces.event.PhaseEvent" id="PhaseEvent">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="javax.faces.event.PhaseId"
+                   isStructured="true"/>
+    <ParameterInfo id="p2" Type="javax.faces.lifecycle.Lifecycle"
+                   isStructured="true"/>
+  </ConstructorMethod>
+</JavaBean>

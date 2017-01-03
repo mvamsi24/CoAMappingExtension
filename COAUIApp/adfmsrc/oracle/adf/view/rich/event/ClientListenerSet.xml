@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ClientListenerSet" Package="oracle.adf.view.rich.event"
+          BeanClass="oracle.adf.view.rich.event.ClientListenerSet"
+          isJavaBased="true">
+  <Attribute Name="featureDependencies" IsUpdateable="0"
+             Type="java.lang.Iterable&lt;java.lang.String>"/>
+  <MethodAccessor IsCollection="false" Type="void" id="addListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addBehavior"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addBehavior"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ValueExpression" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addFeatureDependency"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addCustomServerListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="javax.el.MethodExpression"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void"
+                  id="invokeCustomEventListeners" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="oracle.adf.view.rich.render.ClientEvent"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="encodeAsJson"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="encodeBehaviorsAsJson" ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.adf.view.rich.event.ClientListenerSet"
+                     BeanClass="oracle.adf.view.rich.event.ClientListenerSet"
+                     id="ClientListenerSet"/>
+</JavaBean>

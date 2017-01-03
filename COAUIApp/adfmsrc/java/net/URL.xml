@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="URL" Package="java.net" BeanClass="java.net.URL"
+          isJavaBased="true">
+  <Attribute Name="query" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="path" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="userInfo" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="authority" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="port" IsUpdateable="0" Type="int"/>
+  <Attribute Name="defaultPort" IsUpdateable="0" Type="int"/>
+  <Attribute Name="protocol" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="host" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="file" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="ref" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="content" IsUpdateable="0" Type="java.lang.Object"/>
+  <MethodAccessor IsCollection="false" Type="boolean" id="equals"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="obj" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="int" id="hashCode"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="boolean" id="sameFile"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="other" Type="java.net.URL" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="toString"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="toExternalForm" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="java.net.URI"
+                  BeanClass="java.net.URI" id="toURI" ReturnNodeName="URI"/>
+  <MethodAccessor IsCollection="false" Type="java.net.URLConnection"
+                  BeanClass="java.net.URLConnection" id="openConnection"
+                  ReturnNodeName="URLConnection"/>
+  <MethodAccessor IsCollection="false" Type="java.net.URLConnection"
+                  BeanClass="java.net.URLConnection" id="openConnection"
+                  ReturnNodeName="URLConnection">
+    <ParameterInfo id="proxy" Type="java.net.Proxy" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.io.InputStream"
+                  BeanClass="java.io.InputStream" id="openStream"
+                  ReturnNodeName="InputStream"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="getContent"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="classes" Type="java.lang.Class[]" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void"
+                  id="setURLStreamHandlerFactory" ReturnNodeName="Return">
+    <ParameterInfo id="fac" Type="java.net.URLStreamHandlerFactory"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="java.net.URL"
+                     BeanClass="java.net.URL" id="URL">
+    <ParameterInfo id="context" Type="java.net.URL" isStructured="true"/>
+    <ParameterInfo id="spec" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="handler" Type="java.net.URLStreamHandler"
+                   isStructured="true"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="java.net.URL"
+                     BeanClass="java.net.URL" id="URL">
+    <ParameterInfo id="context" Type="java.net.URL" isStructured="true"/>
+    <ParameterInfo id="spec" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="java.net.URL"
+                     BeanClass="java.net.URL" id="URL">
+    <ParameterInfo id="spec" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="java.net.URL"
+                     BeanClass="java.net.URL" id="URL">
+    <ParameterInfo id="protocol" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="host" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="port" Type="int" isStructured="false"/>
+    <ParameterInfo id="file" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="handler" Type="java.net.URLStreamHandler"
+                   isStructured="true"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="java.net.URL"
+                     BeanClass="java.net.URL" id="URL">
+    <ParameterInfo id="protocol" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="host" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="file" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="java.net.URL"
+                     BeanClass="java.net.URL" id="URL">
+    <ParameterInfo id="protocol" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="host" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="port" Type="int" isStructured="false"/>
+    <ParameterInfo id="file" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

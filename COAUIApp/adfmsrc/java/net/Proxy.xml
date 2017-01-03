@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="Proxy" Package="java.net" BeanClass="java.net.Proxy"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="java.net.Proxy.Type"
+                  BeanClass="java.net.Proxy.Type" id="type"
+                  ReturnNodeName="Type"/>
+  <MethodAccessor IsCollection="false" Type="java.net.SocketAddress"
+                  BeanClass="java.net.SocketAddress" id="address"
+                  ReturnNodeName="SocketAddress"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="toString"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="boolean" id="equals"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="obj" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="int" id="hashCode"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true" Type="java.net.Proxy"
+                     BeanClass="java.net.Proxy" id="Proxy">
+    <ParameterInfo id="type" Type="java.net.Proxy.Type" isStructured="true"/>
+    <ParameterInfo id="sa" Type="java.net.SocketAddress" isStructured="true"/>
+  </ConstructorMethod>
+</JavaBean>

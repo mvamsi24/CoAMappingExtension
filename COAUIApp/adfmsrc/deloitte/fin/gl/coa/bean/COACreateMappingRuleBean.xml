@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="COACreateMappingRuleBean" Package="deloitte.fin.gl.coa.bean"
+          BeanClass="deloitte.fin.gl.coa.bean.COACreateMappingRuleBean"
+          isJavaBased="true">
+  <AccessorAttribute id="si2" IsCollection="false"
+                     BeanClass="javax.faces.component.UISelectItems"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="smc2" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.input.RichSelectManyChoice"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="si1" IsCollection="false"
+                     BeanClass="javax.faces.component.UISelectItems"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="smc1" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.input.RichSelectManyChoice"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="it4" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.input.RichInputText"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="it5" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.input.RichInputText"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="it6" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.input.RichInputText"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="pfl1" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="pfl2" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="g1" IsCollection="false"
+                     BeanClass="org.apache.myfaces.trinidad.component.UIXGroup"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="cb1" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.nav.RichCommandButton"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="g2" IsCollection="false"
+                     BeanClass="org.apache.myfaces.trinidad.component.UIXGroup"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="ot1" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.output.RichOutputText"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="bindings" IsCollection="true"
+                     Type="oracle.binding.BindingContainer"
+                     CollectionBeanClass="UpdateableSingleValue">
+    <Attribute Name="element" Type="oracle.binding.BindingContainer"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="soc1" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.input.RichSelectOneChoice"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="si3" IsCollection="false"
+                     BeanClass="javax.faces.component.UISelectItems"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="si4" IsCollection="false"
+                     BeanClass="javax.faces.component.UISelectItems"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="soc2" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.input.RichSelectOneChoice"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="si5" IsCollection="false"
+                     BeanClass="javax.faces.component.UISelectItems"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="cb2" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.nav.RichCommandButton"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="pfl3" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="pb3" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.layout.RichPanelBox"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="pb1" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.layout.RichPanelBox"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="s2" IsCollection="false"
+                     BeanClass="oracle.adf.view.rich.component.rich.output.RichSpacer"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="cb1_action"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="calljqHelper"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="script" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="cb2_action"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="deloitte.fin.gl.coa.bean.COACreateMappingRuleBean"
+                     BeanClass="deloitte.fin.gl.coa.bean.COACreateMappingRuleBean"
+                     id="COACreateMappingRuleBean"/>
+</JavaBean>

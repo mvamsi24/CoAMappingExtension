@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ExternalContext" Package="javax.faces.context"
+          BeanClass="javax.faces.context.ExternalContext" isJavaBased="true">
+  <Attribute Name="authType" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="context" IsUpdateable="0" Type="java.lang.Object"/>
+  <Attribute Name="remoteUser" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="request" Type="java.lang.Object"/>
+  <Attribute Name="requestContextPath" IsUpdateable="0"
+             Type="java.lang.String"/>
+  <Attribute Name="requestLocale" IsUpdateable="0" Type="java.util.Locale"/>
+  <Attribute Name="requestLocales" IsUpdateable="0"
+             Type="java.util.Iterator&lt;java.util.Locale>"/>
+  <Attribute Name="requestParameterNames" IsUpdateable="0"
+             Type="java.util.Iterator&lt;java.lang.String>"/>
+  <Attribute Name="requestPathInfo" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="requestServletPath" IsUpdateable="0"
+             Type="java.lang.String"/>
+  <Attribute Name="requestCharacterEncoding" Type="java.lang.String"/>
+  <Attribute Name="requestContentType" IsUpdateable="0"
+             Type="java.lang.String"/>
+  <Attribute Name="responseCharacterEncoding" Type="java.lang.String"/>
+  <Attribute Name="responseContentType" IsUpdateable="0"
+             Type="java.lang.String"/>
+  <Attribute Name="response" Type="java.lang.Object"/>
+  <AccessorAttribute id="applicationMap" IsCollection="true"
+                     Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String, java.lang.Object"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="initParameterMap" IsCollection="true"
+                     Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="requestCookieMap" IsCollection="true"
+                     Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String, java.lang.Object"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="requestHeaderMap" IsCollection="true"
+                     Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String, java.lang.String"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="requestHeaderValuesMap" IsCollection="true"
+                     Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String, java.lang.String[]"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="requestMap" IsCollection="true" Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String, java.lang.Object"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="requestParameterMap" IsCollection="true"
+                     Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String, java.lang.String"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="requestParameterValuesMap" IsCollection="true"
+                     Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String, java.lang.String[]"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="sessionMap" IsCollection="true" Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String, java.lang.Object"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="userPrincipal" IsCollection="false"
+                     BeanClass="java.security.Principal"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="void" id="dispatch"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="encodeActionURL" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="encodeNamespace" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="encodeResourceURL" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="getInitParameter" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.net.URL"
+                  BeanClass="java.net.URL" id="getResource"
+                  ReturnNodeName="URL">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.io.InputStream"
+                  BeanClass="java.io.InputStream" id="getResourceAsStream"
+                  ReturnNodeName="InputStream">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="java.util.Set" id="getResourcePaths"
+                  ReturnNodeName="String"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <Attribute Name="element" Type="java.lang.String"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="getSession"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="boolean" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="boolean" id="isUserInRole"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="log"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="log"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Throwable" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="redirect"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="javax.faces.context.ExternalContext"
+                     BeanClass="javax.faces.context.ExternalContext"
+                     id="ExternalContext"/>
+</JavaBean>

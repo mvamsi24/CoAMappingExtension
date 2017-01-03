@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="FacesContext" Package="javax.faces.context"
+          BeanClass="javax.faces.context.FacesContext" isJavaBased="true">
+  <Attribute Name="clientIdsWithMessages" IsUpdateable="0"
+             Type="java.util.Iterator&lt;java.lang.String>"/>
+  <Attribute Name="messages" IsUpdateable="0"
+             Type="java.util.Iterator&lt;javax.faces.application.FacesMessage>"/>
+  <Attribute Name="renderResponse" IsUpdateable="0" Type="boolean"/>
+  <Attribute Name="responseComplete" IsUpdateable="0" Type="boolean"/>
+  <AccessorAttribute id="application" IsCollection="false"
+                     BeanClass="javax.faces.application.Application"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="ELContext" IsCollection="false"
+                     BeanClass="javax.el.ELContext"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="externalContext" IsCollection="false"
+                     BeanClass="javax.faces.context.ExternalContext"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="maximumSeverity" IsCollection="false"
+                     BeanClass="javax.faces.application.FacesMessage.Severity"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="renderKit" IsCollection="false"
+                     BeanClass="javax.faces.render.RenderKit"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="responseStream" IsCollection="false"
+                     BeanClass="javax.faces.context.ResponseStream"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="responseWriter" IsCollection="false"
+                     BeanClass="javax.faces.context.ResponseWriter"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="viewRoot" IsCollection="false"
+                     BeanClass="javax.faces.component.UIViewRoot"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="currentInstance" IsCollection="false"
+                     BeanClass="javax.faces.context.FacesContext"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false"
+                  Type="java.util.Iterator&lt;javax.faces.application.FacesMessage>"
+                  id="getMessages" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addMessage"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="javax.faces.application.FacesMessage"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="release"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="renderResponse"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="responseComplete"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true" Type="javax.faces.context.FacesContext"
+                     BeanClass="javax.faces.context.FacesContext"
+                     id="FacesContext"/>
+</JavaBean>

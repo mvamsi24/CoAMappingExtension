@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="VariableMapper" Package="javax.el"
+          BeanClass="javax.el.VariableMapper" isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="javax.el.ValueExpression"
+                  BeanClass="javax.el.ValueExpression" id="resolveVariable"
+                  ReturnNodeName="ValueExpression">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.el.ValueExpression"
+                  BeanClass="javax.el.ValueExpression" id="setVariable"
+                  ReturnNodeName="ValueExpression">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="javax.el.ValueExpression" isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="javax.el.VariableMapper"
+                     BeanClass="javax.el.VariableMapper" id="VariableMapper"/>
+</JavaBean>

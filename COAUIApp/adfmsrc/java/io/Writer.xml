@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="Writer" Package="java.io" BeanClass="java.io.Writer"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="void" id="write"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="c" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="write"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="cbuf" Type="char[]" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="write"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="cbuf" Type="char[]" isStructured="false"/>
+    <ParameterInfo id="off" Type="int" isStructured="false"/>
+    <ParameterInfo id="len" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="write"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="str" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="write"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="str" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="off" Type="int" isStructured="false"/>
+    <ParameterInfo id="len" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.io.Writer"
+                  BeanClass="java.io.Writer" id="append"
+                  ReturnNodeName="Writer">
+    <ParameterInfo id="csq" Type="java.lang.CharSequence" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.io.Writer"
+                  BeanClass="java.io.Writer" id="append"
+                  ReturnNodeName="Writer">
+    <ParameterInfo id="csq" Type="java.lang.CharSequence" isStructured="false"/>
+    <ParameterInfo id="start" Type="int" isStructured="false"/>
+    <ParameterInfo id="end" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.io.Writer"
+                  BeanClass="java.io.Writer" id="append"
+                  ReturnNodeName="Writer">
+    <ParameterInfo id="c" Type="char" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="flush"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="close"
+                  ReturnNodeName="Return"/>
+</JavaBean>

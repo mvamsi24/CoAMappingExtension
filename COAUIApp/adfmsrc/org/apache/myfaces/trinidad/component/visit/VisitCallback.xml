@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="VisitCallback"
+          Package="org.apache.myfaces.trinidad.component.visit"
+          BeanClass="org.apache.myfaces.trinidad.component.visit.VisitCallback"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.component.visit.VisitResult"
+                  BeanClass="org.apache.myfaces.trinidad.component.visit.VisitResult"
+                  id="visit" ReturnNodeName="VisitResult">
+    <ParameterInfo id="p0"
+                   Type="org.apache.myfaces.trinidad.component.visit.VisitContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="javax.faces.component.UIComponent"
+                   isStructured="true"/>
+  </MethodAccessor>
+</JavaBean>

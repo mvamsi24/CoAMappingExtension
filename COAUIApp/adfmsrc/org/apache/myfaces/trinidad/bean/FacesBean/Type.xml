@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="Type" Package="org.apache.myfaces.trinidad.bean.FacesBean"
+          BeanClass="org.apache.myfaces.trinidad.bean.FacesBean.Type"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="findKey" ReturnNodeName="PropertyKey">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="findKey" ReturnNodeName="PropertyKey">
+    <ParameterInfo id="p0" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="registerKey" ReturnNodeName="PropertyKey">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Class&lt;?>" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="registerKey" ReturnNodeName="PropertyKey">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Class&lt;?>" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="registerKey" ReturnNodeName="PropertyKey">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="registerKey" ReturnNodeName="PropertyKey">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="registerKey" ReturnNodeName="PropertyKey">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Class&lt;?>" isStructured="false"/>
+    <ParameterInfo id="p2" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="registerKey" ReturnNodeName="PropertyKey">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Class&lt;?>" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p3" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="registerAlias" ReturnNodeName="PropertyKey">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="lock"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="lockAndRegister"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="java.util.Iterator&lt;org.apache.myfaces.trinidad.bean.PropertyKey>"
+                  id="keys" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="true"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="propertyKeys" ReturnNodeName="PropertyKey"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="org.apache.myfaces.trinidad.bean.FacesBean.Type"
+                     BeanClass="org.apache.myfaces.trinidad.bean.FacesBean.Type"
+                     id="Type">
+    <ParameterInfo id="p0"
+                   Type="org.apache.myfaces.trinidad.bean.FacesBean.Type"
+                   isStructured="true"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="org.apache.myfaces.trinidad.bean.FacesBean.Type"
+                     BeanClass="org.apache.myfaces.trinidad.bean.FacesBean.Type"
+                     id="Type"/>
+</JavaBean>

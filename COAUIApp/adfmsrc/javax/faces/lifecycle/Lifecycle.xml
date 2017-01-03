@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="Lifecycle" Package="javax.faces.lifecycle"
+          BeanClass="javax.faces.lifecycle.Lifecycle" isJavaBased="true">
+  <AccessorAttribute id="phaseListeners" IsCollection="true"
+                     RemoveMethod="removePhaseListener"
+                     AddMethod="addPhaseListener"
+                     BeanClass="javax.faces.event.PhaseListener"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removePhaseListener"/>
+      <Property Name="AddMethod" Value="addPhaseListener"/>
+    </Properties>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false" Type="void" id="addPhaseListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.event.PhaseListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="execute"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removePhaseListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.event.PhaseListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="render"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="javax.faces.lifecycle.Lifecycle"
+                     BeanClass="javax.faces.lifecycle.Lifecycle"
+                     id="Lifecycle"/>
+</JavaBean>

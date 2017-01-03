@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="FunctionMapper" Package="javax.el"
+          BeanClass="javax.el.FunctionMapper" isJavaBased="true">
+  <MethodAccessor IsCollection="true" Type="java.lang.reflect.Method"
+                  id="resolveFunction" ReturnNodeName="Method"
+                  CollectionBeanClass="ReadOnlySingleValue">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+    <Attribute Name="element" Type="java.lang.reflect.Method"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="javax.el.FunctionMapper"
+                     BeanClass="javax.el.FunctionMapper" id="FunctionMapper"/>
+</JavaBean>

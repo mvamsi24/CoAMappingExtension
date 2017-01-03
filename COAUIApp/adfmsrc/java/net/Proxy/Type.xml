@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="Type" Package="java.net.Proxy" BeanClass="java.net.Proxy.Type"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="true" Type="java.net.Proxy.Type"
+                  BeanClass="java.net.Proxy.Type" id="values"
+                  ReturnNodeName="Type"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false" Type="java.net.Proxy.Type"
+                  BeanClass="java.net.Proxy.Type" id="valueOf"
+                  ReturnNodeName="Type">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

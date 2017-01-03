@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="RenderKit" Package="javax.faces.render"
+          BeanClass="javax.faces.render.RenderKit" isJavaBased="true">
+  <AccessorAttribute id="responseStateManager" IsCollection="false"
+                     BeanClass="javax.faces.render.ResponseStateManager"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="void" id="addRenderer"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p2" Type="javax.faces.render.Renderer"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.render.Renderer"
+                  BeanClass="javax.faces.render.Renderer" id="getRenderer"
+                  ReturnNodeName="Renderer">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.context.ResponseWriter"
+                  BeanClass="javax.faces.context.ResponseWriter"
+                  id="createResponseWriter" ReturnNodeName="ResponseWriter">
+    <ParameterInfo id="p0" Type="java.io.Writer" isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.context.ResponseStream"
+                  BeanClass="javax.faces.context.ResponseStream"
+                  id="createResponseStream" ReturnNodeName="ResponseStream">
+    <ParameterInfo id="p0" Type="java.io.OutputStream" isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="javax.faces.render.RenderKit"
+                     BeanClass="javax.faces.render.RenderKit" id="RenderKit"/>
+</JavaBean>

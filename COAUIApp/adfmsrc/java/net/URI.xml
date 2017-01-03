@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="URI" Package="java.net" BeanClass="java.net.URI"
+          isJavaBased="true">
+  <Attribute Name="scheme" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="absolute" IsUpdateable="0" Type="boolean"/>
+  <Attribute Name="opaque" IsUpdateable="0" Type="boolean"/>
+  <Attribute Name="rawSchemeSpecificPart" IsUpdateable="0"
+             Type="java.lang.String"/>
+  <Attribute Name="schemeSpecificPart" IsUpdateable="0"
+             Type="java.lang.String"/>
+  <Attribute Name="rawAuthority" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="authority" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="rawUserInfo" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="userInfo" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="host" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="port" IsUpdateable="0" Type="int"/>
+  <Attribute Name="rawPath" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="path" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="rawQuery" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="query" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="rawFragment" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="fragment" IsUpdateable="0" Type="java.lang.String"/>
+  <MethodAccessor IsCollection="false" Type="java.net.URI"
+                  BeanClass="java.net.URI" id="create" ReturnNodeName="URI">
+    <ParameterInfo id="str" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.net.URI"
+                  BeanClass="java.net.URI" id="parseServerAuthority"
+                  ReturnNodeName="URI"/>
+  <MethodAccessor IsCollection="false" Type="java.net.URI"
+                  BeanClass="java.net.URI" id="normalize" ReturnNodeName="URI"/>
+  <MethodAccessor IsCollection="false" Type="java.net.URI"
+                  BeanClass="java.net.URI" id="resolve" ReturnNodeName="URI">
+    <ParameterInfo id="uri" Type="java.net.URI" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.net.URI"
+                  BeanClass="java.net.URI" id="resolve" ReturnNodeName="URI">
+    <ParameterInfo id="str" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.net.URI"
+                  BeanClass="java.net.URI" id="relativize" ReturnNodeName="URI">
+    <ParameterInfo id="uri" Type="java.net.URI" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.net.URL"
+                  BeanClass="java.net.URL" id="toURL" ReturnNodeName="URL"/>
+  <MethodAccessor IsCollection="false" Type="boolean" id="equals"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="ob" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="int" id="hashCode"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="int" id="compareTo"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="that" Type="java.net.URI" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="toString"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="toASCIIString" ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true" Type="java.net.URI"
+                     BeanClass="java.net.URI" id="URI">
+    <ParameterInfo id="scheme" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="ssp" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="fragment" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="java.net.URI"
+                     BeanClass="java.net.URI" id="URI">
+    <ParameterInfo id="scheme" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="host" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="path" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="fragment" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="java.net.URI"
+                     BeanClass="java.net.URI" id="URI">
+    <ParameterInfo id="scheme" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="authority" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="path" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="query" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="fragment" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="java.net.URI"
+                     BeanClass="java.net.URI" id="URI">
+    <ParameterInfo id="scheme" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="userInfo" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="host" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="port" Type="int" isStructured="false"/>
+    <ParameterInfo id="path" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="query" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="fragment" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="java.net.URI"
+                     BeanClass="java.net.URI" id="URI">
+    <ParameterInfo id="str" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

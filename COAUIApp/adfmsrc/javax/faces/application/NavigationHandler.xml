@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="NavigationHandler" Package="javax.faces.application"
+          BeanClass="javax.faces.application.NavigationHandler"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="void" id="handleNavigation"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="javax.faces.application.NavigationHandler"
+                     BeanClass="javax.faces.application.NavigationHandler"
+                     id="NavigationHandler"/>
+</JavaBean>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="PropertyKey" Package="org.apache.myfaces.trinidad.bean"
+          BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+          isJavaBased="true">
+  <Attribute Name="type" IsUpdateable="0" Type="java.lang.Class&lt;?>"/>
+  <Attribute Name="default" IsUpdateable="0" Type="java.lang.Object"/>
+  <Attribute Name="supportsBinding" IsUpdateable="0" Type="boolean"/>
+  <Attribute Name="transient" IsUpdateable="0" Type="boolean"/>
+  <Attribute Name="list" IsUpdateable="0" Type="boolean"/>
+  <Attribute Name="name" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="index" IsUpdateable="0" Type="int"/>
+  <AccessorAttribute id="owner" IsCollection="false"
+                     BeanClass="org.apache.myfaces.trinidad.bean.FacesBean.Type"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="createPropertyKey" ReturnNodeName="PropertyKey">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="saveValue"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="restoreValue"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="boolean" id="equals"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="int" id="hashCode"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="toString"
+                  ReturnNodeName="Return"/>
+</JavaBean>

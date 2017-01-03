@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ComponentChangeFilter"
+          Package="org.apache.myfaces.trinidad.change"
+          BeanClass="org.apache.myfaces.trinidad.change.ComponentChangeFilter"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.change.ComponentChangeFilter.Result"
+                  BeanClass="org.apache.myfaces.trinidad.change.ComponentChangeFilter.Result"
+                  id="accept" ReturnNodeName="Result">
+    <ParameterInfo id="p0"
+                   Type="org.apache.myfaces.trinidad.change.ComponentChange"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="javax.faces.component.UIComponent"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="org.apache.myfaces.trinidad.change.ComponentChangeFilter"
+                     BeanClass="org.apache.myfaces.trinidad.change.ComponentChangeFilter"
+                     id="ComponentChangeFilter"/>
+</JavaBean>

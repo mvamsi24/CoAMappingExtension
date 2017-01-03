@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="FacesEvent" Package="javax.faces.event"
+          BeanClass="javax.faces.event.FacesEvent" isJavaBased="true">
+  <AccessorAttribute id="component" IsCollection="false"
+                     BeanClass="javax.faces.component.UIComponent"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="phaseId" IsCollection="false"
+                     BeanClass="javax.faces.event.PhaseId"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="void" id="queue"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="boolean" id="isAppropriateListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.event.FacesListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="processListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.event.FacesListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="javax.faces.event.FacesEvent"
+                     BeanClass="javax.faces.event.FacesEvent" id="FacesEvent">
+    <ParameterInfo id="p0" Type="javax.faces.component.UIComponent"
+                   isStructured="true"/>
+  </ConstructorMethod>
+</JavaBean>

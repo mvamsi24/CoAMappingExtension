@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ValueChangeEvent" Package="javax.faces.event"
+          BeanClass="javax.faces.event.ValueChangeEvent" isJavaBased="true">
+  <Attribute Name="oldValue" IsUpdateable="0" Type="java.lang.Object"/>
+  <Attribute Name="newValue" IsUpdateable="0" Type="java.lang.Object"/>
+  <AccessorAttribute id="component" IsCollection="false"
+                     BeanClass="javax.faces.component.UIComponent"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="phaseId" IsCollection="false"
+                     BeanClass="javax.faces.event.PhaseId"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="boolean" id="isAppropriateListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.event.FacesListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="processListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.event.FacesListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="queue"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="javax.faces.event.ValueChangeEvent"
+                     BeanClass="javax.faces.event.ValueChangeEvent"
+                     id="ValueChangeEvent">
+    <ParameterInfo id="p0" Type="javax.faces.component.UIComponent"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Object" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

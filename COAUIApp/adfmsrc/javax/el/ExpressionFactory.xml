@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ExpressionFactory" Package="javax.el"
+          BeanClass="javax.el.ExpressionFactory" isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="javax.el.ValueExpression"
+                  BeanClass="javax.el.ValueExpression"
+                  id="createValueExpression" ReturnNodeName="ValueExpression">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Class&lt;?>" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.el.ValueExpression"
+                  BeanClass="javax.el.ValueExpression"
+                  id="createValueExpression" ReturnNodeName="ValueExpression">
+    <ParameterInfo id="p0" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Class&lt;?>" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.el.MethodExpression"
+                  BeanClass="javax.el.MethodExpression"
+                  id="createMethodExpression" ReturnNodeName="MethodExpression">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Class&lt;?>" isStructured="false"/>
+    <ParameterInfo id="p3" Type="java.lang.Class&lt;?>[]" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="coerceToType"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Class&lt;?>" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="javax.el.ExpressionFactory"
+                     BeanClass="javax.el.ExpressionFactory"
+                     id="ExpressionFactory"/>
+</JavaBean>

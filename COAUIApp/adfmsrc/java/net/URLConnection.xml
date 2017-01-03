@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="URLConnection" Package="java.net"
+          BeanClass="java.net.URLConnection" isJavaBased="true">
+  <Attribute Name="connectTimeout" Type="int"/>
+  <Attribute Name="readTimeout" Type="int"/>
+  <Attribute Name="contentLength" IsUpdateable="0" Type="int"/>
+  <Attribute Name="contentType" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="contentEncoding" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="expiration" IsUpdateable="0" Type="long"/>
+  <Attribute Name="date" IsUpdateable="0" Type="long"/>
+  <Attribute Name="lastModified" IsUpdateable="0" Type="long"/>
+  <Attribute Name="content" IsUpdateable="0" Type="java.lang.Object"/>
+  <Attribute Name="doInput" Type="boolean"/>
+  <Attribute Name="doOutput" Type="boolean"/>
+  <Attribute Name="allowUserInteraction" Type="boolean"/>
+  <Attribute Name="defaultAllowUserInteraction" IsUpdateable="0"
+             Type="boolean"/>
+  <Attribute Name="useCaches" Type="boolean"/>
+  <Attribute Name="ifModifiedSince" Type="long"/>
+  <Attribute Name="defaultUseCaches" Type="boolean"/>
+  <AccessorAttribute id="fileNameMap" IsCollection="false"
+                     BeanClass="java.net.FileNameMap"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="URL" IsCollection="false" BeanClass="java.net.URL"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="headerFields" IsCollection="true" Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element"
+               Type="java.lang.String, java.util.List&lt;java.lang.String>"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="permission" IsCollection="false"
+                     BeanClass="java.security.Permission"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="inputStream" IsCollection="false"
+                     BeanClass="java.io.InputStream"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="outputStream" IsCollection="false"
+                     BeanClass="java.io.OutputStream"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="requestProperties" IsCollection="true"
+                     Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element"
+               Type="java.lang.String, java.util.List&lt;java.lang.String>"/>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false" Type="void" id="setFileNameMap"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="map" Type="java.net.FileNameMap" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="connect"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="getHeaderField" ReturnNodeName="Return">
+    <ParameterInfo id="name" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="int" id="getHeaderFieldInt"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="name" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="Default" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="long" id="getHeaderFieldDate"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="name" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="Default" Type="long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="getHeaderFieldKey" ReturnNodeName="Return">
+    <ParameterInfo id="n" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="getHeaderField" ReturnNodeName="Return">
+    <ParameterInfo id="n" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="getContent"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="classes" Type="java.lang.Class[]" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="toString"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void"
+                  id="setDefaultAllowUserInteraction" ReturnNodeName="Return">
+    <ParameterInfo id="defaultallowuserinteraction" Type="boolean"
+                   isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setRequestProperty"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="key" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="value" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addRequestProperty"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="key" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="value" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="getRequestProperty" ReturnNodeName="Return">
+    <ParameterInfo id="key" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void"
+                  id="setDefaultRequestProperty" ReturnNodeName="Return">
+    <ParameterInfo id="key" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="value" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="getDefaultRequestProperty" ReturnNodeName="Return">
+    <ParameterInfo id="key" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setContentHandlerFactory"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="fac" Type="java.net.ContentHandlerFactory"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="guessContentTypeFromName" ReturnNodeName="Return">
+    <ParameterInfo id="fname" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="guessContentTypeFromStream" ReturnNodeName="Return">
+    <ParameterInfo id="is" Type="java.io.InputStream" isStructured="true"/>
+  </MethodAccessor>
+</JavaBean>

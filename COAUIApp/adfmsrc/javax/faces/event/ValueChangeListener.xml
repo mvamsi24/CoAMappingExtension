@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ValueChangeListener" Package="javax.faces.event"
+          BeanClass="javax.faces.event.ValueChangeListener" isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="void" id="processValueChange"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.event.ValueChangeEvent"
+                   isStructured="true"/>
+  </MethodAccessor>
+</JavaBean>

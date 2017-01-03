@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ProcessingHint"
+          Package="org.apache.myfaces.trinidad.component.ComponentProcessingContext"
+          BeanClass="org.apache.myfaces.trinidad.component.ComponentProcessingContext.ProcessingHint"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="true"
+                  Type="org.apache.myfaces.trinidad.component.ComponentProcessingContext.ProcessingHint"
+                  BeanClass="org.apache.myfaces.trinidad.component.ComponentProcessingContext.ProcessingHint"
+                  id="values" ReturnNodeName="ProcessingHint"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.component.ComponentProcessingContext.ProcessingHint"
+                  BeanClass="org.apache.myfaces.trinidad.component.ComponentProcessingContext.ProcessingHint"
+                  id="valueOf" ReturnNodeName="ProcessingHint">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

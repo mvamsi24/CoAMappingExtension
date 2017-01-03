@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="SerializedView" Package="javax.faces.application.StateManager"
+          BeanClass="javax.faces.application.StateManager.SerializedView"
+          isJavaBased="true">
+  <Attribute Name="structure" IsUpdateable="0" Type="java.lang.Object"/>
+  <Attribute Name="state" IsUpdateable="0" Type="java.lang.Object"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="javax.faces.application.StateManager.SerializedView"
+                     BeanClass="javax.faces.application.StateManager.SerializedView"
+                     id="SerializedView">
+    <ParameterInfo id="p0" Type="javax.faces.application.StateManager"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Object" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

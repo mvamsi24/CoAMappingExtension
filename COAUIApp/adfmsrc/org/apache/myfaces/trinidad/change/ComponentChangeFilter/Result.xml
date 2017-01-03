@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="Result"
+          Package="org.apache.myfaces.trinidad.change.ComponentChangeFilter"
+          BeanClass="org.apache.myfaces.trinidad.change.ComponentChangeFilter.Result"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="true"
+                  Type="org.apache.myfaces.trinidad.change.ComponentChangeFilter.Result"
+                  BeanClass="org.apache.myfaces.trinidad.change.ComponentChangeFilter.Result"
+                  id="values" ReturnNodeName="Result"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.change.ComponentChangeFilter.Result"
+                  BeanClass="org.apache.myfaces.trinidad.change.ComponentChangeFilter.Result"
+                  id="valueOf" ReturnNodeName="Result">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

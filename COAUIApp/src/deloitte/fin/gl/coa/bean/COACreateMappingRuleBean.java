@@ -55,8 +55,10 @@ public class COACreateMappingRuleBean {
     private UISelectItems si5;
     private RichCommandButton cb2;
     private RichPanelBox pb3;
+    private RichPanelBox pb2;
     private RichPanelBox pb1;
     private RichSpacer s2;
+    private RichSpacer s1;
 
     public COACreateMappingRuleBean() {
     }
@@ -354,5 +356,21 @@ public class COACreateMappingRuleBean {
     public String cb2_action() {
         ADFPopupUtils.hideParentPopup(cb2);
         return null;
+    }
+
+    public void setPb2(RichPanelBox pb2) {
+        this.pb2 = pb2;
+    }
+
+    public RichPanelBox getPb2() {
+        return pb2;
+    }
+
+    public void setS1(RichSpacer s1) {
+        this.s1 = s1;
+    }
+
+    public RichSpacer getS1() {
+        return s1;
     }
 }

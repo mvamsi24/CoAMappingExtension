@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ComponentChange" Package="org.apache.myfaces.trinidad.change"
+          BeanClass="org.apache.myfaces.trinidad.change.ComponentChange"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="void" id="changeComponent"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.component.UIComponent"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="org.apache.myfaces.trinidad.change.ComponentChange"
+                     BeanClass="org.apache.myfaces.trinidad.change.ComponentChange"
+                     id="ComponentChange"/>
+</JavaBean>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="FacesMessage" Package="javax.faces.application"
+          BeanClass="javax.faces.application.FacesMessage" isJavaBased="true">
+  <Attribute Name="detail" Type="java.lang.String"/>
+  <Attribute Name="summary" Type="java.lang.String"/>
+  <AccessorAttribute id="severity" IsCollection="false"
+                     BeanClass="javax.faces.application.FacesMessage.Severity"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="javax.faces.application.FacesMessage"
+                     BeanClass="javax.faces.application.FacesMessage"
+                     id="FacesMessage">
+    <ParameterInfo id="p0" Type="javax.faces.application.FacesMessage.Severity"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="javax.faces.application.FacesMessage"
+                     BeanClass="javax.faces.application.FacesMessage"
+                     id="FacesMessage">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="javax.faces.application.FacesMessage"
+                     BeanClass="javax.faces.application.FacesMessage"
+                     id="FacesMessage">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="javax.faces.application.FacesMessage"
+                     BeanClass="javax.faces.application.FacesMessage"
+                     id="FacesMessage"/>
+</JavaBean>

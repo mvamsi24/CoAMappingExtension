@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="LaunchListener" Package="org.apache.myfaces.trinidad.event"
+          BeanClass="org.apache.myfaces.trinidad.event.LaunchListener"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="void" id="processLaunch"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.event.LaunchEvent"
+                   isStructured="true"/>
+  </MethodAccessor>
+</JavaBean>
