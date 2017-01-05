@@ -32,7 +32,7 @@ import org.apache.myfaces.trinidad.event.AttributeChangeEvent;
 import org.apache.myfaces.trinidad.render.ExtendedRenderKitService;
  
 import org.apache.myfaces.trinidad.util.Service;
-
+//Fixed the issue with Bean
 public class COACreateMappingRuleBean {
     private UISelectItems si2;
     private RichSelectManyChoice smc2;
