@@ -69,5 +69,29 @@
         <Item Value="TargetSystem"/>
       </AttrNames>
     </list>
+    <methodAction id="setSourceSegmentLov"
+                  InstanceName="COAAMDataControl.dataProvider"
+                  DataControl="COAAMDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setSourceSegmentLov"
+                  IsViewObjectMethod="false"
+                  ReturnName="data.COAAMDataControl.methodResults.setSourceSegmentLov_COAAMDataControl_dataProvider_setSourceSegmentLov_result">
+      <NamedData NDName="sourceSystemStr" NDType="java.lang.String"/>
+    </methodAction>
+    <action IterBinding="COASourceSegmentLOVVO1Iterator" id="ExecuteWithParams"
+            InstanceName="COAAMDataControl.COASourceSegmentLOVVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="pSourceSystem"
+                 NDValue="#{bindings.COASourceSystemLOVVO1.inputValue}"
+                 NDType="java.lang.String"/>
+    </action>
+    <action IterBinding="COATargetSegmentLOVVO1Iterator" id="ExecuteWithParams1"
+            InstanceName="COAAMDataControl.COATargetSegmentLOVVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="pTargetSystemName"
+                 NDValue="#{bindings.COATargetSystemLOVVO1.inputValue}"
+                 NDType="java.lang.String"/>
+    </action>
   </bindings>
 </pageDefinition>
