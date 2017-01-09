@@ -19,8 +19,13 @@
         ResId="deloitte.fin.gl.coa.view.lov.COATargetSegmentLOVVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="pTargetSystemName"
+    Kind="where"
+    Type="java.lang.String"/>
   <SQLQuery>
     <![CDATA[select segment_id, segment_name, system_name from coa_segment_definitions  where target_flag = 'Y'  and enabled_flag ='Y'
+and system_name =:pTargetSystemName
 order by display_sequence]]>
   </SQLQuery>
   <ViewAttribute
@@ -68,6 +73,45 @@ order by display_sequence]]>
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
   </ViewAttribute>
+  <ViewCriteria
+    Name="COATargetSegmentLOVVOCriteria"
+    ViewObjectName="deloitte.fin.gl.coa.view.lov.COATargetSegmentLOVVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow10"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="SystemName"
+        ViewAttribute="SystemName"
+        Operator="="
+        Conjunction="AND"
+        Value=":pTargetSystemName"
+        UpperColumns="0"
+        GenerateIsNullClauseForBindVars="false"
+        ValidateBindVars="true"
+        IsBindVarValue="true"
+        Required="Required"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="deloitte.fin.gl.coa.COAModelBundle"/>
