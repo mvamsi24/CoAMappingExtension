@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <task-flow-definition id="COASystemCreateTF">
-    <default-activity id="__1">COASystemCreatePG</default-activity>
+  <task-flow-definition id="COASystemDefinitionEditTF">
+    <default-activity id="__1">COASystemDefinitionEditPF</default-activity>
     <data-control-scope id="__2">
     </data-control-scope>
-    <view id="COASystemCreatePG">
-      <page>/COAPageFraments/COASystemCreatePG.jsff</page>
+    <view id="COASystemDefinitionEditPF">
+      <page>/COAPageFraments/COASystemDefinitionEditPF.jsff</page>
     </view>
     <use-page-fragments/>
   </task-flow-definition>

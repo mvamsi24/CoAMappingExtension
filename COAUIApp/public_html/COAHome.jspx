@@ -55,7 +55,7 @@
             </af:menuBar>
           </f:facet>
           <f:facet name="card-1-content">
-            <af:region value="#{bindings.COASegmentDefinitionsTF1.regionModel}" id="r2"/>
+            <af:region value="#{bindings.COASystemDefinitionTF1.regionModel}" id="r2"/>
           </f:facet>
           <f:facet name="card-2-content">
             <af:region value="#{bindings.COAMappingRulesTF1.regionModel}"

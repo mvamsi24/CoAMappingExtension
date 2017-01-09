@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.57"
+                id="COAAddSystemDefinition_COAAddSystemDefinition_SetCurrentRowWithKeyPageDef"
+                Package="COATaskflows" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="COASystemDefinitonsVO1" RangeSize="25"
+              DataControl="COAAMDataControl"
+              id="COASystemDefinitonsVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="COASystemDefinitonsVO1Iterator"
+            id="setCurrentRowWithKey" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{pageFlowScope.selectedRowKeyStr}"
+                 NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

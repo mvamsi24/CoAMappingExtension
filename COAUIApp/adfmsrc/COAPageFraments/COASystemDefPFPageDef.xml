@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
-                version="11.1.1.65.57" id="COASystemDefinitionsPGPageDef"
+                version="11.1.1.65.57" id="COASystemDefPFPageDef"
                 Package="COAPageFraments">
   <parameters/>
   <executables>
@@ -8,8 +8,11 @@
     <iterator Binds="COASystemDefinitonsVO1" RangeSize="25"
               DataControl="COAAMDataControl"
               id="COASystemDefinitonsVO1Iterator"/>
-    <taskFlow taskFlowId="/WEB-INF/COATaskflows/COASystemCreateTF.xml#COASystemCreateTF"
-              id="COASystemCreateTF1"
+    <searchRegion Binds="COASystemDefinitonsVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="COASystemDefinitonsVO1Query"/>
+    <taskFlow id="COASystemDefinitionEditTF1"
+              taskFlowId="/WEB-INF/COATaskflows/COASystemDefinitionEditTF.xml#COASystemDefinitionEditTF"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"
               activation="conditional"
               active="#{pageFlowScope.forceActivate eq true}"/>
@@ -22,15 +25,31 @@
         <AttrNames>
           <Item Value="SystemId"/>
           <Item Value="SystemName"/>
-          <Item Value="Description"/>
-          <Item Value="StartDate"/>
-          <Item Value="EndDate"/>
           <Item Value="SourceFlag"/>
           <Item Value="TargetFlag"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
           <Item Value="EnabledFlag"/>
+          <Item Value="Description"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action id="Commit" DataControl="COAAMDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="COAAMDataControl"
+            RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <action IterBinding="COASystemDefinitonsVO1Iterator" id="CreateInsert"
+            InstanceName="COAAMDataControl.COASystemDefinitonsVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="COASystemDefinitonsVO1Iterator" id="Delete"
+            InstanceName="COAAMDataControl.COASystemDefinitonsVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="COASystemDefinitonsVO1Iterator" id="Execute"
+            InstanceName="COAAMDataControl.COASystemDefinitonsVO1"
+            DataControl="COAAMDataControl" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
     <methodAction id="findSystemValues" RequiresUpdateModel="true"
                   Action="invokeMethod" MethodName="findSystemValues"
                   IsViewObjectMethod="false" DataControl="COAAMDataControl"
@@ -39,13 +58,9 @@
                  NDValue="#{pageFlowScope.COASystemsFindBean.findSystemString}"
                  NDType="java.lang.String"/>
       <events xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
-        <event name="findSystemEvent"/>
+        <event name="findSystem"/>
       </events>
     </methodAction>
-    <action IterBinding="COASystemDefinitonsVO1Iterator" id="Execute"
-            InstanceName="COAAMDataControl.COASystemDefinitonsVO1"
-            DataControl="COAAMDataControl" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
     <methodAction id="selectSystemValues"
                   InstanceName="COAAMDataControl.dataProvider"
                   DataControl="COAAMDataControl" RequiresUpdateModel="true"
@@ -55,20 +70,8 @@
                  NDValue="#{backingBeanScope.COASelectSystemBean.selectChoiceSystemString}"
                  NDType="java.lang.String"/>
       <events xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
-        <event name="selectSystemName"/>
+        <event name="selectSystem"/>
       </events>
     </methodAction>
-    <action IterBinding="COASystemDefinitonsVO1Iterator" id="Delete"
-            InstanceName="COAAMDataControl.COASystemDefinitonsVO1"
-            DataControl="COAAMDataControl" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
-    <action IterBinding="COASystemDefinitonsVO1Iterator" id="CreateInsert"
-            InstanceName="COAAMDataControl.COASystemDefinitonsVO1"
-            DataControl="COAAMDataControl" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action id="Rollback" DataControl="COAAMDataControl"
-            RequiresUpdateModel="false" Action="rollbackTransaction"/>
-    <action id="Commit" DataControl="COAAMDataControl"
-            RequiresUpdateModel="true" Action="commitTransaction"/>
   </bindings>
 </pageDefinition>

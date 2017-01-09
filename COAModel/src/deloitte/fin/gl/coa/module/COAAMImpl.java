@@ -17,6 +17,7 @@ import oracle.jbo.ViewCriteria;
 import oracle.jbo.server.ApplicationModuleImpl;
 import oracle.jbo.server.DBTransactionImpl;
 import oracle.jbo.server.ViewLinkImpl;
+
 import oracle.jbo.server.ViewObjectImpl;
 
 import oracle.jdbc.OracleCallableStatement;
@@ -504,4 +505,5 @@ this.getDBTransaction().createCallableStatement("begin ? := " + stmt + ";end;",
     public ViewObjectImpl getCOASystemDefinitonsVO1() {
         return (ViewObjectImpl)findViewObject("COASystemDefinitonsVO1");
     }
+
 }

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.57" id="COASystemDefinitonsCreate2PGPageDef"
+                Package="COAPageFraments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="COASystemDefinitonsVO1" RangeSize="25"
+              DataControl="COAAMDataControl"
+              id="COASystemDefinitonsVO1Iterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator" id="SystemId">
+      <AttrNames>
+        <Item Value="SystemId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="SystemName">
+      <AttrNames>
+        <Item Value="SystemName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="SourceFlag">
+      <AttrNames>
+        <Item Value="SourceFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="TargetFlag">
+      <AttrNames>
+        <Item Value="TargetFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="EnabledFlag">
+      <AttrNames>
+        <Item Value="EnabledFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Attribute1">
+      <AttrNames>
+        <Item Value="Attribute1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Attribute2">
+      <AttrNames>
+        <Item Value="Attribute2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Attribute3">
+      <AttrNames>
+        <Item Value="Attribute3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Attribute4">
+      <AttrNames>
+        <Item Value="Attribute4"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Attribute5">
+      <AttrNames>
+        <Item Value="Attribute5"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Attribute6">
+      <AttrNames>
+        <Item Value="Attribute6"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Attribute7">
+      <AttrNames>
+        <Item Value="Attribute7"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Attribute8">
+      <AttrNames>
+        <Item Value="Attribute8"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Attribute9">
+      <AttrNames>
+        <Item Value="Attribute9"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="Attribute10">
+      <AttrNames>
+        <Item Value="Attribute10"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="CreationDate">
+      <AttrNames>
+        <Item Value="CreationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="LastUpdatedBy">
+      <AttrNames>
+        <Item Value="LastUpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="LastUpdateDate">
+      <AttrNames>
+        <Item Value="LastUpdateDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="COASystemDefinitonsVO1Iterator"
+                     id="LastUpdatedLogin">
+      <AttrNames>
+        <Item Value="LastUpdatedLogin"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="COASystemDefinitonsVO1Iterator" id="First"
+            RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="COASystemDefinitonsVO1Iterator" id="Previous"
+            RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="COASystemDefinitonsVO1Iterator" id="Next"
+            RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="COASystemDefinitonsVO1Iterator" id="Last"
+            RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" DataControl="COAAMDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="COAAMDataControl"
+            RequiresUpdateModel="false" Action="rollbackTransaction"/>
+  </bindings>
+</pageDefinition>

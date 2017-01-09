@@ -24,7 +24,6 @@
       <af:group id="g1"
                 binding="#{backingBeanScope.backing_COACreateMappingRuleBean.g1}">
         <af:panelBox text="Enter Rule Info"
-                     binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pb2}"
                      id="pb2">
           <f:facet name="toolbar"/>
           <af:panelFormLayout id="pfl1"
@@ -58,7 +57,7 @@
           </af:panelFormLayout>
         </af:panelBox>
         <af:panelBox text="Select Source/Segment Details"
-                     binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pb1}"
+                     
                      id="pb1">
           <f:facet name="toolbar"/>
           <af:panelFormLayout binding="#{backingBeanScope.backing_COACreateMappingRuleBean.pfl3}"
@@ -72,7 +71,7 @@
                              binding="#{backingBeanScope.backing_COACreateMappingRuleBean.si1}"/>
             </af:selectManyChoice>
             <af:spacer width="20" height="10"
-                       binding="#{backingBeanScope.backing_COACreateMappingRuleBean.s1}"
+                       
                        id="s1"/>
             <af:selectManyChoice value="#{bindings.COATargetSegmentLOVVO1.inputValue}"
                                  label="Target Segment" id="smc2"

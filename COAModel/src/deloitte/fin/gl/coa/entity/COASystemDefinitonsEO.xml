@@ -22,10 +22,12 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="COA_SYSTEM_DEFINITIONS"
-    PrimaryKey="true">
+    PrimaryKey="true"
+    IsQueriable="false">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <TransientExpression><![CDATA[(new oracle.jbo.server.SequenceImpl("HR.COA_SYSTEM_DEFINITIONS_S",adf.object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="SystemName"

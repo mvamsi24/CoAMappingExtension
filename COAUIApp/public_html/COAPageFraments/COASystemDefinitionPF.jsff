@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/WEB-INF/_Templates/fuse-page-1-column.jspx"
+                   id="pt1">
+    <f:facet name="header-start"/>
+    <f:facet name="header-end"/>
+    <f:facet name="body">
+      <af:group id="g1">
+        <af:panelGroupLayout id="pgl1" layout="vertical"
+                             partialTriggers="p1 pw1">
+          <af:panelStretchLayout id="psl1" startWidth="auto" endWidth="auto"
+                                 topHeight="0px" bottomHeight="0px"
+                                 dimensionsFrom="auto">
+            <f:facet name="bottom"/>
+            <f:facet name="center"/>
+            <f:facet name="start">
+              <af:toolbar id="t3">
+                <af:commandButton text="Add" id="cb4" partialSubmit="true">
+                  <af:showPopupBehavior popupId="p1" triggerType="click"/>
+                </af:commandButton>
+              </af:toolbar>
+            </f:facet>
+            <f:facet name="end">
+              <af:toolbar id="t1">
+                <af:spacer width="5" id="s3"/>
+                <af:commandButton text="Save" id="ctb1"
+                                  inlineStyle="width:90.0px;"
+                                  partialSubmit="true"
+                                  actionListener="#{bindings.Commit.execute}"/>
+                <af:spacer width="5" id="spacer1"/>
+                <af:commandButton text="Delete" id="cb3"
+                                  disabled="#{!bindings.Delete.enabled}"
+                                  partialSubmit="true"
+                                  inlineStyle="width:90.0px;"
+                                  actionListener="#{bindings.Delete.execute}"
+                                  immediate="true"/>
+              </af:toolbar>
+            </f:facet>
+            <f:facet name="top"/>
+          </af:panelStretchLayout>
+          <af:table value="#{bindings.COASystemDefinitonsVO1.collectionModel}"
+                    var="row"
+                    rows="#{bindings.COASystemDefinitonsVO1.rangeSize}"
+                    emptyText="#{bindings.COASystemDefinitonsVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.COASystemDefinitonsVO1.rangeSize}"
+                    rowBandingInterval="0"
+                    filterModel="#{bindings.COASystemDefinitonsVO1Query.queryDescriptor}"
+                    queryListener="#{bindings.COASystemDefinitonsVO1Query.processQuery}" varStatus="vs"
+                    selectedRowKeys="#{bindings.COASystemDefinitonsVO1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.COASystemDefinitonsVO1.collectionModel.makeCurrent}"
+                    rowSelection="single" id="t2" columnStretching="multiple"
+                    styleClass="AFStretchWidth" contentDelivery="immediate"
+                    partialTriggers="::cb4 ::ctb1 ::cb3">
+            <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.SystemId.name}"
+                       filterable="true" sortable="true"
+                       headerText="#{bindings.COASystemDefinitonsVO1.hints.SystemId.label}"
+                       id="c1">
+              <af:outputText value="#{row.SystemId}" id="ot4"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.SystemName.name}"
+                       filterable="true" sortable="true"
+                       headerText="#{bindings.COASystemDefinitonsVO1.hints.SystemName.label}"
+                       id="c2">
+              <af:commandLink id="ot26" text="#{row.SystemName}"
+                              styleClass="minor-link">
+                <af:showPopupBehavior triggerType="click" popupId="::p1"/>
+              </af:commandLink>
+            </af:column>
+            <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.SourceFlag.name}"
+                       filterable="true" sortable="true"
+                       headerText="#{bindings.COASystemDefinitonsVO1.hints.SourceFlag.label}"
+                       id="c5">
+              <af:outputText value="#{row.SourceFlag}" id="ot7"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.TargetFlag.name}"
+                       filterable="true" sortable="true"
+                       headerText="#{bindings.COASystemDefinitonsVO1.hints.TargetFlag.label}"
+                       id="c7">
+              <af:outputText value="#{row.TargetFlag}" id="ot1"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.StartDate.name}"
+                       filterable="true" sortable="true"
+                       headerText="#{bindings.COASystemDefinitonsVO1.hints.StartDate.label}"
+                       id="c8">
+              <f:facet name="filter">
+                <af:inputDate value="#{vs.filterCriteria.StartDate}" id="id3"/>
+              </f:facet>
+              <af:outputText value="#{row.StartDate}" id="ot6">
+                <af:convertDateTime pattern="#{bindings.COASystemDefinitonsVO1.hints.StartDate.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.EndDate.name}"
+                       filterable="true" sortable="true"
+                       headerText="#{bindings.COASystemDefinitonsVO1.hints.EndDate.label}"
+                       id="c6">
+              <f:facet name="filter">
+                <af:inputDate value="#{vs.filterCriteria.EndDate}" id="id4"/>
+              </f:facet>
+              <af:outputText value="#{row.EndDate}" id="ot3">
+                <af:convertDateTime pattern="#{bindings.COASystemDefinitonsVO1.hints.EndDate.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.EnabledFlag.name}"
+                       filterable="true" sortable="true"
+                       headerText="#{bindings.COASystemDefinitonsVO1.hints.EnabledFlag.label}"
+                       id="c4">
+              <af:outputText value="#{row.EnabledFlag}" id="ot8"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.COASystemDefinitonsVO1.hints.Description.name}"
+                       filterable="true" sortable="true"
+                       headerText="#{bindings.COASystemDefinitonsVO1.hints.Description.label}"
+                       id="c3">
+              <af:outputText value="#{row.Description}" id="ot2"/>
+            </af:column>
+          </af:table>
+        </af:panelGroupLayout>
+      </af:group>
+    </f:facet>
+    <f:facet name="footer-end"/>
+    <f:facet name="footer-start"/>
+    <f:facet name="hidden">
+      <af:group id="group1">
+        <af:popup id="p1" contentDelivery="lazyUncached"
+                  childCreation="deferred"
+                  popupFetchListener="#{COAPopBean.editPopFetch}"
+                  popupCanceledListener="#{COAPopBean.editPopCancel}">
+          <af:panelWindow id="pw1" closeIconVisible="false" modal="true"
+                          styleClass="fuse-popup" inlineStyle="height:500.0px;">
+            <af:region value="#{bindings.COASystemDefinitionEditTF1.regionModel}"
+                       id="r2"/>
+          </af:panelWindow>
+        </af:popup>
+      </af:group>
+    </f:facet>
+    <f:facet name="side-panel"/>
+  </af:pageTemplate>
+</jsp:root>

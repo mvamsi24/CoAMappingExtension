@@ -91,16 +91,6 @@
             InstanceName="COAAMDataControl.COASearchVO1"
             DataControl="COAAMDataControl" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <button IterBinding="COASegmentValuesVO1Iterator" id="EnabledFlag1"
-            DTSupportsMRU="false" StaticList="true">
-      <AttrNames>
-        <Item Value="EnabledFlag"/>
-      </AttrNames>
-      <ValueList>
-        <Item Value="Y"/>
-        <Item Value="N"/>
-      </ValueList>
-    </button>
     <button IterBinding="COASearchVO1Iterator" id="EnableFlagBoolean"
             DTSupportsMRU="false" StaticList="true">
       <AttrNames>
@@ -109,6 +99,16 @@
       <ValueList>
         <Item Value="true"/>
         <Item Value="false"/>
+      </ValueList>
+    </button>
+    <button IterBinding="COASearchVO1Iterator" StaticList="true"
+            id="EnabledFlag1">
+      <AttrNames>
+        <Item Value="EnabledFlag"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Y"/>
+        <Item Value="N"/>
       </ValueList>
     </button>
   </bindings>

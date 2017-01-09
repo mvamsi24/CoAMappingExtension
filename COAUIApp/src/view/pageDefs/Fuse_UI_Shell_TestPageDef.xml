@@ -11,15 +11,16 @@
     <taskFlow id="COATargetSegmentTF1"
               taskFlowId="/WEB-INF/COATaskflows/COATargetSegmentTF.xml#COATargetSegmentTF"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
-    <taskFlow id="COASegmentDefinitionsTF1"
-              taskFlowId="/WEB-INF/COATaskflows/COASegmentDefinitionsTF.xml#COASegmentDefinitionsTF"
-              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <taskFlow id="COAMappingRulesTF1"
               taskFlowId="/WEB-INF/COATaskflows/COAMappingRulesTF.xml#COAMappingRulesTF"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <taskFlow id="COAStringMappingsTF1"
               taskFlowId="/WEB-INF/COATaskflows/COAStringMappingsTF.xml#COAStringMappingsTF"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="COASystemDefinitionTF1"
+              taskFlowId="/WEB-INF/COATaskflows/COASystemTF.xml#COASystemDefTF"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"
+              activation="deferred"/>
     <taskFlow id="COASpreedSheetLoaderTF1"
               taskFlowId="/WEB-INF/COATaskflows/COASpreedSheetLoaderTF.xml#COASpreedSheetLoaderTF"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
@@ -41,6 +42,18 @@
       <producer region="COASegmentDefinitionsTF1.COASystemDefinitionsPGPageDef.selectSystemValues">
         <consumer region="COASegmentDefinitionsTF1"
                   handler="COASystemDefinitionsPGPageDef.Execute"/>
+      </producer>
+    </event>
+    <event name="findSystem">
+      <producer region="COASystemDefinitionTF1.COASystemDefPFPageDef.findSystemValues">
+        <consumer region="COASystemDefinitionTF1"
+                  handler="COASystemDefPFPageDef.Execute"/>
+      </producer>
+    </event>
+    <event name="selectSystem">
+      <producer region="COASystemDefinitionTF1.COASystemDefPFPageDef.selectSystemValues">
+        <consumer region="COASystemDefinitionTF1"
+                  handler="COASystemDefPFPageDef.Execute"/>
       </producer>
     </event>
   </eventMap>

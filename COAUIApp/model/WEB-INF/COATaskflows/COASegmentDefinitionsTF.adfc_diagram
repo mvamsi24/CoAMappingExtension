@@ -1,7 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <SDM>
    <OverallProperties
-      id="OverallProperties1"/>
+      id="OverallProperties1">
+      <property
+         name="linkStyle">Polyline</property>
+   </OverallProperties>
    <View
       id="View2">
       <property
@@ -15,10 +18,10 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">99.59766</property>
+         name="y">124.76953</property>
+      <property
+         name="x">166.0</property>
       <property
          name="pageFragment">true</property>
-      <property
-         name="x">309.0</property>
    </View>
 </SDM>

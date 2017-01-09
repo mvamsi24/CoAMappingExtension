@@ -58,7 +58,8 @@
     PrecisionRule="true"
     EntityAttrName="SystemId"
     EntityUsage="COASystemDefinitonsEO"
-    AliasName="SYSTEM_ID"/>
+    AliasName="SYSTEM_ID"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="SystemName"
     PrecisionRule="true"

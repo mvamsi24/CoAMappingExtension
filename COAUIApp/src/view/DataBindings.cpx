@@ -37,6 +37,22 @@
           usageId="view_COASystemDefinitionsPGPageDef"/>
     <page path="/COAPageFraments/COASystemCreatePG.jsff"
           usageId="view_COASystemCreatePGPageDef"/>
+    <page path="/COAPageFraments/COAAddSystemDefinitionPG.jsff"
+          usageId="view_COAAddSystemDefinitionPGPageDef"/>
+    <page path="/WEB-INF/COATaskflows/COAAddSystemDefinition.xml#COAAddSystemDefinition@CreateInsert"
+          usageId="view_COAAddSystemDefinition_COAAddSystemDefinition_CreateInsertPageDef"/>
+    <page path="/WEB-INF/COATaskflows/COAAddSystemDefinition.xml#COAAddSystemDefinition@SetCurrentRowWithKey"
+          usageId="view_COAAddSystemDefinition_COAAddSystemDefinition_SetCurrentRowWithKeyPageDef"/>
+    <page path="/COAPageFraments/COASystemDefinitionsCreatePG.jsff"
+          usageId="view_COASystemDefinitionsCreatePGPageDef"/>
+    <page path="/COAPageFraments/COASystemDefinitonsCreate2PG.jsff"
+          usageId="view_COASystemDefinitonsCreate2PGPageDef"/>
+    <page path="/COAPageFraments/COASystemDefinitionPF.jsff"
+          usageId="view_CIAFBDIProcessPFPageDef"/>
+    <page path="/COAPageFraments/COASystemDefinitionEditPF.jsff"
+          usageId="view_CIAFBDIProcessEditPFPageDef"/>
+    <page path="/COAPageFraments/COASystemDefPF.jsff"
+          usageId="view_COASystemDefPFPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Fuse_UI_Shell_TestPageDef"
@@ -71,6 +87,22 @@
           path="COAPageFraments.COASystemDefinitionsPGPageDef"/>
     <page id="view_COASystemCreatePGPageDef"
           path="COAPageFraments.COASystemCreatePGPageDef"/>
+    <page id="view_COAAddSystemDefinitionPGPageDef"
+          path="COAPageFraments.COAAddSystemDefinitionPGPageDef"/>
+    <page id="view_COAAddSystemDefinition_COAAddSystemDefinition_CreateInsertPageDef"
+          path="COATaskflows.COAAddSystemDefinition_COAAddSystemDefinition_CreateInsertPageDef"/>
+    <page id="view_COAAddSystemDefinition_COAAddSystemDefinition_SetCurrentRowWithKeyPageDef"
+          path="COATaskflows.COAAddSystemDefinition_COAAddSystemDefinition_SetCurrentRowWithKeyPageDef"/>
+    <page id="view_COASystemDefinitionsCreatePGPageDef"
+          path="COAPageFraments.COASystemDefinitionsCreatePGPageDef"/>
+    <page id="view_COASystemDefinitonsCreate2PGPageDef"
+          path="COAPageFraments.COASystemDefinitonsCreate2PGPageDef"/>
+    <page id="view_CIAFBDIProcessPFPageDef"
+          path="COAPageFraments.CIAFBDIProcessPFPageDef"/>
+    <page id="view_CIAFBDIProcessEditPFPageDef"
+          path="COAPageFraments.CIAFBDIProcessEditPFPageDef"/>
+    <page id="view_COASystemDefPFPageDef"
+          path="COAPageFraments.COASystemDefPFPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="FusionOpportunityService"

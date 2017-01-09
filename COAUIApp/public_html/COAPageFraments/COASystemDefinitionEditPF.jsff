@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/WEB-INF/_Templates/fuse-popup.jspx" id="pt1">
+    <f:facet name="header-start">
+      <af:panelGroupLayout id="panelGroupLayout1">
+        <af:outputText value="#{empty bindings.SystemName.inputValue ? 'Create: System Definition' : 'Edit: System Definition -'} #{bindings.SystemName.inputValue}" id="ot2"
+                       styleClass="page-title"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="header-end">
+      <af:panelGroupLayout id="pgl1" layout="horizontal">
+        <af:commandButton text="Save and Close" id="cb2"
+                          actionListener="#{backingBeanScope.UtilLibraryBean.saveAndClose}"/>
+        <af:commandButton text="Cancel" id="cb3" immediate="true"
+                          actionListener="#{backingBeanScope.UtilLibraryBean.cancelButton}"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="body">
+      <af:panelGroupLayout id="pgl2" layout="vertical">
+        <af:panelBox id="pb1" styleClass="indent-content"
+                     inlineStyle="color:#4d799c;" showDisclosure="false">
+          <f:facet name="toolbar"/>
+          <af:panelFormLayout id="pfl1" maxColumns="1" rows="1"
+                              labelWidth="200px">
+            <af:inputText value="#{bindings.SystemId.inputValue}"
+                          label="System Id"
+                          required="#{bindings.SystemId.hints.mandatory}"
+                          maximumLength="#{bindings.SystemId.hints.precision}"
+                          shortDesc="#{bindings.SystemId.hints.tooltip}"
+                          id="it5" rendered="false">
+              <f:validator binding="#{bindings.SystemId.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.SystemName.inputValue}"
+                          label="System Name"
+                          required="#{bindings.SystemName.hints.mandatory}"
+                          maximumLength="#{bindings.SystemName.hints.precision}"
+                          shortDesc="#{bindings.SystemName.hints.tooltip}"
+                          id="it2" columns="40" rows="1">
+              <f:validator binding="#{bindings.SystemName.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Description.inputValue}"
+                          label="Description"
+                          required="#{bindings.Description.hints.mandatory}"
+                          maximumLength="#{bindings.Description.hints.precision}"
+                          shortDesc="#{bindings.Description.hints.tooltip}"
+                          id="it4" columns="50" rows="4">
+              <f:validator binding="#{bindings.Description.validator}"/>
+            </af:inputText>
+          </af:panelFormLayout>
+          <af:spacer width="10" height="10" id="s1"/>
+          <af:panelFormLayout id="pfl3" rows="1" maxColumns="2"
+                              labelWidth="200px">
+            <af:inputDate value="#{bindings.StartDate.inputValue}"
+                          label="Start Date"
+                          required="#{bindings.StartDate.hints.mandatory}"
+                          shortDesc="#{bindings.StartDate.hints.tooltip}"
+                          id="id2">
+              <f:validator binding="#{bindings.StartDate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
+            </af:inputDate>
+            <af:inputDate value="#{bindings.EndDate.inputValue}"
+                          label="End Date"
+                          required="#{bindings.EndDate.hints.mandatory}"
+                          shortDesc="#{bindings.EndDate.hints.tooltip}"
+                          id="id1">
+              <f:validator binding="#{bindings.EndDate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
+            </af:inputDate>
+          </af:panelFormLayout>
+          <af:spacer width="10" height="10" id="s2"/>
+          <af:panelFormLayout id="pfl2" rows="1" maxColumns="2"
+                              labelWidth="200px">
+            <af:selectBooleanCheckbox value="#{bindings.SourceFlag1.inputValue}"
+                                      label="Source"
+                                      required="#{bindings.SourceFlag.hints.mandatory}"
+                                      shortDesc="#{bindings.SourceFlag.hints.tooltip}"
+                                      id="it3">
+              <f:validator binding="#{bindings.SourceFlag.validator}"/>
+            </af:selectBooleanCheckbox>
+            <af:selectBooleanCheckbox value="#{bindings.EnabledFlag1.inputValue}"
+                                      label="Enable"
+                                      required="#{bindings.EnabledFlag.hints.mandatory}"
+                                      shortDesc="#{bindings.EnabledFlag.hints.tooltip}"
+                                      id="it1">
+              <f:validator binding="#{bindings.EnabledFlag.validator}"/>
+            </af:selectBooleanCheckbox>
+            <af:selectBooleanCheckbox value="#{bindings.TargetFlag1.inputValue}"
+                                      label="Target"
+                                      required="#{bindings.TargetFlag.hints.mandatory}"
+                                      shortDesc="#{bindings.TargetFlag.hints.tooltip}"
+                                      id="it6">
+              <f:validator binding="#{bindings.TargetFlag.validator}"/>
+            </af:selectBooleanCheckbox>
+          </af:panelFormLayout>
+        </af:panelBox>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="hidden"/>
+  </af:pageTemplate>
+</jsp:root>

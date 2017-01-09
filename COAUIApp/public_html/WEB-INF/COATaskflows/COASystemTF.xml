@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="COASystemDefTF">
+    <default-activity id="__1">COASystemDefinitionPF</default-activity>
+    <data-control-scope id="__6">
+      <isolated/>
+    </data-control-scope>
+    <managed-bean id="__10">
+      <managed-bean-name id="__8">COAPopBean</managed-bean-name>
+      <managed-bean-class id="__9">deloitte.fin.gl.coa.bean.pop.COAPopBean</managed-bean-class>
+      <managed-bean-scope id="__7">application</managed-bean-scope>
+    </managed-bean>
+        <managed-bean id="__5">
+      <managed-bean-name id="__2">COASystemsFindBean</managed-bean-name>
+      <managed-bean-class id="__4">deloitte.fin.gl.coa.bean.COASystemsFindBean</managed-bean-class>
+      <managed-bean-scope id="__3">pageFlow</managed-bean-scope>
+    </managed-bean>
+        <managed-bean id="__17">
+      <managed-bean-name id="__16">COASelectSystemBean</managed-bean-name>
+      <managed-bean-class id="__18">deloitte.fin.gl.coa.bean.COASelectSystemBean</managed-bean-class>
+      <managed-bean-scope id="__19">backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="COASystemDefinitionPF">
+      <page>/COAPageFraments/COASystemDefPF.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

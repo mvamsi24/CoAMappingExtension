@@ -125,10 +125,10 @@
               <f:validator binding="#{bindings.StartDate.validator}"/>
               <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
             </af:inputDate>
-            <af:selectBooleanCheckbox value="#{bindings.EnableFlagBoolean.inputValue}"
+            <af:selectBooleanCheckbox value="#{bindings.EnabledFlag1.inputValue}"
                                       label="Enable"
                                       shortDesc="#{bindings.EnableFlagBoolean.hints.tooltip}"
-                                      id="sbc1" selected="true"
+                                      id="sbc1"
                                       autoSubmit="true"/>
             <af:selectBooleanCheckbox
                                       label="Enable"
