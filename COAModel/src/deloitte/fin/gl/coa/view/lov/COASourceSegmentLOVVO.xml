@@ -9,11 +9,9 @@
   BindingStyle="OracleName"
   CustomQuery="true"
   PageIterMode="Full"
-  UseGlueCode="false"
-  ComponentClass="deloitte.fin.gl.coa.view.lov.COASourceSegmentLOVVOImpl">
+  UseGlueCode="false">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
-    <Attr Name="_codeGenFlag2" Value="Coll"/>
   </DesignTime>
   <Properties>
     <SchemaBasedProperties>
