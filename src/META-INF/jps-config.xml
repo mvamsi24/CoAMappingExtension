@@ -6,13 +6,7 @@
       </serviceProvider>
    </serviceProviders>
    <serviceInstances>
-      <serviceInstance name="credstore" provider="credstore.provider">
-         <property name="location" value="./"/>
-      </serviceInstance>
    </serviceInstances>
    <jpsContexts default="UIAcceleratorNEW">
-      <jpsContext name="UIAcceleratorNEW">
-         <serviceInstanceRef ref="credstore"/>
-      </jpsContext>
    </jpsContexts>
 </jpsConfig>

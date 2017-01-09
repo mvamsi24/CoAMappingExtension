@@ -105,6 +105,8 @@
          <string v="-Xlint:-serial"/>
          <string v="-Xlint:-unchecked"/>
       </list>
+      <value n="source" v="Default"/>
+      <value n="target" v="Default"/>
       <value n="webIANAEncoding" v="windows-1252"/>
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
@@ -709,5 +711,6 @@
    </hash>
    <hash n="ResourceBundleOptions">
       <value n="ADFRestricted" v="true"/>
+      <list n="RegisteredResourceBundles"/>
    </hash>
 </jpr:project>

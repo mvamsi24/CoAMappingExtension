@@ -9,8 +9,9 @@
   PackageName="fuseuiapp">
   <DesignTime>
     <Attr Name="_jprName" Value="../../COAUIApp.jpr"/>
-    <Attr Name="_NamedConnection" Value="hrConn"/>
+    <Attr Name="_NamedConnection" Value="hrConn1"/>
     <Attr Name="_appModuleNames0" Value="deloitte.fin.gl.coa.module.COAAM"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="Java"/>
   </DesignTime>
   <Containee
     Name="entity"
