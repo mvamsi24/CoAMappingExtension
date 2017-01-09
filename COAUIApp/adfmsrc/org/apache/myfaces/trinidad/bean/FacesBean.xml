@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="FacesBean" Package="org.apache.myfaces.trinidad.bean"
+          BeanClass="org.apache.myfaces.trinidad.bean.FacesBean"
+          isJavaBased="true">
+  <AccessorAttribute id="type" IsCollection="false"
+                     BeanClass="org.apache.myfaces.trinidad.bean.FacesBean.Type"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="getProperty"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setProperty"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object"
+                  id="getLocalProperty" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.el.ValueExpression"
+                  BeanClass="javax.el.ValueExpression" id="getValueExpression"
+                  ReturnNodeName="ValueExpression">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.el.ValueBinding"
+                  BeanClass="javax.faces.el.ValueBinding" id="getValueBinding"
+                  ReturnNodeName="ValueBinding">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object"
+                  id="getRawProperty" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setValueExpression"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="javax.el.ValueExpression" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setValueBinding"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="javax.faces.el.ValueBinding"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addEntry"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeEntry"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="java.lang.Object[]" id="getEntries"
+                  ReturnNodeName="Object"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Class&lt;?>" isStructured="false"/>
+    <Attribute Name="element" Type="java.lang.Object"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="boolean" id="containsEntry"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Class&lt;?>" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="java.util.Iterator&lt;? extends java.lang.Object>"
+                  id="entries" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addAll"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="org.apache.myfaces.trinidad.bean.FacesBean"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="keySet" ReturnNodeName="PropertyKey"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  BeanClass="org.apache.myfaces.trinidad.bean.PropertyKey"
+                  id="bindingKeySet" ReturnNodeName="PropertyKey"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false" Type="void" id="markInitialState"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="saveState"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="restoreState"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

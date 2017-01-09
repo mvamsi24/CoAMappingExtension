@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="URLStreamHandler" Package="java.net"
+          BeanClass="java.net.URLStreamHandler" isJavaBased="true">
+  <ConstructorMethod IsCollection="true" Type="java.net.URLStreamHandler"
+                     BeanClass="java.net.URLStreamHandler"
+                     id="URLStreamHandler"/>
+</JavaBean>

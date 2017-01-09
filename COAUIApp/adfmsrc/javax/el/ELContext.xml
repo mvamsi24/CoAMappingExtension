@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ELContext" Package="javax.el" BeanClass="javax.el.ELContext"
+          isJavaBased="true">
+  <Attribute Name="propertyResolved" Type="boolean"/>
+  <Attribute Name="locale" Type="java.util.Locale"/>
+  <AccessorAttribute id="ELResolver" IsCollection="false"
+                     BeanClass="javax.el.ELResolver"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="functionMapper" IsCollection="false"
+                     BeanClass="javax.el.FunctionMapper"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="variableMapper" IsCollection="false"
+                     BeanClass="javax.el.VariableMapper"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="void" id="putContext"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.Class" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="getContext"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.Class" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="javax.el.ELContext"
+                     BeanClass="javax.el.ELContext" id="ELContext"/>
+</JavaBean>

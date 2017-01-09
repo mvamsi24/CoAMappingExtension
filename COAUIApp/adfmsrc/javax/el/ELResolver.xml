@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ELResolver" Package="javax.el" BeanClass="javax.el.ELResolver"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="getValue"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Class&lt;?>" id="getType"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setValue"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p3" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="boolean" id="isReadOnly"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="java.util.Iterator&lt;java.beans.FeatureDescriptor>"
+                  id="getFeatureDescriptors" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Class&lt;?>"
+                  id="getCommonPropertyType" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="javax.el.ELResolver"
+                     BeanClass="javax.el.ELResolver" id="ELResolver"/>
+</JavaBean>

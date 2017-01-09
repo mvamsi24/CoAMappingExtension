@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="VariableResolver" Package="javax.faces.el"
+          BeanClass="javax.faces.el.VariableResolver" isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="java.lang.Object"
+                  id="resolveVariable" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="javax.faces.el.VariableResolver"
+                     BeanClass="javax.faces.el.VariableResolver"
+                     id="VariableResolver"/>
+</JavaBean>

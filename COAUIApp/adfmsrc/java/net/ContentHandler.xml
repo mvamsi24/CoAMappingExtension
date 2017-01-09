@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ContentHandler" Package="java.net"
+          BeanClass="java.net.ContentHandler" isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="getContent"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="urlc" Type="java.net.URLConnection" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="getContent"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="urlc" Type="java.net.URLConnection" isStructured="true"/>
+    <ParameterInfo id="classes" Type="java.lang.Class[]" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="java.net.ContentHandler"
+                     BeanClass="java.net.ContentHandler" id="ContentHandler"/>
+</JavaBean>

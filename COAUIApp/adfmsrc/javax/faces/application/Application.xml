@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="Application" Package="javax.faces.application"
+          BeanClass="javax.faces.application.Application" isJavaBased="true">
+  <Attribute Name="defaultLocale" Type="java.util.Locale"/>
+  <Attribute Name="defaultRenderKitId" Type="java.lang.String"/>
+  <Attribute Name="messageBundle" Type="java.lang.String"/>
+  <Attribute Name="componentTypes" IsUpdateable="0"
+             Type="java.util.Iterator&lt;java.lang.String>"/>
+  <Attribute Name="converterIds" IsUpdateable="0"
+             Type="java.util.Iterator&lt;java.lang.String>"/>
+  <Attribute Name="converterTypes" IsUpdateable="0"
+             Type="java.util.Iterator&lt;java.lang.Class>"/>
+  <Attribute Name="supportedLocales" IsUpdateable="0"
+             Type="java.util.Iterator&lt;java.util.Locale>"/>
+  <Attribute Name="validatorIds" IsUpdateable="0"
+             Type="java.util.Iterator&lt;java.lang.String>"/>
+  <AccessorAttribute id="actionListener" IsCollection="false"
+                     BeanClass="javax.faces.event.ActionListener"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="navigationHandler" IsCollection="false"
+                     BeanClass="javax.faces.application.NavigationHandler"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="propertyResolver" IsCollection="false"
+                     BeanClass="javax.faces.el.PropertyResolver"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="variableResolver" IsCollection="false"
+                     BeanClass="javax.faces.el.VariableResolver"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="ELResolver" IsCollection="false"
+                     BeanClass="javax.el.ELResolver"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="viewHandler" IsCollection="false"
+                     BeanClass="javax.faces.application.ViewHandler"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="stateManager" IsCollection="false"
+                     BeanClass="javax.faces.application.StateManager"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="expressionFactory" IsCollection="false"
+                     BeanClass="javax.el.ExpressionFactory"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="ELContextListeners" IsCollection="true"
+                     RemoveMethod="removeELContextListener"
+                     AddMethod="addELContextListener"
+                     BeanClass="javax.el.ELContextListener"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeELContextListener"/>
+      <Property Name="AddMethod" Value="addELContextListener"/>
+    </Properties>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false" Type="java.util.ResourceBundle"
+                  id="getResourceBundle" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addELResolver"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELResolver" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addComponent"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.component.UIComponent"
+                  BeanClass="javax.faces.component.UIComponent"
+                  id="createComponent" ReturnNodeName="UIComponent">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.component.UIComponent"
+                  BeanClass="javax.faces.component.UIComponent"
+                  id="createComponent" ReturnNodeName="UIComponent">
+    <ParameterInfo id="p0" Type="javax.faces.el.ValueBinding"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p2" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.component.UIComponent"
+                  BeanClass="javax.faces.component.UIComponent"
+                  id="createComponent" ReturnNodeName="UIComponent">
+    <ParameterInfo id="p0" Type="javax.el.ValueExpression" isStructured="true"/>
+    <ParameterInfo id="p1" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p2" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addConverter"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addConverter"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.Class" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.convert.Converter"
+                  BeanClass="javax.faces.convert.Converter" id="createConverter"
+                  ReturnNodeName="Converter">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.convert.Converter"
+                  BeanClass="javax.faces.convert.Converter" id="createConverter"
+                  ReturnNodeName="Converter">
+    <ParameterInfo id="p0" Type="java.lang.Class" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object"
+                  id="evaluateExpressionGet" ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.context.FacesContext"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Class" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.el.MethodBinding"
+                  BeanClass="javax.faces.el.MethodBinding"
+                  id="createMethodBinding" ReturnNodeName="MethodBinding">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Class[]" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setSupportedLocales"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.util.Collection" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addELContextListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContextListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeELContextListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContextListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="addValidator"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.validator.Validator"
+                  BeanClass="javax.faces.validator.Validator"
+                  id="createValidator" ReturnNodeName="Validator">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="javax.faces.el.ValueBinding"
+                  BeanClass="javax.faces.el.ValueBinding"
+                  id="createValueBinding" ReturnNodeName="ValueBinding">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="javax.faces.application.Application"
+                     BeanClass="javax.faces.application.Application"
+                     id="Application"/>
+</JavaBean>

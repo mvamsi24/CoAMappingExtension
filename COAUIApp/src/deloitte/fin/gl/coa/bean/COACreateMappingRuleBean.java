@@ -9,16 +9,22 @@ import javax.faces.context.FacesContext;
 
 import javax.faces.event.ActionEvent;
 
+import javax.faces.event.ValueChangeEvent;
+
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.input.RichSelectManyChoice;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
+import oracle.adf.view.rich.component.rich.layout.RichPanelBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
 import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
 
+import oracle.adf.view.rich.component.rich.output.RichSpacer;
+import oracle.adf.view.rich.event.LaunchPopupEvent;
 import oracle.adf.view.rich.event.PopupCanceledEvent;
+ 
 
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
@@ -26,6 +32,10 @@ import oracle.binding.OperationBinding;
 import oracle.jbo.uicli.binding.JUCtrlListBinding;
 
 import org.apache.myfaces.trinidad.component.UIXGroup;
+import org.apache.myfaces.trinidad.event.AttributeChangeEvent;
+import org.apache.myfaces.trinidad.render.ExtendedRenderKitService;
+ 
+import org.apache.myfaces.trinidad.util.Service;
 
 public class COACreateMappingRuleBean {
     private UISelectItems si2;
@@ -43,11 +53,14 @@ public class COACreateMappingRuleBean {
     private UIXGroup g2;
     private RichOutputText ot1;
     private RichSelectOneChoice soc1;
-    private UISelectItems si3;
     private UISelectItems si4;
     private RichSelectOneChoice soc2;
     private UISelectItems si5;
     private RichCommandButton cb2;
+    private RichPanelBox pb3;
+    private RichPanelBox pb1;
+    private RichSpacer s2;
+
 
     public COACreateMappingRuleBean() {
     }
@@ -234,17 +247,26 @@ public class COACreateMappingRuleBean {
         ob.execute();
         
         
-        String messageText= "Data Saved Successfully"; ;
+      /*  String messageText= "Data Saved Successfully"; ;
                FacesMessage fm = new FacesMessage(messageText);
 
                fm.setSeverity(FacesMessage.SEVERITY_INFO);
                FacesContext context = FacesContext.getCurrentInstance();
                context.addMessage(null, fm);
-             
+          */   
+      
+        calljqHelper("$.growl.notice({ message: \"Record Saved\" });");
+        
+        ADFPopupUtils.hideParentPopup(cb1);      
+      
         return null;
     }
 
- 
+    public void calljqHelper(String script) {
+        FacesContext context = FacesContext.getCurrentInstance();
+        ExtendedRenderKitService erks = Service.getService(context.getRenderKit(), ExtendedRenderKitService.class);
+        erks.addScript(context, script);
+    }
 
     public BindingContainer getBindings() {
         return BindingContext.getCurrent().getCurrentBindingsEntry();
@@ -256,14 +278,6 @@ public class COACreateMappingRuleBean {
 
     public RichSelectOneChoice getSoc1() {
         return soc1;
-    }
-
-    public void setSi3(UISelectItems si3) {
-        this.si3 = si3;
-    }
-
-    public UISelectItems getSi3() {
-        return si3;
     }
 
 
@@ -307,4 +321,92 @@ public class COACreateMappingRuleBean {
     public RichPanelFormLayout getPfl3() {
         return pfl3;
     }
+
+
+    public void setPb3(RichPanelBox pb3) {
+        this.pb3 = pb3;
+    }
+
+    public RichPanelBox getPb3() {
+        return pb3;
+    }
+
+    public void setPb1(RichPanelBox pb1) {
+        this.pb1 = pb1;
+    }
+
+    public RichPanelBox getPb1() {
+        return pb1;
+    }
+
+    public void setS2(RichSpacer s2) {
+        this.s2 = s2;
+    }
+
+    public RichSpacer getS2() {
+        return s2;
+    }
+
+    public String cb2_action() {
+        ADFPopupUtils.hideParentPopup(cb2);
+        return null;
+    }
+    
+    public void onLovLaunch(LaunchPopupEvent launchPopupEvent) {
+     BindingContext bctx = BindingContext.getCurrent();
+     BindingContainer bindings = bctx.getCurrentBindingsEntry();
+    
+    }
+ 
+    public void targetSystemValueChangeEvent(ValueChangeEvent valueChangeEvent)
+    {
+        String targetSystemStr = (String)soc2.getValue(); 
+        System.out.println("User Change Target Lov Value -->"+ soc2.getValue());
+        
+        BindingContext bCtx = BindingContext.getCurrent();
+        DCBindingContainer DcCon = (DCBindingContainer)bCtx.getCurrentBindingsEntry();
+        System.out.println("Calling Target ");
+                                   
+        DcCon.getOperationBinding("ExecuteWithParams1").execute();
+        
+    }
+    
+    
+    public void sourceSystemValueChangeEvent(ValueChangeEvent valueChangeEvent)
+    {
+        String sourceSystemStr = (String)soc1.getValue(); 
+        System.out.println("User Change Source Lov Value -->"+ soc1.getValue());
+        
+                if(soc1.getValue()!=null)
+                {
+//                          if(valueChangeEvent.getNewValue()!=valueChangeEvent.getOldValue())   
+//                          {
+//                              this.smc1.setValue(null);
+//                              
+//                        }
+                    
+//                    System.out.println("Setting Source Segments to NULL");
+//                    smc1.setValue(null);
+                  
+                  // String sourceNameEL =(String)ADFUtil.evaluateEL(" #{bindings.COASourceSystemLOVVO1.inputValue}"); 
+                    BindingContext bCtx = BindingContext.getCurrent();
+                    DCBindingContainer DcCon = (DCBindingContainer)bCtx.getCurrentBindingsEntry();
+                    System.out.println("Calling Execution");
+                                               
+                    DcCon.getOperationBinding("ExecuteWithParams").execute();
+                    
+                    
+                    /*
+                    //Get OperationBinding of method
+                    System.out.println("Invoking AM Method ....setSourceSegmentLov.");
+                    OperationBinding ob= DcCon.getOperationBinding("setSourceSegmentLov");                   
+                    ob.getParamsMap().put("sourceSystemStr", sourceSystemStr);
+                    //Passing parameter to method -Get parameter map and use paramater name as key
+                    //Execute this method
+                    ob.execute();
+                    */
+                }
+      }
+
+
 }

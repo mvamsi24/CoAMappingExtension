@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="InputStream" Package="java.io" BeanClass="java.io.InputStream"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="int" id="read"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="int" id="read"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="b" Type="byte[]" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="int" id="read"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="b" Type="byte[]" isStructured="false"/>
+    <ParameterInfo id="off" Type="int" isStructured="false"/>
+    <ParameterInfo id="len" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="long" id="skip"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="n" Type="long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="int" id="available"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="close"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="mark"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="readlimit" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="reset"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="boolean" id="markSupported"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true" Type="java.io.InputStream"
+                     BeanClass="java.io.InputStream" id="InputStream"/>
+</JavaBean>

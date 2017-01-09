@@ -5,6 +5,8 @@ import deloitte.fin.gl.coa.module.common.COAAM;
 import deloitte.fin.gl.coa.view.COAMappingRulesVOImpl;
 import deloitte.fin.gl.coa.view.COASearchVOImpl;
 
+import deloitte.fin.gl.coa.view.CoaStringValuesVOImpl;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -506,4 +508,53 @@ this.getDBTransaction().createCallableStatement("begin ? := " + stmt + ";end;",
         return (ViewObjectImpl)findViewObject("COASystemDefinitonsVO1");
     }
 
+    /**
+     * Container's getter for CoaStringValuesVO1.
+     * @return CoaStringValuesVO1
+     */
+    public CoaStringValuesVOImpl getCoaStringValuesVO1() {
+        return (CoaStringValuesVOImpl)findViewObject("CoaStringValuesVO1");
+    }
+    
+    
+    public void findStringValues(String sourceSystem, String targetSystem
+                               , String sourceValue,String targetValue
+                               ) {
+         System.out.println("Source System:" + sourceSystem + "Tatget: " +
+                            targetSystem +  "SourceValue: " + sourceValue + "TargetValue " +
+                            targetValue + "\n");
+
+         ViewObjectImpl COAValuesVO = getCoaStringValuesVO1();
+         //        tableName = "TableA";
+         if (sourceSystem != null || targetSystem != null ||
+             sourceValue != null ||
+             targetValue != null) {
+             System.out.println("Inside IF Start");
+             ViewCriteria vc =
+                 COAValuesVO.getViewCriteria("CoaStringValuesVOCriteria");
+             COAValuesVO.applyViewCriteria(vc);
+             COAValuesVO.setNamedWhereClauseParam("pSourceSystem",
+                                                  sourceSystem);
+             COAValuesVO.setNamedWhereClauseParam("pTargetSystem",
+                                                  targetSystem);
+             
+             COAValuesVO.setNamedWhereClauseParam("pSourceValue",
+                                                  sourceValue);
+             COAValuesVO.setNamedWhereClauseParam("pTargetValue",
+                                                  targetValue);
+             //            ciaVO.executeQuery();
+             System.out.println("Inside IF END");
+         } else {
+             System.out.println("Inside Else Start");
+             ViewCriteria vc =
+                 COAValuesVO.getViewCriteria("CoaStringValuesVOCriteria");
+             COAValuesVO.removeViewCriteria("CoaStringValuesVOCriteria");
+             vc.resetCriteria();
+             COAValuesVO.applyViewCriteria(vc);
+             //            ciaVO.executeQuery();
+             System.out.println("Inside Else Start");
+         }
+
+     }    
+    
 }

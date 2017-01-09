@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ClientEvent" Package="oracle.adf.view.rich.render"
+          BeanClass="oracle.adf.view.rich.render.ClientEvent"
+          isJavaBased="true">
+  <Attribute Name="type" IsUpdateable="0" Type="java.lang.String"/>
+  <AccessorAttribute id="parameters" IsCollection="true" Type="java.util.Map"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String, java.lang.Object"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="component" IsCollection="false"
+                     BeanClass="javax.faces.component.UIComponent"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="toString"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.adf.view.rich.render.ClientEvent"
+                     BeanClass="oracle.adf.view.rich.render.ClientEvent"
+                     id="ClientEvent">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.util.Map" isStructured="false"/>
+    <ParameterInfo id="p2" Type="javax.faces.component.UIComponent"
+                   isStructured="true"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="oracle.adf.view.rich.render.ClientEvent"
+                     BeanClass="oracle.adf.view.rich.render.ClientEvent"
+                     id="ClientEvent">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.util.Map" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

@@ -30,4 +30,7 @@ public interface COAAM extends ApplicationModule {
     void findSystemValues(String systemName);
 
     void selectSystemValues(String systemName);
+
+    void findStringValues(String sourceSystem, String targetSystem,
+                          String sourceValue, String targetValue);
 }

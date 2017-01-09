@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ELContextListener" Package="javax.el"
+          BeanClass="javax.el.ELContextListener" isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="void" id="contextCreated"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContextEvent" isStructured="true"/>
+  </MethodAccessor>
+</JavaBean>

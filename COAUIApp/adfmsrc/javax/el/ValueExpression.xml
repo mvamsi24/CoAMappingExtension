@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ValueExpression" Package="javax.el"
+          BeanClass="javax.el.ValueExpression" isJavaBased="true">
+  <Attribute Name="expectedType" IsUpdateable="0" Type="java.lang.Class&lt;?>"/>
+  <Attribute Name="expressionString" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="literalText" IsUpdateable="0" Type="boolean"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="getValue"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setValue"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="boolean" id="isReadOnly"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Class&lt;?>" id="getType"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.el.ELContext" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="boolean" id="equals"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="int" id="hashCode"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true" Type="javax.el.ValueExpression"
+                     BeanClass="javax.el.ValueExpression" id="ValueExpression"/>
+</JavaBean>

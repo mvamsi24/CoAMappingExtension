@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="ActionListener" Package="javax.faces.event"
+          BeanClass="javax.faces.event.ActionListener" isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="void" id="processAction"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.event.ActionEvent"
+                   isStructured="true"/>
+  </MethodAccessor>
+</JavaBean>

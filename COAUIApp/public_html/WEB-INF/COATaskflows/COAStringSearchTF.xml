@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="COAStringSearchTF">
+    <default-activity id="__1">COAStringSearchPG</default-activity>
+    <managed-bean id="__5">
+      <managed-bean-name id="__3">COAStringValuesBean</managed-bean-name>
+      <managed-bean-class id="__4">deloitte.fin.gl.coa.bean.COAStringValuesBean</managed-bean-class>
+      <managed-bean-scope id="__2">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="COAStringSearchPG">
+      <page>/COAPageFraments/COAStringSearchPG.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

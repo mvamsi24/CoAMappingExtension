@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/WEB-INF/_Templates/fuse-side-panel.jspx" id="pt1">
+    <f:facet name="body">
+      <af:panelGroupLayout id="pgl1" layout="vertical"
+                           styleClass="AFStrecthWidth">
+        <af:panelGroupLayout id="pgl3" styleClass="AFStrecthWidth">
+          <af:panelFormLayout id="pfl1">
+            <af:selectOneChoice value="#{pageFlowScope.COAStringValuesBean.sourceSystem}"
+                                label="Source System"
+                                required="#{bindings.SourceSystem1.hints.mandatory}"
+                                shortDesc="#{bindings.SourceSystem1.hints.tooltip}"
+                                id="soc1">
+              <f:selectItems value="#{bindings.SourceSystem1.items}" id="si1"/>
+            </af:selectOneChoice>
+            <af:inputText
+                          label="#{bindings.SourceValue.hints.label}"
+                          columns="#{bindings.SourceValue.hints.displayWidth}"
+                          maximumLength="#{bindings.SourceValue.hints.precision}"
+                          shortDesc="#{bindings.SourceValue.hints.tooltip}"
+                          id="SourceValueItm"
+                          value="#{pageFlowScope.COAStringValuesBean.sourceValue}"/>
+            <af:selectOneChoice value="#{pageFlowScope.COAStringValuesBean.targetSystem}"
+                                label="Target System"
+                                required="#{bindings.TargetSystem.hints.mandatory}"
+                                shortDesc="#{bindings.TargetSystem.hints.tooltip}"
+                                id="soc2">
+              <f:selectItems value="#{bindings.TargetSystem.items}" id="si2"/>
+            </af:selectOneChoice>
+            <af:inputText
+                          label="#{bindings.TargetValue.hints.label}"
+                          columns="#{bindings.TargetValue.hints.displayWidth}"
+                          maximumLength="#{bindings.TargetValue.hints.precision}"
+                          shortDesc="#{bindings.TargetValue.hints.tooltip}"
+                          id="TargetValueItm"
+                          value="#{pageFlowScope.COAStringValuesBean.targetValue}"/>
+          </af:panelFormLayout>
+        </af:panelGroupLayout>
+        <af:panelGroupLayout id="pgl2" layout="horizontal"
+                             styleClass="AFStrecthWidth">
+          <af:spacer width="171" height="10" id="s3"/>
+          <af:commandButton text="Search" id="cb1"
+                            actionListener="#{bindings.findStringValues.execute}"/>
+          <af:spacer width="5" height="10" id="s4"/>
+          <af:commandButton text="Clear" id="cb2" partialSubmit="true"
+                            actionListener="#{backingBeanScope.COAListnersBean.clearForm}"/>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="hidden"/>
+  </af:pageTemplate>
+</jsp:root>

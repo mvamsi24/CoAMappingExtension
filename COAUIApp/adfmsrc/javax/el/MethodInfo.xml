@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="MethodInfo" Package="javax.el" BeanClass="javax.el.MethodInfo"
+          isJavaBased="true">
+  <Attribute Name="name" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="returnType" IsUpdateable="0" Type="java.lang.Class&lt;?>"/>
+  <AccessorAttribute id="paramTypes" IsCollection="true"
+                     Type="java.lang.Class&lt;?>[]"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.Class&lt;?>"/>
+  </AccessorAttribute>
+  <ConstructorMethod IsCollection="true" Type="javax.el.MethodInfo"
+                     BeanClass="javax.el.MethodInfo" id="MethodInfo">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p1" Type="java.lang.Class&lt;?>" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Class&lt;?>[]" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

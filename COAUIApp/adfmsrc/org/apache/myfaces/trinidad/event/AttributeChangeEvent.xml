@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="AttributeChangeEvent" Package="org.apache.myfaces.trinidad.event"
+          BeanClass="org.apache.myfaces.trinidad.event.AttributeChangeEvent"
+          isJavaBased="true">
+  <Attribute Name="attribute" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="oldValue" IsUpdateable="0" Type="java.lang.Object"/>
+  <Attribute Name="newValue" IsUpdateable="0" Type="java.lang.Object"/>
+  <AccessorAttribute id="component" IsCollection="false"
+                     BeanClass="javax.faces.component.UIComponent"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="phaseId" IsCollection="false"
+                     BeanClass="javax.faces.event.PhaseId"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="void" id="processListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.event.FacesListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="boolean" id="isAppropriateListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="p0" Type="javax.faces.event.FacesListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="toString"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="queue"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="org.apache.myfaces.trinidad.event.AttributeChangeEvent"
+                     BeanClass="org.apache.myfaces.trinidad.event.AttributeChangeEvent"
+                     id="AttributeChangeEvent">
+    <ParameterInfo id="p0" Type="javax.faces.component.UIComponent"
+                   isStructured="true"/>
+    <ParameterInfo id="p1" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="p2" Type="java.lang.Object" isStructured="false"/>
+    <ParameterInfo id="p3" Type="java.lang.Object" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

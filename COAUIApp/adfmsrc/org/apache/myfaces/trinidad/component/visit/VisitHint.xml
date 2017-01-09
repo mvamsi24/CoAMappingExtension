@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.65.57"
+          id="VisitHint" Package="org.apache.myfaces.trinidad.component.visit"
+          BeanClass="org.apache.myfaces.trinidad.component.visit.VisitHint"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="true"
+                  Type="org.apache.myfaces.trinidad.component.visit.VisitHint"
+                  BeanClass="org.apache.myfaces.trinidad.component.visit.VisitHint"
+                  id="values" ReturnNodeName="VisitHint"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false"
+                  Type="org.apache.myfaces.trinidad.component.visit.VisitHint"
+                  BeanClass="org.apache.myfaces.trinidad.component.visit.VisitHint"
+                  id="valueOf" ReturnNodeName="VisitHint">
+    <ParameterInfo id="p0" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>
