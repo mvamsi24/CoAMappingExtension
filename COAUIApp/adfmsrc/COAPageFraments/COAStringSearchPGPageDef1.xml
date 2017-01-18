@@ -11,11 +11,6 @@
               DataControl="COAAMDataControl" id="COAFindFieldLOVVO1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="CoaStringValuesVO1Iterator" id="SourceValue">
-      <AttrNames>
-        <Item Value="SourceValue"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="CoaStringValuesVO1Iterator" id="TargetValue">
       <AttrNames>
         <Item Value="TargetValue"/>
@@ -51,6 +46,11 @@
     <list IterBinding="COAFindFieldLOVVO1Iterator" StaticList="false"
           Uses="LOV_TargetSystem" id="TargetSystem" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="COAFindFieldLOVVO1Iterator" id="SourceValue1">
+      <AttrNames>
+        <Item Value="SourceValue"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
   <eventMap xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
     <event name="findStringValues">

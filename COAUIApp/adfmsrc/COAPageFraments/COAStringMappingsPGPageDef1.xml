@@ -49,5 +49,15 @@
         <Item Value="false"/>
       </ValueList>
     </button>
+    <button IterBinding="CoaStringValuesVO1Iterator" StaticList="true"
+            id="EnabledFlag">
+      <AttrNames>
+        <Item Value="EnabledFlag"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Y"/>
+        <Item Value="N"/>
+      </ValueList>
+    </button>
   </bindings>
 </pageDefinition>

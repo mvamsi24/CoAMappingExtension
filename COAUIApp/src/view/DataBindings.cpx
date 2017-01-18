@@ -53,6 +53,10 @@
           usageId="view_CIAFBDIProcessEditPFPageDef"/>
     <page path="/COAPageFraments/COASystemDefPF.jsff"
           usageId="view_COASystemDefPFPageDef"/>
+    <page path="/COAPageFraments/COAStringMappingsPG.jsff"
+          usageId="view_COAStringMappingsPGPageDef1"/>
+    <page path="/COAPageFraments/COAStringSearchPG.jsff"
+          usageId="view_COAStringSearchPGPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_Fuse_UI_Shell_TestPageDef"
@@ -107,6 +111,10 @@
           path="COAPageFraments.CIAFBDIProcessEditPFPageDef"/>
     <page id="view_COASystemDefPFPageDef"
           path="COAPageFraments.COASystemDefPFPageDef"/>
+    <page id="view_COAStringMappingsPGPageDef1"
+          path="COAPageFraments.COAStringMappingsPGPageDef1"/>
+    <page id="view_COAStringSearchPGPageDef1"
+          path="COAPageFraments.COAStringSearchPGPageDef1"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="FusionOpportunityService"

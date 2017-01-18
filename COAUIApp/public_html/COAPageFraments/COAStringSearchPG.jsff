@@ -7,7 +7,7 @@
       <af:panelGroupLayout id="pgl1" layout="vertical"
                            styleClass="AFStrecthWidth">
         <af:panelGroupLayout id="pgl3" styleClass="AFStrecthWidth">
-          <af:panelFormLayout id="pfl1">
+          <af:panelFormLayout id="pfl1" labelWidth="150px">
             <af:selectOneChoice value="#{pageFlowScope.COAStringValuesBean.sourceSystem}"
                                 label="Source System"
                                 required="#{bindings.SourceSystem1.hints.mandatory}"
@@ -15,13 +15,19 @@
                                 id="soc1">
               <f:selectItems value="#{bindings.SourceSystem1.items}" id="si1"/>
             </af:selectOneChoice>
+            <af:inputText label="Source Value" id="it1"
+                          value="#{pageFlowScope.COAStringValuesBean.sourceValue}"
+                          shortDesc="#{bindings.SourceValue1.hints.tooltip}"/>
             <af:inputText
-                          label="#{bindings.SourceValue.hints.label}"
-                          columns="#{bindings.SourceValue.hints.displayWidth}"
-                          maximumLength="#{bindings.SourceValue.hints.precision}"
-                          shortDesc="#{bindings.SourceValue.hints.tooltip}"
+                          label="#{bindings.SourceValue1.hints.label}"
+                          maximumLength="#{bindings.SourceValue1.hints.precision}"
+                          shortDesc="#{bindings.SourceValue1.hints.tooltip}"
                           id="SourceValueItm"
-                          value="#{pageFlowScope.COAStringValuesBean.sourceValue}"/>
+                          value="#{bindings.SourceValue1.inputValue}"
+                          required="#{bindings.SourceValue1.hints.mandatory}"
+                          rendered="false">
+              <f:validator binding="#{bindings.SourceValue1.validator}"/>
+            </af:inputText>
             <af:selectOneChoice value="#{pageFlowScope.COAStringValuesBean.targetSystem}"
                                 label="Target System"
                                 required="#{bindings.TargetSystem.hints.mandatory}"
@@ -31,7 +37,6 @@
             </af:selectOneChoice>
             <af:inputText
                           label="#{bindings.TargetValue.hints.label}"
-                          columns="#{bindings.TargetValue.hints.displayWidth}"
                           maximumLength="#{bindings.TargetValue.hints.precision}"
                           shortDesc="#{bindings.TargetValue.hints.tooltip}"
                           id="TargetValueItm"

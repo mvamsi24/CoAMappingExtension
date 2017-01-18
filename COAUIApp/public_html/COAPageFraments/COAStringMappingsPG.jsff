@@ -104,7 +104,7 @@
                      sortable="false"
                      headerText="Enabled"
                      id="c7" width="10%">
-            <af:selectBooleanCheckbox value="#{bindings.EnabledFlagBoolean.inputValue}"
+            <af:selectBooleanCheckbox value="#{row.bindings.EnabledFlag.inputValue}"
                                       label="#{row.bindings.EnabledFlag.label}"
                                       shortDesc="#{bindings.CoaStringValuesVO1.hints.EnabledFlag.tooltip}"
                                       id="sbc1" autoSubmit="true"/>
