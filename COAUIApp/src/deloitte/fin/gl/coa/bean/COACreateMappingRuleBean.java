@@ -13,6 +13,7 @@ import javax.faces.event.ValueChangeEvent;
 
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 import oracle.adf.view.rich.component.rich.input.RichSelectManyChoice;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
@@ -29,6 +30,7 @@ import oracle.adf.view.rich.event.PopupCanceledEvent;
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
+import oracle.jbo.ViewObject;
 import oracle.jbo.uicli.binding.JUCtrlListBinding;
 
 import org.apache.myfaces.trinidad.component.UIXGroup;
@@ -367,7 +369,18 @@ public class COACreateMappingRuleBean {
         DCBindingContainer DcCon = (DCBindingContainer)bCtx.getCurrentBindingsEntry();
         System.out.println("Calling Target ");
                                    
-        DcCon.getOperationBinding("ExecuteWithParams1").execute();
+   //     DcCon.getOperationBinding("ExecuteWithParams1").execute();
+        
+        BindingContext bindingctx=BindingContext.getCurrent();  
+        BindingContainer binding = bindingctx.getCurrentBindingsEntry();  
+        DCBindingContainer bindingsImpl = (DCBindingContainer) binding;  
+        
+        DCIteratorBinding dciter = bindingsImpl.findIteratorBinding("COATargetSegmentLOVVO1Iterator");  
+        ViewObject vo=dciter.getViewObject();
+        vo.setNamedWhereClauseParam("pTargetSystemName", targetSystemStr);
+        vo.executeQuery();
+        
+        
         
     }
     
@@ -393,7 +406,19 @@ public class COACreateMappingRuleBean {
                     DCBindingContainer DcCon = (DCBindingContainer)bCtx.getCurrentBindingsEntry();
                     System.out.println("Calling Execution");
                                                
-                    DcCon.getOperationBinding("ExecuteWithParams").execute();
+                   // DcCon.getOperationBinding("ExecuteWithParams").execute();
+               
+               
+                    BindingContext bindingctx=BindingContext.getCurrent();  
+                    BindingContainer binding = bindingctx.getCurrentBindingsEntry();  
+                    DCBindingContainer bindingsImpl = (DCBindingContainer) binding;  
+                    
+                    DCIteratorBinding dciter = bindingsImpl.findIteratorBinding("COASourceSegmentLOVVO1Iterator");  
+                    ViewObject vo=dciter.getViewObject();
+                    vo.setNamedWhereClauseParam("pSourceSystem", sourceSystemStr);
+                    vo.executeQuery();
+                    
+ 
                     
                     
                     /*
