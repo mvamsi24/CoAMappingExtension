@@ -21,9 +21,12 @@
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery>
-    <![CDATA[select DISTINCT SYSTEM_NAME SOURCE_SYSTEM FROM COA_SEGMENT_DEFINITIONS
+    <![CDATA[select DISTINCT SYSTEM_NAME SOURCE_SYSTEM , 'x' temp  FROM COA_SEGMENT_DEFINITIONS
 WHERE SOURCE_FLAG = 'Y'
-AND ENABLED_FLAG = 'Y']]>
+AND ENABLED_FLAG = 'Y'
+union
+select  null , 'a' temp  from dual
+order by 2]]>
   </SQLQuery>
   <ViewAttribute
     Name="SourceSystem"
@@ -37,6 +40,21 @@ AND ENABLED_FLAG = 'Y']]>
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Temp"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="TEMP"
+    Expression="TEMP"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </ViewAttribute>
   <ResourceBundle>

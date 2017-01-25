@@ -6,7 +6,6 @@
   Name="COATargetSystemLOVVO"
   Version="11.1.1.65.57"
   InheritPersonalization="true"
-  OrderBy='TARGET_SYSTEM'
   BindingStyle="OracleName"
   CustomQuery="true"
   PageIterMode="Full"
@@ -22,9 +21,12 @@
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery>
-    <![CDATA[select DISTINCT SYSTEM_NAME TARGET_SYSTEM FROM COA_SEGMENT_DEFINITIONS
+    <![CDATA[select DISTINCT SYSTEM_NAME TARGET_SYSTEM  , 'x' temp  FROM COA_SEGMENT_DEFINITIONS
 WHERE TARGET_FLAG = 'Y'
-AND ENABLED_FLAG = 'Y']]>
+AND ENABLED_FLAG = 'Y'
+union
+select null ,'a' temp from dual
+order by 2 asc]]>
   </SQLQuery>
   <ViewAttribute
     Name="TargetSystem"
@@ -39,6 +41,21 @@ AND ENABLED_FLAG = 'Y']]>
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Temp"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="TEMP"
+    Expression="TEMP"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </ViewAttribute>
   <ResourceBundle>
