@@ -4,6 +4,7 @@ import javax.faces.component.UISelectItems;
 
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.view.rich.component.rich.RichPanelWindow;
 import oracle.adf.view.rich.component.rich.RichPopup;
 import oracle.adf.view.rich.component.rich.data.RichTable;
@@ -15,8 +16,10 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
 
+import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
+import oracle.jbo.ViewObject;
 import oracle.jbo.uicli.binding.JUCtrlListBinding;
 
 import org.apache.myfaces.trinidad.component.UIXGroup;
@@ -266,12 +269,16 @@ public class COAMappingRule {
         DCBindingContainer DcCon = (DCBindingContainer)bCtx.getCurrentBindingsEntry();
         //Get OperationBinding of method
         OperationBinding ob= DcCon.getOperationBinding("executeCOAMappingRuleVO");
-     //public void executeCOAMappingRuleVO(String ruleStr, String descStr, String seqStr, String sourceStr, String destStr)   
+     //public void executeCOAMappingRuleVO(String ruleStr, String descStr,
+     //                                     String seqStr, String sourceStr,
+     //                                     String targetSystemStr  
         ob.getParamsMap().put("ruleStr", ruleNameStr);
         ob.getParamsMap().put("descStr", descStr);
         ob.getParamsMap().put("seqStr", seqStr);
         ob.getParamsMap().put("sourceStr", sourceSystemStr);
         ob.getParamsMap().put("targetSystemStr", targetSystemStr);
+        
+        System.out.println("--ENd of COAMappingRule.java----");
         ob.execute();
         return null;
     }
@@ -281,6 +288,28 @@ public class COAMappingRule {
         sequenceITID.setValue(null); 
         ruleInputID.setValue(null);
         descriptionITID.setValue(null);
+        
+        BindingContext bindingctx=BindingContext.getCurrent();  
+        BindingContainer binding = bindingctx.getCurrentBindingsEntry();  
+        DCBindingContainer bindingsImpl = (DCBindingContainer) binding;  
+        
+        
+        DCIteratorBinding dciter = bindingsImpl.findIteratorBinding("COASourceSystemLOVVO1Iterator");  
+        ViewObject vo=dciter.getViewObject();
+        String name = vo.getName();
+        System.out.println("VO Name: "+name);
+        vo.executeQuery();
+  
+  
+        DCIteratorBinding dciter1 = bindingsImpl.findIteratorBinding("COATargetSystemLOVVO1Iterator");  
+        ViewObject vo1=dciter1.getViewObject();
+        String name1 = vo1.getName();
+        System.out.println("VO1 Name: "+name1);
+        vo1.executeQuery();
+        
+        
+     //   soc1.setValue(0);
+      // soc2.setValue(0);
         
         return null;
     }
