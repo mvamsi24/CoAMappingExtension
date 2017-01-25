@@ -58,8 +58,8 @@
       <NamedData NDName="ruleStr" NDType="java.lang.String"/>
       <NamedData NDName="descStr" NDType="java.lang.String"/>
       <NamedData NDName="seqStr" NDType="java.lang.String"/>
-      <NamedData NDName="sourceStr" NDType="java.lang.String"/>
-      <NamedData NDName="destStr" NDType="java.lang.String"/>
+      <NamedData NDName="sourceStr" NDValue="" NDType="java.lang.String"/>
+      <NamedData NDName="targetSystemStr" NDValue="" NDType="java.lang.String"/>
     </methodAction>
   </bindings>
 </pageDefinition>
